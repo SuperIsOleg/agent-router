@@ -1,0 +1,2164 @@
+{
+ "version": 1,
+ "tasks": [
+  {
+   "id": "ios-01",
+   "subagent_type": "Explore",
+   "description": "Find UserDefaults usages",
+   "prompt": "Найди все использования `UserDefaults.standard` в папке Modules/ и выдай список файлов с номерами строк. Ничего не правь.",
+   "lang": "ru",
+   "domain": "ios",
+   "tags": [
+    "search"
+   ],
+   "expected_tier": "mechanical",
+   "acceptable_tiers": [
+    "mechanical",
+    "ordinary"
+   ],
+   "min_safe_tier": "mechanical",
+   "ambiguous": false,
+   "why": "Simple grep-style search, read-only."
+  },
+  {
+   "id": "ios-02",
+   "subagent_type": "general-purpose",
+   "description": "Rename profile header view",
+   "prompt": "Rename `ProfileHeaderView` to `ProfileSummaryView` everywhere in the Profile module: type name, file name, previews and references. No behaviour changes.",
+   "lang": "en",
+   "domain": "ios",
+   "tags": [
+    "rename"
+   ],
+   "expected_tier": "mechanical",
+   "acceptable_tiers": [
+    "mechanical"
+   ],
+   "min_safe_tier": "mechanical",
+   "ambiguous": false,
+   "why": "Pure rename inside one module."
+  },
+  {
+   "id": "ios-03",
+   "subagent_type": "general-purpose",
+   "description": "Fix missing import",
+   "prompt": "Билд упал, вот лог:\n\n```\nCommand line invocation:\n    /usr/bin/xcodebuild -workspace App.xcworkspace -scheme App-Debug build\n\nCompileSwift normal arm64 /Users/dev/proj/Modules/Checkout/Sources/File0.swift (in target 'Checkout')\nCompileSwift normal arm64 /Users/dev/proj/Modules/Checkout/Sources/File1.swift (in target 'Checkout')\nCompileSwift normal arm64 /Users/dev/proj/Modules/Checkout/Sources/File2.swift (in target 'Checkout')\nCompileSwift normal arm64 /Users/dev/proj/Modules/Checkout/Sources/File3.swift (in target 'Checkout')\nCompileSwift normal arm64 /Users/dev/proj/Modules/Checkout/Sources/File4.swift (in target 'Checkout')\nCompileSwift normal arm64 /Users/dev/proj/Modules/Checkout/Sources/File5.swift (in target 'Checkout')\n\n/Users/dev/proj/Modules/Checkout/Sources/PaymentSheetView.swift:41:17: error: cannot find 'Logger' in scope\n        let log = Logger(subsystem: \"app.checkout\", category: \"payment\")\n                  ^~~~~~\n/Users/dev/proj/Modules/Checkout/Sources/PaymentSheetView.swift:58:9: warning: unused variable 'crashHandler'\n** BUILD FAILED **\n\nThe following build commands failed:\n    CompileSwift normal arm64 (in target 'Checkout' from project 'App')\n(1 failure)\n```\n\nПросто добавь недостающий `import os` в `PaymentSheetView.swift`, больше ничего не меняй.\n\nПолный вывод xcodebuild для справки:\n```\nCompileSwift normal arm64 /Users/dev/proj/Modules/Checkout/Sources/File0.swift (in target 'Checkout' from project 'App')\nCompileSwift normal arm64 /Users/dev/proj/Modules/Checkout/Sources/File1.swift (in target 'Checkout' from project 'App')\nCompileSwift normal arm64 /Users/dev/proj/Modules/Checkout/Sources/File2.swift (in target 'Checkout' from project 'App')\nCompileSwift normal arm64 /Users/dev/proj/Modules/Checkout/Sources/File3.swift (in target 'Checkout' from project 'App')\nCompileSwift normal arm64 /Users/dev/proj/Modules/Checkout/Sources/File4.swift (in target 'Checkout' from project 'App')\nCompileSwift normal arm64 /Users/dev/proj/Modules/Checkout/Sources/File5.swift (in target 'Checkout' from project 'App')\nCompileSwift normal arm64 /Users/dev/proj/Modules/Checkout/Sources/File6.swift (in target 'Checkout' from project 'App')\nCompileSwift normal arm64 /Users/dev/proj/Modules/Home/Sources/File0.swift (in target 'Home' from project 'App')\nCompileSwift normal arm64 /Users/dev/proj/Modules/Home/Sources/File1.swift (in target 'Home' from project 'App')\nCompileSwift normal arm64 /Users/dev/proj/Modules/Home/Sources/File2.swift (in target 'Home' from project 'App')\nCompileSwift normal arm64 /Users/dev/proj/Modules/Home/Sources/File3.swift (in target 'Home' from project 'App')\nCompileSwift normal arm64 /Users/dev/proj/Modules/Home/Sources/File4.swift (in target 'Home' from project 'App')\nCompileSwift normal arm64 /Users/dev/proj/Modules/Home/Sources/File5.swift (in target 'Home' from project 'App')\nCompileSwift normal arm64 /Users/dev/proj/Modules/Home/Sources/File6.swift (in target 'Home' from project 'App')\nCompileSwift normal arm64 /Users/dev/proj/Modules/Editor/Sources/File0.swift (in target 'Editor' from project 'App')\nCompileSwift normal arm64 /Users/dev/proj/Modules/Editor/Sources/File1.swift (in target 'Editor' from project 'App')\nCompileSwift normal arm64 /Users/dev/proj/Modules/Editor/Sources/File2.swift (in target 'Editor' from project 'App')\nCompileSwift normal arm64 /Users/dev/proj/Modules/Editor/Sources/File3.swift (in target 'Editor' from project 'App')\nCompileSwift normal arm64 /Users/dev/proj/Modules/Editor/Sources/File4.swift (in target 'Editor' from project 'App')\nCompileSwift normal arm64 /Users/dev/proj/Modules/Editor/Sources/File5.swift (in target 'Editor' from project 'App')\nCompileSwift normal arm64 /Users/dev/proj/Modules/Editor/Sources/File6.swift (in target 'Editor' from project 'App')\nCompileSwift normal arm64 /Users/dev/proj/Modules/Profile/Sources/File0.swift (in target 'Profile' from project 'App')\nCompileSwift normal arm64 /Users/dev/proj/Modules/Profile/Sources/File1.swift (in target 'Profile' from project 'App')\nCompileSwift normal arm64 /Users/dev/proj/Modules/Profile/Sources/File2.swift (in target 'Profile' from project 'App')\nCompileSwift normal arm64 /Users/dev/proj/Modules/Profile/Sources/File3.swift (in target 'Profile' from project 'App')\nCompileSwift normal arm64 /Users/dev/proj/Modules/Profile/Sources/File4.swift (in target 'Profile' from project 'App')\nCompileSwift normal arm64 /Users/dev/proj/Modules/Profile/Sources/File5.swift (in target 'Profile' from project 'App')\nCompileSwift normal arm64 /Users/dev/proj/Modules/Profile/Sources/File6.swift (in target 'Profile' from project 'App')\nCompileSwift normal arm64 /Users/dev/proj/Modules/Camera/Sources/File0.swift (in target 'Camera' from project 'App')\nCompileSwift normal arm64 /Users/dev/proj/Modules/Camera/Sources/File1.swift (in target 'Camera' from project 'App')\nCompileSwift normal arm64 /Users/dev/proj/Modules/Camera/Sources/File2.swift (in target 'Camera' from project 'App')\nCompileSwift normal arm64 /Users/dev/proj/Modules/Camera/Sources/File3.swift (in target 'Camera' from project 'App')\nCompileSwift normal arm64 /Users/dev/proj/Modules/Camera/Sources/File4.swift (in target 'Camera' from project 'App')\nCompileSwift normal arm64 /Users/dev/proj/Modules/Camera/Sources/File5.swift (in target 'Camera' from project 'App')\nCompileSwift normal arm64 /Users/dev/proj/Modules/Camera/Sources/File6.swift (in target 'Camera' from project 'App')\nCompileSwift normal arm64 /Users/dev/proj/Modules/Export/Sources/File0.swift (in target 'Export' from project 'App')\nCompileSwift normal arm64 /Users/dev/proj/Modules/Export/Sources/File1.swift (in target 'Export' from project 'App')\nCompileSwift normal arm64 /Users/dev/proj/Modules/Export/Sources/File2.swift (in target 'Export' from project 'App')\nCompileSwift normal arm64 /Users/dev/proj/Modules/Export/Sources/File3.swift (in target 'Export' from project 'App')\nCompileSwift normal arm64 /Users/dev/proj/Modules/Export/Sources/File4.swift (in target 'Export' from project 'App')\nCompileSwift normal arm64 /Users/dev/proj/Modules/Export/Sources/File5.swift (in target 'Export' from project 'App')\nCompileSwift normal arm64 /Users/dev/proj/Modules/Export/Sources/File6.swift (in target 'Export' from project 'App')\nLd /Users/dev/Library/Developer/Xcode/DerivedData/App/Build/Products/Debug-iphonesimulator/App.app/App normal\n** BUILD FAILED **\n```",
+   "lang": "ru",
+   "domain": "ios",
+   "tags": [
+    "trap:log-in-fence",
+    "trap:ru-forms",
+    "long"
+   ],
+   "expected_tier": "mechanical",
+   "acceptable_tiers": [
+    "mechanical",
+    "ordinary"
+   ],
+   "min_safe_tier": "mechanical",
+   "ambiguous": false,
+   "why": "Log mentions payment/failed/crash but the ask is one missing import."
+  },
+  {
+   "id": "ios-05",
+   "subagent_type": "",
+   "description": "Fix button typo",
+   "prompt": "не трогай оплату, просто поправь опечатку в тексте кнопки на экране оплаты: в строке 'Pyament' должно быть 'Payment'. Больше ничего не меняй.",
+   "lang": "ru",
+   "domain": "ios",
+   "tags": [
+    "trap:negation",
+    "typo"
+   ],
+   "expected_tier": "mechanical",
+   "acceptable_tiers": [
+    "mechanical"
+   ],
+   "min_safe_tier": "mechanical",
+   "ambiguous": false,
+   "why": "Negation: explicitly only a typo despite payment screen."
+  },
+  {
+   "id": "ios-07",
+   "subagent_type": "ios-team:ios-engineer",
+   "description": "Swipe to delete drafts",
+   "prompt": "Add swipe-to-delete on the saved drafts list in the Home module.\n- Swipe from the trailing edge shows a destructive Delete action.\n- Tapping it asks for confirmation with an alert.\n- On confirm, the ViewModel calls the existing DraftsRepository.delete(id:) and removes the row.\nEmpty state stays as is.",
+   "lang": "en",
+   "domain": "ios",
+   "tags": [
+    "feature"
+   ],
+   "expected_tier": "ordinary",
+   "acceptable_tiers": [
+    "ordinary"
+   ],
+   "min_safe_tier": "ordinary",
+   "ambiguous": false,
+   "why": "Normal feature in one area with clear behaviour."
+  },
+  {
+   "id": "ios-08",
+   "subagent_type": "general-purpose",
+   "description": "Quiet hours toggle",
+   "prompt": "На экране настроек уведомлений добавь переключатель «Тихие часы» с выбором интервала времени. Значение хранится через существующую обёртку над настройками (SettingsStore), логика расписания уже есть в NotificationScheduler — нужно только UI и привязка.",
+   "lang": "ru",
+   "domain": "ios",
+   "tags": [
+    "feature"
+   ],
+   "expected_tier": "ordinary",
+   "acceptable_tiers": [
+    "ordinary"
+   ],
+   "min_safe_tier": "ordinary",
+   "ambiguous": false,
+   "why": "One-screen feature with existing backend pieces."
+  },
+  {
+   "id": "ios-09",
+   "subagent_type": "general-purpose",
+   "description": "Tests for DurationFormatter",
+   "prompt": "Write Swift Testing unit tests for this pure struct. Cover zero, negative, sub-second, exactly one minute, one hour and large values.\n\n```swift\nstruct DurationFormatter {\n    func string(from seconds: TimeInterval) -> String {\n        guard seconds >= 0 else { return \"0:00\" }\n        let total = Int(seconds.rounded(.down))\n        let h = total / 3600\n        let m = (total % 3600) / 60\n        let s = total % 60\n        if h > 0 { return String(format: \"%d:%02d:%02d\", h, m, s) }\n        return String(format: \"%d:%02d\", m, s)\n    }\n}\n```\n\nPut the file under Tests/CV1DomainTests/.\n\nFor reference, here is how it's used in the exporter:\n```swift\nlet label0 = formatter.string(from: segments[0].duration)\nlet label1 = formatter.string(from: segments[1].duration)\nlet label2 = formatter.string(from: segments[2].duration)\nlet label3 = formatter.string(from: segments[3].duration)\nlet label4 = formatter.string(from: segments[4].duration)\nlet label5 = formatter.string(from: segments[5].duration)\nlet label6 = formatter.string(from: segments[6].duration)\nlet label7 = formatter.string(from: segments[7].duration)\nlet label8 = formatter.string(from: segments[8].duration)\nlet label9 = formatter.string(from: segments[9].duration)\nlet label10 = formatter.string(from: segments[10].duration)\nlet label11 = formatter.string(from: segments[11].duration)\nlet label12 = formatter.string(from: segments[12].duration)\nlet label13 = formatter.string(from: segments[13].duration)\nlet label14 = formatter.string(from: segments[14].duration)\nlet label15 = formatter.string(from: segments[15].duration)\nlet label16 = formatter.string(from: segments[16].duration)\nlet label17 = formatter.string(from: segments[17].duration)\nlet label18 = formatter.string(from: segments[18].duration)\nlet label19 = formatter.string(from: segments[19].duration)\nlet label20 = formatter.string(from: segments[20].duration)\nlet label21 = formatter.string(from: segments[21].duration)\nlet label22 = formatter.string(from: segments[22].duration)\nlet label23 = formatter.string(from: segments[23].duration)\nlet label24 = formatter.string(from: segments[24].duration)\nlet label25 = formatter.string(from: segments[25].duration)\nlet label26 = formatter.string(from: segments[26].duration)\nlet label27 = formatter.string(from: segments[27].duration)\nlet label28 = formatter.string(from: segments[28].duration)\nlet label29 = formatter.string(from: segments[29].duration)\n```",
+   "lang": "en",
+   "domain": "ios",
+   "tags": [
+    "tests",
+    "long"
+   ],
+   "expected_tier": "ordinary",
+   "acceptable_tiers": [
+    "ordinary"
+   ],
+   "min_safe_tier": "ordinary",
+   "ambiguous": false,
+   "why": "Tests for small clear code."
+  },
+  {
+   "id": "ios-10",
+   "subagent_type": "general-purpose",
+   "description": "Move projects to SwiftData",
+   "prompt": "Нужно мигрировать хранилище проектов с JSON-файлов в Documents на SwiftData. Пользователи с существующими проектами не должны потерять данные: старые файлы надо прочитать, перенести и только потом удалить. Версия iOS 26, модуль AppProjects.",
+   "lang": "ru",
+   "domain": "ios",
+   "tags": [
+    "trap:ru-forms",
+    "persistence",
+    "migration"
+   ],
+   "expected_tier": "risky",
+   "acceptable_tiers": [
+    "risky"
+   ],
+   "min_safe_tier": "risky",
+   "ambiguous": false,
+   "why": "Persistence migration with user data loss risk."
+  },
+  {
+   "id": "ios-11",
+   "subagent_type": "general-purpose",
+   "description": "Restore purchase logic",
+   "prompt": "Change how the app decides a purchase is 'restored' after reinstall. Right now we trust the local isPremium flag first and only then ask StoreKit. I think it should be the other way round, can you flip it?",
+   "lang": "en",
+   "domain": "ios",
+   "tags": [
+    "trap:casual-risky",
+    "payments"
+   ],
+   "expected_tier": "risky",
+   "acceptable_tiers": [
+    "risky"
+   ],
+   "min_safe_tier": "risky",
+   "ambiguous": false,
+   "why": "Casual wording, but entitlement/IAP logic."
+  },
+  {
+   "id": "ios-12",
+   "subagent_type": "general-purpose",
+   "description": "Refund calculation change",
+   "prompt": "поменяй, как считаются деньги при возврате на экране подписки: сейчас остаток дней округляется вверх, пусть округляется вниз и показывается в локальной валюте",
+   "lang": "ru",
+   "domain": "ios",
+   "tags": [
+    "trap:casual-risky",
+    "money"
+   ],
+   "expected_tier": "risky",
+   "acceptable_tiers": [
+    "risky"
+   ],
+   "min_safe_tier": "risky",
+   "ambiguous": false,
+   "why": "Money calculation, casually phrased."
+  },
+  {
+   "id": "ios-13",
+   "subagent_type": "general-purpose",
+   "description": "Investigate launch crash",
+   "prompt": "There is a crash that shows up only on iOS 26 in roughly 2% of sessions. We cannot reproduce it locally. Crash report below.\n\n```\nException Type:  EXC_BAD_ACCESS (SIGSEGV)\nException Subtype: KERN_INVALID_ADDRESS at 0x0000000000000010\nTermination Reason: SIGNAL 11 Segmentation fault: 11\nTriggered by Thread:  4\n\nThread 4 name:  com.example.render-queue\nThread 4 Crashed:\n0   App                          \t0x0000000103e88a0 0x100000000 + 4000\n1   App                          \t0x00000001040d8a0 0x100000000 + 4911\n2   App                          \t0x0000000104328a0 0x100000000 + 5822\n3   App                          \t0x0000000104578a0 0x100000000 + 6733\n4   App                          \t0x00000001047c8a0 0x100000000 + 7644\n5   App                          \t0x0000000104a18a0 0x100000000 + 8555\n6   App                          \t0x0000000104c68a0 0x100000000 + 9466\n7   App                          \t0x0000000104eb8a0 0x100000000 + 10377\n8   App                          \t0x0000000105108a0 0x100000000 + 11288\n9   App                          \t0x0000000105358a0 0x100000000 + 12199\n10   App                          \t0x00000001055a8a0 0x100000000 + 13110\n11   App                          \t0x00000001057f8a0 0x100000000 + 14021\n12   App                          \t0x0000000105a48a0 0x100000000 + 14932\n13   App                          \t0x0000000105c98a0 0x100000000 + 15843\n14  libdispatch.dylib             \t0x00000001bd3a2e18 _dispatch_client_callout + 20\n15  libdispatch.dylib             \t0x00000001bd3a46b0 _dispatch_continuation_pop + 596\n\nThread 0:\n0   libsystem_kernel.dylib\t0x00000001e3c00000 mach_msg2_trap + 8\n1   libsystem_kernel.dylib\t0x00000001e3c00100 mach_msg2_trap + 8\n2   libsystem_kernel.dylib\t0x00000001e3c00200 mach_msg2_trap + 8\n3   libsystem_kernel.dylib\t0x00000001e3c00300 mach_msg2_trap + 8\n4   libsystem_kernel.dylib\t0x00000001e3c00400 mach_msg2_trap + 8\n\nBinary Images:\n    0x100000000 - 0x10a3fffff App arm64  <a1b2c3d4e5f6/>\nDevice: iPhone15,2  OS: iOS 26.0.1 (23A355)\nSessions affected: ~2.1% of iOS 26.0.x, none on 25.x. Started in build 4412.\n```\n\nFind the root cause, explain the evidence, and propose a fix. Don't apply a workaround without telling me.\n\nSymbolicated top frames from more reports:\n```\nreport 1: RenderQueue.drawFrame(at:) -> LUTCache.texture(for:) -> MTLTexture.replace(region:) EXC_BAD_ACCESS\nreport 2: RenderQueue.drawFrame(at:) -> LUTCache.texture(for:) -> MTLTexture.replace(region:) EXC_BAD_ACCESS\nreport 3: RenderQueue.drawFrame(at:) -> LUTCache.texture(for:) -> MTLTexture.replace(region:) EXC_BAD_ACCESS\nreport 4: RenderQueue.drawFrame(at:) -> LUTCache.texture(for:) -> MTLTexture.replace(region:) EXC_BAD_ACCESS\nreport 5: RenderQueue.drawFrame(at:) -> LUTCache.texture(for:) -> MTLTexture.replace(region:) EXC_BAD_ACCESS\nreport 6: RenderQueue.drawFrame(at:) -> LUTCache.texture(for:) -> MTLTexture.replace(region:) EXC_BAD_ACCESS\nreport 7: RenderQueue.drawFrame(at:) -> LUTCache.texture(for:) -> MTLTexture.replace(region:) EXC_BAD_ACCESS\nreport 8: RenderQueue.drawFrame(at:) -> LUTCache.texture(for:) -> MTLTexture.replace(region:) EXC_BAD_ACCESS\nAll on A15 / A16 devices; none on A17.\n```",
+   "lang": "en",
+   "domain": "ios",
+   "tags": [
+    "long",
+    "unknown-cause"
+   ],
+   "expected_tier": "risky",
+   "acceptable_tiers": [
+    "risky"
+   ],
+   "min_safe_tier": "risky",
+   "ambiguous": false,
+   "why": "Unknown-cause crash in render queue, no repro."
+  },
+  {
+   "id": "ios-14",
+   "subagent_type": "general-purpose",
+   "description": "Export deeplink",
+   "prompt": "Добавь диплинк myapp://project/<id>/export, который из любого таба открывает редактор нужного проекта и сразу экран экспорта. Учти: пользователь может быть не залогинен, проект может быть ещё не синхронизирован, приложение может быть холодно запущено. Затрагивает Home, Editor и корневой роутер.",
+   "lang": "ru",
+   "domain": "ios",
+   "tags": [
+    "navigation",
+    "deeplink"
+   ],
+   "expected_tier": "risky",
+   "acceptable_tiers": [
+    "risky"
+   ],
+   "min_safe_tier": "risky",
+   "ambiguous": false,
+   "why": "Cross-module navigation with auth and cold-start states."
+  },
+  {
+   "id": "ios-15",
+   "subagent_type": "general-purpose",
+   "description": "Metal compositor architecture",
+   "prompt": "Design the real-time preview pipeline for a Metal-based compositor that blends up to 4 video layers with per-layer LUTs and Ken Burns transforms at 60 fps on A15 without dropping frames during scrubbing. Cover texture lifetime, command-buffer and queue model, CVPixelBuffer pools, and how to keep export and preview bit-compatible. Propose an architecture and list the failure modes.",
+   "lang": "en",
+   "domain": "ios",
+   "tags": [
+    "gpu",
+    "architecture"
+   ],
+   "expected_tier": "deep",
+   "acceptable_tiers": [
+    "risky",
+    "deep"
+   ],
+   "min_safe_tier": "risky",
+   "ambiguous": false,
+   "why": "GPU rendering internals plus architecture."
+  },
+  {
+   "id": "ios-16",
+   "subagent_type": "general-purpose",
+   "description": "Fix caption desync",
+   "prompt": "Почему AVVideoCompositionCoreAnimationTool даёт рассинхрон субтитров при экспорте 60 fps? Разберись и исправь.",
+   "lang": "ru",
+   "domain": "ios",
+   "tags": [
+    "trap:short-deep",
+    "rendering"
+   ],
+   "expected_tier": "deep",
+   "acceptable_tiers": [
+    "risky",
+    "deep"
+   ],
+   "min_safe_tier": "risky",
+   "ambiguous": false,
+   "why": "Very short brief but rendering-internals bug with unknown cause."
+  },
+  {
+   "id": "ios-17",
+   "subagent_type": "Explore",
+   "description": "List files with previews",
+   "prompt": "List every file in Frameworks/CV1Presentation that contains a `#Preview` macro. Paths only.",
+   "lang": "en",
+   "domain": "ios",
+   "tags": [
+    "search"
+   ],
+   "expected_tier": "mechanical",
+   "acceptable_tiers": [
+    "mechanical",
+    "ordinary"
+   ],
+   "min_safe_tier": "mechanical",
+   "ambiguous": false,
+   "why": "Simple search."
+  },
+  {
+   "id": "ios-18",
+   "subagent_type": "general-purpose",
+   "description": "Trim duration label",
+   "prompt": "В ClipTrimView под ползунком показывай длительность обрезанного клипа в формате 0:12.4, по макету из тикета. Формат уже есть в DurationFormatter, нужно подключить и обновлять при перетаскивании.",
+   "lang": "ru",
+   "domain": "ios",
+   "tags": [
+    "feature",
+    "ui"
+   ],
+   "expected_tier": "ordinary",
+   "acceptable_tiers": [
+    "ordinary"
+   ],
+   "min_safe_tier": "ordinary",
+   "ambiguous": false,
+   "why": "Small UI feature."
+  },
+  {
+   "id": "ios-20",
+   "subagent_type": "general-purpose",
+   "description": "Rename ownerId attribute",
+   "prompt": "Rename the Core Data attribute `ownerId` to `accountId` on the Project entity. It's a rename only, but production stores already contain data, so ship a mapping model / renaming identifier so existing users keep their projects.",
+   "lang": "en",
+   "domain": "ios",
+   "tags": [
+    "trap:rename-risky",
+    "migration",
+    "persistence"
+   ],
+   "expected_tier": "risky",
+   "acceptable_tiers": [
+    "risky"
+   ],
+   "min_safe_tier": "risky",
+   "ambiguous": false,
+   "why": "Rename on a persisted production schema."
+  },
+  {
+   "id": "ios-21",
+   "subagent_type": "code-reviewer",
+   "description": "Review debounce diff",
+   "prompt": "Review this small diff that adds a debounce to the search field. Check correctness and style, reply with a short list of findings.\n\n```diff\n--- a/Modules/Home/SearchViewModel.swift\n+++ b/Modules/Home/SearchViewModel.swift\n@@ -12,6 +12,17 @@ final class SearchViewModel: CV1ViewModel {\n+    private var searchTask: Task<Void, Never>?\n+\n     func queryChanged(_ text: String) {\n-        Task { await search(text) }\n+        searchTask?.cancel()\n+        searchTask = Task { [weak self] in\n+            try? await Task.sleep(for: .milliseconds(300))\n+            guard !Task.isCancelled else { return }\n+            await self?.search(text)\n+        }\n     }\n```\n\nНиже полный файл после изменений, если нужен контекст:\n```swift\nimport Foundation\n\nfinal class SearchViewModel {\n    private(set) var clips: [Clip] = []\n    private let syncService: ClipSyncing\n\n    func handleRemoteUpdate0(_ items: [Clip]) {\n        guard !items.isEmpty else { return }\n        clips = merge(clips, with: items, revision: 0)\n    }\n\n    func handleRemoteUpdate1(_ items: [Clip]) {\n        guard !items.isEmpty else { return }\n        clips = merge(clips, with: items, revision: 1)\n    }\n\n    func handleRemoteUpdate2(_ items: [Clip]) {\n        guard !items.isEmpty else { return }\n        clips = merge(clips, with: items, revision: 2)\n    }\n\n    func handleRemoteUpdate3(_ items: [Clip]) {\n        guard !items.isEmpty else { return }\n        clips = merge(clips, with: items, revision: 3)\n    }\n\n    func handleRemoteUpdate4(_ items: [Clip]) {\n        guard !items.isEmpty else { return }\n        clips = merge(clips, with: items, revision: 4)\n    }\n\n    func handleRemoteUpdate5(_ items: [Clip]) {\n        guard !items.isEmpty else { return }\n        clips = merge(clips, with: items, revision: 5)\n    }\n\n    func moveClip(from: Int, to: Int) {\n        clips.insert(clips.remove(at: from), at: to)\n    }\n}\n```",
+   "lang": "en",
+   "domain": "ios",
+   "tags": [
+    "review",
+    "long"
+   ],
+   "expected_tier": "ordinary",
+   "acceptable_tiers": [
+    "ordinary"
+   ],
+   "min_safe_tier": "ordinary",
+   "ambiguous": false,
+   "why": "Review of a small diff."
+  },
+  {
+   "id": "ios-23",
+   "subagent_type": "general-purpose",
+   "description": "Credits not applied",
+   "prompt": "Покупка проходит, но кредиты не начисляются у части пользователей после обрыва сети в момент оплаты. Воспроизвести не удаётся, в логах только 'transaction finished'. Найди причину.",
+   "lang": "ru",
+   "domain": "ios",
+   "tags": [
+    "payments",
+    "unknown-cause"
+   ],
+   "expected_tier": "risky",
+   "acceptable_tiers": [
+    "risky"
+   ],
+   "min_safe_tier": "risky",
+   "ambiguous": false,
+   "why": "Payments, unknown-cause bug."
+  },
+  {
+   "id": "ios-24",
+   "subagent_type": "general-purpose",
+   "description": "VoiceOver on export",
+   "prompt": "Add VoiceOver labels, hints and traits to the export progress screen (ExportProgressView). Progress should be announced at 25% steps, cancel button needs a clear label. Strings must go through the existing localization accessors.",
+   "lang": "en",
+   "domain": "ios",
+   "tags": [
+    "accessibility",
+    "ui"
+   ],
+   "expected_tier": "ordinary",
+   "acceptable_tiers": [
+    "ordinary"
+   ],
+   "min_safe_tier": "ordinary",
+   "ambiguous": false,
+   "why": "Bounded UI accessibility work."
+  },
+  {
+   "id": "ios-25",
+   "subagent_type": "general-purpose",
+   "description": "Swap color token name",
+   "prompt": "Задача простая, но хочу чтобы всё было сделано аккуратно, поэтому расписываю подробно.\n\nКонтекст: дизайнеры переименовали токен цвета `Color.accentPrimary` в `Color.brandAccent`. Значение не меняется, меняется только имя. Старое имя в SharedResources уже помечено deprecated, новое добавлено.\n\nЧто нужно сделать:\n1. В каждом из файлов ниже заменить `Color.accentPrimary` на `Color.brandAccent`, а также короткую форму `.accentPrimary` там, где она используется в контексте Color.\n2. Не менять ни отступы, ни порядок импортов, ни логику.\n3. Не трогать комментарии и строки в тестах.\n4. Не менять файлы, которых нет в списке; если найдёшь это имя где-то ещё, просто перечисли файлы в отчёте.\n5. После замены собери проект и убедись, что нет новых предупреждений.\n6. Если какой-то файл не содержит старого имени, пропусти его и так и напиши.\n\nСписок файлов:\n- Modules/Home/Views/HomeHeaderView.swift\n- Modules/Home/Views/ProjectCardView.swift\n- Modules/Home/Views/EmptyStateView.swift\n- Modules/Editor/Views/ToolbarView.swift\n- Modules/Editor/Views/TimelineView.swift\n- Modules/Editor/Views/ClipRowView.swift\n- Modules/Camera/Views/ShutterButtonView.swift\n- Modules/Camera/Views/ModeSwitcherView.swift\n- Modules/Profile/Views/ProfileHeaderView.swift\n- Modules/Profile/Views/SettingsRowView.swift\n- Modules/Onboarding/Views/StepView.swift\n- Modules/Onboarding/Views/PagerView.swift\n- Modules/Export/Views/ExportSheetView.swift\n- Modules/Export/Views/ProgressRingView.swift\n\nРезультат: короткий отчёт со списком изменённых файлов и итогом сборки.\n\nЕщё раз полный список ради удобства, плюс файлы, которые заведомо НЕ трогаем:\n- Modules/Home/Views/HomeHeaderView.swift\n- Modules/Home/Views/ProjectCardView.swift\n- Modules/Home/Views/EmptyStateView.swift\n- Modules/Editor/Views/ToolbarView.swift\n- Modules/Editor/Views/TimelineView.swift\n- Modules/Editor/Views/ClipRowView.swift\n- Modules/Camera/Views/ShutterButtonView.swift\n- Modules/Camera/Views/ModeSwitcherView.swift\n- Modules/Profile/Views/ProfileHeaderView.swift\n- Modules/Profile/Views/SettingsRowView.swift\n- Modules/Onboarding/Views/StepView.swift\n- Modules/Onboarding/Views/PagerView.swift\n- Modules/Export/Views/ExportSheetView.swift\n- Modules/Export/Views/ProgressRingView.swift\n- Tests/ProfileTests/ProfileHeaderViewTests.swift (не трогать)\n- Modules/Legacy/OldPaywallView.swift (не трогать)",
+   "lang": "ru",
+   "domain": "ios",
+   "tags": [
+    "trap:long-simple",
+    "rename",
+    "multi-file",
+    "long"
+   ],
+   "expected_tier": "mechanical",
+   "acceptable_tiers": [
+    "mechanical",
+    "ordinary"
+   ],
+   "min_safe_tier": "mechanical",
+   "ambiguous": false,
+   "why": "Long, carefully worded brief, but a mechanical rename across files."
+  },
+  {
+   "id": "ios-26",
+   "subagent_type": "Plan",
+   "description": "Timeline SwiftUI rewrite plan",
+   "prompt": "Plan the architecture for moving the editor timeline from a UIKit-bridged scroll view to a fully SwiftUI implementation. Requirements: virtualized clip rendering for projects with 500+ clips, gesture arbitration between scrub / trim / reorder / pinch-zoom, frame-accurate playhead sync with AVPlayer, and an undo history that survives backgrounding. Compare at least three approaches (LazyHStack, Canvas-based custom layout, hybrid) with their risks and migration path.",
+   "lang": "en",
+   "domain": "ios",
+   "tags": [
+    "architecture",
+    "big-decision"
+   ],
+   "expected_tier": "deep",
+   "acceptable_tiers": [
+    "risky",
+    "deep"
+   ],
+   "min_safe_tier": "risky",
+   "ambiguous": false,
+   "why": "Big architecture decision across gestures, rendering and state."
+  },
+  {
+   "id": "ios-27",
+   "subagent_type": "general-purpose",
+   "description": "Add empty-state copy",
+   "prompt": "Add an empty-state message 'No saved templates yet' to the Templates screen with a button that opens the template picker. The text must go through the string catalog in all six languages (translations for ru/es/de/fr/pt are fine to draft).",
+   "lang": "en",
+   "domain": "ios",
+   "tags": [
+    "feature",
+    "localization"
+   ],
+   "expected_tier": "ordinary",
+   "acceptable_tiers": [
+    "ordinary"
+   ],
+   "min_safe_tier": "ordinary",
+   "ambiguous": false,
+   "why": "Small UI addition with localization."
+  },
+  {
+   "id": "web-01",
+   "subagent_type": "general-purpose",
+   "description": "Convert var to const",
+   "prompt": "Convert all `var` declarations in src/utils/*.js to `const` or `let` as appropriate. Don't change any behaviour; run eslint afterwards.",
+   "lang": "en",
+   "domain": "web",
+   "tags": [
+    "refactor",
+    "multi-file"
+   ],
+   "expected_tier": "mechanical",
+   "acceptable_tiers": [
+    "mechanical"
+   ],
+   "min_safe_tier": "mechanical",
+   "ambiguous": false,
+   "why": "Mechanical syntax change across files."
+  },
+  {
+   "id": "web-02",
+   "subagent_type": "general-purpose",
+   "description": "Update button blue",
+   "prompt": "Поменяй цвет основной кнопки с #3b82f6 на #2563eb в стилях компонента Button, включая hover и disabled варианты (они считаются от основного).",
+   "lang": "ru",
+   "domain": "web",
+   "tags": [
+    "css"
+   ],
+   "expected_tier": "mechanical",
+   "acceptable_tiers": [
+    "mechanical",
+    "ordinary"
+   ],
+   "min_safe_tier": "mechanical",
+   "ambiguous": false,
+   "why": "Value swap in one component."
+  },
+  {
+   "id": "web-03",
+   "subagent_type": "general-purpose",
+   "description": "Pricing table component",
+   "prompt": "Build a responsive pricing table React component with three plans and a monthly/yearly toggle (yearly = 2 months free). Use Tailwind, no new dependencies. Plans come from props. Add a Storybook story.",
+   "lang": "en",
+   "domain": "web",
+   "tags": [
+    "feature",
+    "react"
+   ],
+   "expected_tier": "ordinary",
+   "acceptable_tiers": [
+    "ordinary"
+   ],
+   "min_safe_tier": "ordinary",
+   "ambiguous": false,
+   "why": "Standard component."
+  },
+  {
+   "id": "web-04",
+   "subagent_type": "general-purpose",
+   "description": "Signup form validation",
+   "prompt": "В форме регистрации добавь валидацию e-mail и пароля (мин. 10 символов, цифра, буква) с показом ошибок под полями. Стек: React Hook Form + zod, сабмит на бэкенд уже работает — его не трогай.",
+   "lang": "ru",
+   "domain": "web",
+   "tags": [
+    "feature",
+    "forms",
+    "trap:negation"
+   ],
+   "expected_tier": "ordinary",
+   "acceptable_tiers": [
+    "ordinary"
+   ],
+   "min_safe_tier": "ordinary",
+   "ambiguous": false,
+   "why": "Client-side validation only; backend untouched."
+  },
+  {
+   "id": "web-05",
+   "subagent_type": "general-purpose",
+   "description": "Harden SPA session handling",
+   "prompt": "Implement CSRF protection and move the session token from localStorage to an httpOnly SameSite cookie in our SPA and its API. Keep the existing login UI. Plan the rollout so users logged in with the old token are not kicked out at once.",
+   "lang": "en",
+   "domain": "web",
+   "tags": [
+    "auth",
+    "security"
+   ],
+   "expected_tier": "risky",
+   "acceptable_tiers": [
+    "risky"
+   ],
+   "min_safe_tier": "risky",
+   "ambiguous": false,
+   "why": "Auth/session security across client and server."
+  },
+  {
+   "id": "web-06",
+   "subagent_type": "general-purpose",
+   "description": "Change session expiry",
+   "prompt": "поправь, как протухают сессии — сейчас живут 30 дней, а надо чтобы при смене пароля все старые сразу вылетали. Остальное оставь как есть.",
+   "lang": "ru",
+   "domain": "web",
+   "tags": [
+    "trap:casual-risky",
+    "auth",
+    "sessions"
+   ],
+   "expected_tier": "risky",
+   "acceptable_tiers": [
+    "risky"
+   ],
+   "min_safe_tier": "risky",
+   "ambiguous": false,
+   "why": "Session invalidation, casually phrased."
+  },
+  {
+   "id": "web-07",
+   "subagent_type": "general-purpose",
+   "description": "Update copy snapshots",
+   "prompt": "The copy was intentionally changed in the last commit (marketing request, ticket is approved). Jest snapshot failures below are only about that.\n\n```\nFAIL src/checkout/__tests__/paymentSummary.test.tsx\n  PaymentSummary\n    ✓ renders total (12 ms)\n    ✕ renders security badge (31 ms)\n    ✕ shows failed payment banner (18 ms)\n\n  ● PaymentSummary › renders security badge\n\n    expect(received).toMatchSnapshot()\n\n    Snapshot name: `PaymentSummary renders security badge 1`\n\n    - Snapshot  - 3\n    + Received  + 3\n\n      <div className=\"badge\">\n    -   <span>Secure payment</span>\n    +   <span>Secure checkout</span>\n      </div>\n\n  ● PaymentSummary › shows failed payment banner\n\n    - Snapshot  - 1\n    + Received  + 1\n\n    -   <p role=\"alert\">Payment failed. Try again.</p>\n    +   <p role=\"alert\">Payment didn't go through. Try again.</p>\n\nSnapshot Summary\n › 2 snapshots failed from 1 test suite. Inspect your code changes or run `npm test -- -u` to update them.\nTest Suites: 1 failed, 4 passed, 5 total\n```\n\nJust update the snapshots with `npm test -- -u`, re-run the suite, and tell me the result.\n\nFull run output, for context:\n```\nPASS src/cart/__tests__/list.test.tsx (10 ms)\nPASS src/cart/__tests__/form.test.tsx (13 ms)\nPASS src/cart/__tests__/summary.test.tsx (16 ms)\nPASS src/orders/__tests__/list.test.tsx (19 ms)\nPASS src/orders/__tests__/form.test.tsx (22 ms)\nPASS src/orders/__tests__/summary.test.tsx (25 ms)\nPASS src/profile/__tests__/list.test.tsx (28 ms)\nPASS src/profile/__tests__/form.test.tsx (31 ms)\nPASS src/profile/__tests__/summary.test.tsx (34 ms)\nPASS src/search/__tests__/list.test.tsx (37 ms)\nPASS src/search/__tests__/form.test.tsx (40 ms)\nPASS src/search/__tests__/summary.test.tsx (43 ms)\nPASS src/settings/__tests__/list.test.tsx (46 ms)\nPASS src/settings/__tests__/form.test.tsx (49 ms)\nPASS src/settings/__tests__/summary.test.tsx (52 ms)\nPASS src/auth/__tests__/list.test.tsx (55 ms)\nPASS src/auth/__tests__/form.test.tsx (58 ms)\nPASS src/auth/__tests__/summary.test.tsx (61 ms)\nTests: 2 failed, 61 passed, 63 total\nSnapshots: 2 failed, 14 passed, 16 total\nTime: 24.3 s\n```",
+   "lang": "en",
+   "domain": "web",
+   "tags": [
+    "trap:log-in-fence",
+    "rerun-command",
+    "long"
+   ],
+   "expected_tier": "mechanical",
+   "acceptable_tiers": [
+    "mechanical",
+    "ordinary"
+   ],
+   "min_safe_tier": "mechanical",
+   "ambiguous": false,
+   "why": "Log full of payment/security/failed words; the task is re-running with -u."
+  },
+  {
+   "id": "web-08",
+   "subagent_type": "general-purpose",
+   "description": "Orders table pagination",
+   "prompt": "В админке таблица заказов грузит всё разом. Сделай серверную пагинацию и сортировку по колонкам: API уже принимает page, pageSize, sort и order. Состояние в URL-параметрах, чтобы работала кнопка «назад».",
+   "lang": "ru",
+   "domain": "web",
+   "tags": [
+    "feature",
+    "react"
+   ],
+   "expected_tier": "ordinary",
+   "acceptable_tiers": [
+    "ordinary"
+   ],
+   "min_safe_tier": "ordinary",
+   "ambiguous": false,
+   "why": "Normal feature, API ready."
+  },
+  {
+   "id": "web-09",
+   "subagent_type": "Explore",
+   "description": "Find dangerouslySetInnerHTML",
+   "prompt": "Find all places where `dangerouslySetInnerHTML` is used in the web app and list them as file:line with the line's content. Don't evaluate whether they are safe.",
+   "lang": "en",
+   "domain": "web",
+   "tags": [
+    "search",
+    "trap:keyword-security"
+   ],
+   "expected_tier": "mechanical",
+   "acceptable_tiers": [
+    "mechanical",
+    "ordinary"
+   ],
+   "min_safe_tier": "mechanical",
+   "ambiguous": false,
+   "why": "Security-flavoured word but plain grep."
+  },
+  {
+   "id": "web-10",
+   "subagent_type": "Plan",
+   "description": "Collaborative editing design",
+   "prompt": "Design a conflict-free collaborative editing layer for our canvas editor (shapes, text, z-order). Compare CRDT and OT, address offline editing with later merge, undo semantics per user, presence, and server cost at 50 concurrent editors per document. Recommend one and outline the migration from our current last-write-wins sync.",
+   "lang": "en",
+   "domain": "web",
+   "tags": [
+    "architecture",
+    "algorithm"
+   ],
+   "expected_tier": "deep",
+   "acceptable_tiers": [
+    "risky",
+    "deep"
+   ],
+   "min_safe_tier": "risky",
+   "ambiguous": false,
+   "why": "Complex cross-system design plus algorithm choice."
+  },
+  {
+   "id": "web-11",
+   "subagent_type": "general-purpose",
+   "description": "Dark mode toggle",
+   "prompt": "Добавь тёмную тему: переключатель в шапке (системная / светлая / тёмная), по умолчанию prefers-color-scheme, выбор сохраняется в localStorage. Цвета берём из CSS-переменных в tokens.css, часть переменных для тёмной темы там уже есть.",
+   "lang": "ru",
+   "domain": "web",
+   "tags": [
+    "feature",
+    "css"
+   ],
+   "expected_tier": "ordinary",
+   "acceptable_tiers": [
+    "ordinary"
+   ],
+   "min_safe_tier": "ordinary",
+   "ambiguous": false,
+   "why": "Standard UI feature."
+  },
+  {
+   "id": "web-13",
+   "subagent_type": "general-purpose",
+   "description": "Upgrade shared webpack config",
+   "prompt": "Update the shared webpack config in packages/build-config: enable per-route code splitting and change publicPath to the new CDN prefix. This config is consumed by six apps in the monorepo and the nightly deploys. Make sure none of them regress; list which ones you built to verify.",
+   "lang": "en",
+   "domain": "web",
+   "tags": [
+    "shared-core",
+    "build"
+   ],
+   "expected_tier": "risky",
+   "acceptable_tiers": [
+    "risky"
+   ],
+   "min_safe_tier": "risky",
+   "ambiguous": false,
+   "why": "Shared build config used by many apps."
+  },
+  {
+   "id": "web-14",
+   "subagent_type": "general-purpose",
+   "description": "Fix dropdown scrollbar bug",
+   "prompt": "Баг: выпадающий список закрывается при клике по его скроллбару, только в Firefox. Скорее всего блюр срабатывает раньше клика. Воспроизведи в компоненте Select и поправь, добавь тест.",
+   "lang": "ru",
+   "domain": "web",
+   "tags": [
+    "bugfix",
+    "ui"
+   ],
+   "expected_tier": "ordinary",
+   "acceptable_tiers": [
+    "ordinary"
+   ],
+   "min_safe_tier": "ordinary",
+   "ambiguous": false,
+   "why": "Local UI bug with clear repro."
+  },
+  {
+   "id": "web-16",
+   "subagent_type": "general-purpose",
+   "description": "Checkout e2e tests",
+   "prompt": "Write Playwright e2e tests for the checkout form happy path and two validation errors (empty card name, invalid zip). Use the existing test fixtures in e2e/fixtures. Do not touch any payment logic or the sandbox keys; tests run against the mocked gateway.",
+   "lang": "en",
+   "domain": "web",
+   "tags": [
+    "tests",
+    "trap:negation"
+   ],
+   "expected_tier": "ordinary",
+   "acceptable_tiers": [
+    "ordinary"
+   ],
+   "min_safe_tier": "ordinary",
+   "ambiguous": false,
+   "why": "Tests for clear flow; negation says payment logic untouched."
+  },
+  {
+   "id": "web-17",
+   "subagent_type": "general-purpose",
+   "description": "Lighthouse accessibility fixes",
+   "prompt": "Lighthouse reports contrast and missing alt text issues on the landing page. Fix the flagged ones: darken the grey caption text to meet AA, add alt text to the three hero images. Don't redesign anything.",
+   "lang": "en",
+   "domain": "web",
+   "tags": [
+    "a11y",
+    "css"
+   ],
+   "expected_tier": "ordinary",
+   "acceptable_tiers": [
+    "mechanical",
+    "ordinary"
+   ],
+   "min_safe_tier": "mechanical",
+   "ambiguous": false,
+   "why": "Small targeted fixes."
+  },
+  {
+   "id": "be-01",
+   "subagent_type": "general-purpose",
+   "description": "Add healthz endpoint",
+   "prompt": "Add a GET /healthz endpoint to the Express app that returns 200 with {status:'ok'} and checks the DB connection with a SELECT 1. Add one test.",
+   "lang": "en",
+   "domain": "backend",
+   "tags": [
+    "feature"
+   ],
+   "expected_tier": "ordinary",
+   "acceptable_tiers": [
+    "mechanical",
+    "ordinary"
+   ],
+   "min_safe_tier": "mechanical",
+   "ambiguous": false,
+   "why": "Small endpoint, clear behaviour."
+  },
+  {
+   "id": "be-02",
+   "subagent_type": "general-purpose",
+   "description": "Bump requests version",
+   "prompt": "Обнови requests до 2.32.3 в requirements.txt и requirements-dev.txt, прогони тесты и сообщи, прошли ли.",
+   "lang": "ru",
+   "domain": "backend",
+   "tags": [
+    "version-bump",
+    "rerun-command"
+   ],
+   "expected_tier": "mechanical",
+   "acceptable_tiers": [
+    "mechanical"
+   ],
+   "min_safe_tier": "mechanical",
+   "ambiguous": false,
+   "why": "Dependency version bump with test run."
+  },
+  {
+   "id": "be-03",
+   "subagent_type": "general-purpose",
+   "description": "Payments amount split migration",
+   "prompt": "Добавь миграцию Postgres: разбить колонку `amount` в таблице платежей на `amount_minor` (bigint) и `currency`. В таблице около 40 млн строк, миграции должны идти без простоя и блокировок, нужен бэкфилл батчами и план отката. Приложение в проде читает и пишет в старую колонку во время выката.\n\nСхема таблицы и её читатели/писатели:\n```\nCREATE TABLE payments (\n    id            bigserial PRIMARY KEY,\n    order_id      bigint NOT NULL REFERENCES orders(id),\n    amount        numeric(12,2) NOT NULL,\n    status        text NOT NULL,\n    provider_ref  text,\n    created_at    timestamptz NOT NULL DEFAULT now(),\n    updated_at    timestamptz NOT NULL DEFAULT now()\n);\nCREATE INDEX payments_created_idx ON payments(created_at);\nCREATE INDEX payments_status_idx ON payments(status) WHERE status <> 'settled';\n\n-- readers: reports.monthly_revenue (matview), billing_export.py, admin table\n-- writers: processor.py, webhooks.py (two separate deploy units)\n```",
+   "lang": "ru",
+   "domain": "backend",
+   "tags": [
+    "trap:ru-forms",
+    "migration",
+    "payments",
+    "long"
+   ],
+   "expected_tier": "risky",
+   "acceptable_tiers": [
+    "risky"
+   ],
+   "min_safe_tier": "risky",
+   "ambiguous": false,
+   "why": "Production migration on payments table with zero downtime."
+  },
+  {
+   "id": "be-04",
+   "subagent_type": "general-purpose",
+   "description": "Tweak refresh token expiry",
+   "prompt": "Tweak how sessions expire: refresh tokens should slide for 7 days of inactivity instead of a fixed 30 days from login. Update the token service and its tests.",
+   "lang": "en",
+   "domain": "backend",
+   "tags": [
+    "trap:casual-risky",
+    "auth"
+   ],
+   "expected_tier": "risky",
+   "acceptable_tiers": [
+    "risky"
+   ],
+   "min_safe_tier": "risky",
+   "ambiguous": false,
+   "why": "Token lifetime semantics, casual wording."
+  },
+  {
+   "id": "be-05",
+   "subagent_type": "general-purpose",
+   "description": "Rename users email column",
+   "prompt": "Rename column users.email to users.login_email in prod. Update the ORM model and all queries. We have two replicas and a nightly job that reads this table; deploy must be safe for the old and new app versions running at the same time.",
+   "lang": "en",
+   "domain": "backend",
+   "tags": [
+    "trap:rename-risky",
+    "migration"
+   ],
+   "expected_tier": "risky",
+   "acceptable_tiers": [
+    "risky"
+   ],
+   "min_safe_tier": "risky",
+   "ambiguous": false,
+   "why": "Prod column rename needing expand/contract."
+  },
+  {
+   "id": "be-06",
+   "subagent_type": "general-purpose",
+   "description": "Cursor pagination for notes",
+   "prompt": "Add cursor-based pagination to GET /notes: query params `limit` (max 100) and `cursor`, response includes `next_cursor`. Order by created_at desc, id desc. Update OpenAPI and add tests.",
+   "lang": "en",
+   "domain": "backend",
+   "tags": [
+    "feature",
+    "api"
+   ],
+   "expected_tier": "ordinary",
+   "acceptable_tiers": [
+    "ordinary"
+   ],
+   "min_safe_tier": "ordinary",
+   "ambiguous": false,
+   "why": "Normal feature in one area."
+  },
+  {
+   "id": "be-07",
+   "subagent_type": "general-purpose",
+   "description": "Email sending via queue",
+   "prompt": "Сделай отправку писем через очередь Celery с ретраями (3 попытки, экспоненциальная пауза). Шаблоны писем и SMTP-клиент уже есть, нужно обернуть их в таск и заменить синхронный вызов в `signup_service`. Покрой тестами.",
+   "lang": "ru",
+   "domain": "backend",
+   "tags": [
+    "feature"
+   ],
+   "expected_tier": "ordinary",
+   "acceptable_tiers": [
+    "ordinary"
+   ],
+   "min_safe_tier": "ordinary",
+   "ambiguous": false,
+   "why": "Bounded feature with existing parts."
+  },
+  {
+   "id": "be-08",
+   "subagent_type": "general-purpose",
+   "description": "Investigate periodic 502s",
+   "prompt": "В проде раз в несколько часов API отдаёт 502, p99 растёт до 12 секунд на 2-3 минуты, потом всё само проходит. Ошибок в логах приложения нет, CPU и память в норме. Найди причину по доступным логам и конфигурам nginx/gunicorn и предложи исправление.\n\nФрагмент access-лога nginx за время одного из провалов (rt — время ответа клиенту, urt — upstream):\n```\n10.0.0.0 - - [12/Mar/2026:14:00:00 +0000] \"GET /api/v2/orders/4000 HTTP/1.1\" 200 120 \"-\" \"okhttp/4.12\" rt=0.040 urt=0.00\n10.0.1.13 - - [12/Mar/2026:14:07:11 +0000] \"POST /api/v2/orders/4017 HTTP/1.1\" 200 151 \"-\" \"okhttp/4.12\" rt=0.050 urt=0.01\n10.0.2.26 - - [12/Mar/2026:14:14:22 +0000] \"POST /api/v2/orders/4034 HTTP/1.1\" 200 182 \"-\" \"okhttp/4.12\" rt=0.060 urt=0.02\n10.0.3.39 - - [12/Mar/2026:14:21:33 +0000] \"GET /api/v2/orders/4051 HTTP/1.1\" 200 213 \"-\" \"okhttp/4.12\" rt=0.070 urt=0.03\n10.0.4.52 - - [12/Mar/2026:14:28:44 +0000] \"POST /api/v2/orders/4068 HTTP/1.1\" 502 244 \"-\" \"okhttp/4.12\" rt=11.940 urt=-\n10.0.5.65 - - [12/Mar/2026:14:35:55 +0000] \"POST /api/v2/orders/4085 HTTP/1.1\" 200 275 \"-\" \"okhttp/4.12\" rt=0.040 urt=0.05\n10.0.6.78 - - [12/Mar/2026:14:42:06 +0000] \"GET /api/v2/orders/4102 HTTP/1.1\" 200 306 \"-\" \"okhttp/4.12\" rt=0.050 urt=0.06\n10.0.0.91 - - [12/Mar/2026:14:49:17 +0000] \"POST /api/v2/orders/4119 HTTP/1.1\" 200 337 \"-\" \"okhttp/4.12\" rt=0.060 urt=0.07\n10.0.1.104 - - [12/Mar/2026:14:56:28 +0000] \"POST /api/v2/orders/4136 HTTP/1.1\" 200 368 \"-\" \"okhttp/4.12\" rt=0.070 urt=0.08\n10.0.2.117 - - [12/Mar/2026:14:03:39 +0000] \"GET /api/v2/orders/4153 HTTP/1.1\" 200 399 \"-\" \"okhttp/4.12\" rt=0.080 urt=0.00\n10.0.3.130 - - [12/Mar/2026:14:10:50 +0000] \"POST /api/v2/orders/4170 HTTP/1.1\" 200 430 \"-\" \"okhttp/4.12\" rt=0.040 urt=0.01\n10.0.4.143 - - [12/Mar/2026:14:17:01 +0000] \"POST /api/v2/orders/4187 HTTP/1.1\" 200 461 \"-\" \"okhttp/4.12\" rt=0.050 urt=0.02\n10.0.5.156 - - [12/Mar/2026:14:24:12 +0000] \"GET /api/v2/orders/4204 HTTP/1.1\" 200 492 \"-\" \"okhttp/4.12\" rt=0.060 urt=0.03\n10.0.6.169 - - [12/Mar/2026:14:31:23 +0000] \"POST /api/v2/orders/4221 HTTP/1.1\" 502 523 \"-\" \"okhttp/4.12\" rt=11.930 urt=-\n10.0.0.182 - - [12/Mar/2026:14:38:34 +0000] \"POST /api/v2/orders/4238 HTTP/1.1\" 200 554 \"-\" \"okhttp/4.12\" rt=0.080 urt=0.05\n10.0.1.195 - - [12/Mar/2026:14:45:45 +0000] \"GET /api/v2/orders/4255 HTTP/1.1\" 200 585 \"-\" \"okhttp/4.12\" rt=0.040 urt=0.06\n10.0.2.208 - - [12/Mar/2026:14:52:56 +0000] \"POST /api/v2/orders/4272 HTTP/1.1\" 200 616 \"-\" \"okhttp/4.12\" rt=0.050 urt=0.07\n10.0.3.221 - - [12/Mar/2026:14:59:07 +0000] \"POST /api/v2/orders/4289 HTTP/1.1\" 200 647 \"-\" \"okhttp/4.12\" rt=0.060 urt=0.08\n10.0.4.234 - - [12/Mar/2026:14:06:18 +0000] \"GET /api/v2/orders/4306 HTTP/1.1\" 200 678 \"-\" \"okhttp/4.12\" rt=0.070 urt=0.00\n10.0.5.247 - - [12/Mar/2026:14:13:29 +0000] \"POST /api/v2/orders/4323 HTTP/1.1\" 200 709 \"-\" \"okhttp/4.12\" rt=0.080 urt=0.01\n10.0.6.10 - - [12/Mar/2026:14:20:40 +0000] \"POST /api/v2/orders/4340 HTTP/1.1\" 200 740 \"-\" \"okhttp/4.12\" rt=0.040 urt=0.02\n10.0.0.23 - - [12/Mar/2026:14:27:51 +0000] \"GET /api/v2/orders/4357 HTTP/1.1\" 200 771 \"-\" \"okhttp/4.12\" rt=0.050 urt=0.03\n10.0.1.36 - - [12/Mar/2026:14:34:02 +0000] \"POST /api/v2/orders/4374 HTTP/1.1\" 502 802 \"-\" \"okhttp/4.12\" rt=11.920 urt=-\n10.0.2.49 - - [12/Mar/2026:14:41:13 +0000] \"POST /api/v2/orders/4391 HTTP/1.1\" 200 833 \"-\" \"okhttp/4.12\" rt=0.070 urt=0.05\n10.0.3.62 - - [12/Mar/2026:14:48:24 +0000] \"GET /api/v2/orders/4408 HTTP/1.1\" 200 864 \"-\" \"okhttp/4.12\" rt=0.080 urt=0.06\n10.0.4.75 - - [12/Mar/2026:14:55:35 +0000] \"POST /api/v2/orders/4425 HTTP/1.1\" 200 895 \"-\" \"okhttp/4.12\" rt=0.040 urt=0.07\n10.0.5.88 - - [12/Mar/2026:14:02:46 +0000] \"POST /api/v2/orders/4442 HTTP/1.1\" 200 926 \"-\" \"okhttp/4.12\" rt=0.050 urt=0.08\n10.0.6.101 - - [12/Mar/2026:14:09:57 +0000] \"GET /api/v2/orders/4459 HTTP/1.1\" 200 957 \"-\" \"okhttp/4.12\" rt=0.060 urt=0.00\n10.0.0.114 - - [12/Mar/2026:14:16:08 +0000] \"POST /api/v2/orders/4476 HTTP/1.1\" 200 988 \"-\" \"okhttp/4.12\" rt=0.070 urt=0.01\n10.0.1.127 - - [12/Mar/2026:14:23:19 +0000] \"POST /api/v2/orders/4493 HTTP/1.1\" 200 1019 \"-\" \"okhttp/4.12\" rt=0.080 urt=0.02\n10.0.2.140 - - [12/Mar/2026:14:30:30 +0000] \"GET /api/v2/orders/4510 HTTP/1.1\" 200 1050 \"-\" \"okhttp/4.12\" rt=0.040 urt=0.03\n10.0.3.153 - - [12/Mar/2026:14:37:41 +0000] \"POST /api/v2/orders/4527 HTTP/1.1\" 502 1081 \"-\" \"okhttp/4.12\" rt=11.910 urt=-\n10.0.4.166 - - [12/Mar/2026:14:44:52 +0000] \"POST /api/v2/orders/4544 HTTP/1.1\" 200 1112 \"-\" \"okhttp/4.12\" rt=0.060 urt=0.05\n10.0.5.179 - - [12/Mar/2026:14:51:03 +0000] \"GET /api/v2/orders/4561 HTTP/1.1\" 200 1143 \"-\" \"okhttp/4.12\" rt=0.070 urt=0.06\n10.0.6.192 - - [12/Mar/2026:14:58:14 +0000] \"POST /api/v2/orders/4578 HTTP/1.1\" 200 1174 \"-\" \"okhttp/4.12\" rt=0.080 urt=0.07\n10.0.0.205 - - [12/Mar/2026:14:05:25 +0000] \"POST /api/v2/orders/4595 HTTP/1.1\" 200 1205 \"-\" \"okhttp/4.12\" rt=0.040 urt=0.08\n10.0.1.218 - - [12/Mar/2026:14:12:36 +0000] \"GET /api/v2/orders/4612 HTTP/1.1\" 200 1236 \"-\" \"okhttp/4.12\" rt=0.050 urt=0.00\n10.0.2.231 - - [12/Mar/2026:14:19:47 +0000] \"POST /api/v2/orders/4629 HTTP/1.1\" 200 1267 \"-\" \"okhttp/4.12\" rt=0.060 urt=0.01\n10.0.3.244 - - [12/Mar/2026:14:26:58 +0000] \"POST /api/v2/orders/4646 HTTP/1.1\" 200 1298 \"-\" \"okhttp/4.12\" rt=0.070 urt=0.02\n10.0.4.7 - - [12/Mar/2026:14:33:09 +0000] \"GET /api/v2/orders/4663 HTTP/1.1\" 200 1329 \"-\" \"okhttp/4.12\" rt=0.080 urt=0.03\n```\nКонфиг gunicorn: workers=4, threads=2, timeout=30, keepalive=2. Пул соединений к БД: 20, pool_timeout=30.",
+   "lang": "ru",
+   "domain": "backend",
+   "tags": [
+    "incident",
+    "unknown-cause",
+    "long"
+   ],
+   "expected_tier": "risky",
+   "acceptable_tiers": [
+    "risky"
+   ],
+   "min_safe_tier": "risky",
+   "ambiguous": false,
+   "why": "Production incident, unknown cause."
+  },
+  {
+   "id": "be-09",
+   "subagent_type": "general-purpose",
+   "description": "Add missing uuid import",
+   "prompt": "Нашёл вот такой хвост в логе стейджинга:\n\n```\nTraceback (most recent call last):\n  File \"/srv/app/payments/processor.py\", line 212, in charge\n    result = self._gateway.authorize(token, amount)\n  File \"/srv/app/payments/gateway.py\", line 88, in authorize\n    raise PaymentProcessingError(\"auth failed: upstream timeout\")\npayments.gateway.PaymentProcessingError: auth failed: upstream timeout\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/srv/app/api/views.py\", line 57, in post\n    order_id = uuid.uuid4()\nNameError: name 'uuid' is not defined\n```\n\nПервое исключение — нормальный таймаут тестового шлюза, его игнорируй. Нужно только добавить недостающий `import uuid` в api/views.py.\n\nКонтекст — кусок лога стейджинга вокруг этого места:\n```\n2026-03-12 11:10:10 INFO  api.views request_id=r9110 POST /orders status=201 took=70ms\n2026-03-12 11:11:17 INFO  api.views request_id=r9111 POST /orders status=201 took=74ms\n2026-03-12 11:12:24 INFO  api.views request_id=r9112 POST /orders status=201 took=78ms\n2026-03-12 11:13:31 INFO  api.views request_id=r9113 POST /orders status=201 took=82ms\n2026-03-12 11:14:38 INFO  api.views request_id=r9114 POST /orders status=500 took=86ms\n2026-03-12 11:15:45 INFO  api.views request_id=r9115 POST /orders status=500 took=90ms\n2026-03-12 11:16:52 INFO  api.views request_id=r9116 POST /orders status=201 took=94ms\n2026-03-12 11:17:59 INFO  api.views request_id=r9117 POST /orders status=201 took=98ms\n2026-03-12 11:18:06 INFO  api.views request_id=r9118 POST /orders status=201 took=102ms\n2026-03-12 11:19:13 INFO  api.views request_id=r9119 POST /orders status=201 took=106ms\n2026-03-12 11:20:20 INFO  api.views request_id=r9120 POST /orders status=201 took=110ms\n2026-03-12 11:21:27 INFO  api.views request_id=r9121 POST /orders status=201 took=114ms\n2026-03-12 11:22:34 INFO  api.views request_id=r9122 POST /orders status=201 took=118ms\n2026-03-12 11:23:41 INFO  api.views request_id=r9123 POST /orders status=201 took=122ms\n2026-03-12 11:24:48 INFO  api.views request_id=r9124 POST /orders status=201 took=126ms\n2026-03-12 11:25:55 INFO  api.views request_id=r9125 POST /orders status=201 took=130ms\n2026-03-12 11:26:02 INFO  api.views request_id=r9126 POST /orders status=201 took=134ms\n2026-03-12 11:27:09 INFO  api.views request_id=r9127 POST /orders status=201 took=138ms\n2026-03-12 11:28:16 INFO  api.views request_id=r9128 POST /orders status=201 took=142ms\n2026-03-12 11:29:23 INFO  api.views request_id=r9129 POST /orders status=201 took=146ms\n2026-03-12 11:30:30 INFO  api.views request_id=r9130 POST /orders status=201 took=150ms\n2026-03-12 11:31:37 INFO  api.views request_id=r9131 POST /orders status=201 took=154ms\n2026-03-12 11:32:44 INFO  api.views request_id=r9132 POST /orders status=201 took=158ms\n2026-03-12 11:33:51 INFO  api.views request_id=r9133 POST /orders status=201 took=162ms\n2026-03-12 11:34:58 INFO  api.views request_id=r9134 POST /orders status=201 took=166ms\n2026-03-12 11:35:05 INFO  api.views request_id=r9135 POST /orders status=201 took=170ms\n```",
+   "lang": "ru",
+   "domain": "backend",
+   "tags": [
+    "trap:log-in-fence",
+    "trap:negation",
+    "long"
+   ],
+   "expected_tier": "mechanical",
+   "acceptable_tiers": [
+    "mechanical",
+    "ordinary"
+   ],
+   "min_safe_tier": "mechanical",
+   "ambiguous": false,
+   "why": "Log with payment/auth failed; actual task is one import."
+  },
+  {
+   "id": "be-10",
+   "subagent_type": "Plan",
+   "description": "Multi-region order service",
+   "prompt": "Design a multi-region active-active architecture for our order service (currently single-region Postgres + Redis). Cover the consistency model for inventory and payments state, conflict resolution, failover and failback, data residency for EU customers, and the migration path without downtime. Give a recommendation and the main trade-offs.",
+   "lang": "en",
+   "domain": "backend",
+   "tags": [
+    "architecture",
+    "cross-system"
+   ],
+   "expected_tier": "deep",
+   "acceptable_tiers": [
+    "risky",
+    "deep"
+   ],
+   "min_safe_tier": "risky",
+   "ambiguous": false,
+   "why": "Cross-system architecture, money and data residency."
+  },
+  {
+   "id": "be-11",
+   "subagent_type": "general-purpose",
+   "description": "Idempotent refunds",
+   "prompt": "Implement idempotency keys for POST /refunds: the same key with the same payload must return the first result and not refund twice, the same key with a different payload must return 409. Keys live for 24h. Concurrent requests with the same key must be safe.",
+   "lang": "en",
+   "domain": "backend",
+   "tags": [
+    "payments",
+    "concurrency"
+   ],
+   "expected_tier": "risky",
+   "acceptable_tiers": [
+    "risky"
+   ],
+   "min_safe_tier": "risky",
+   "ambiguous": false,
+   "why": "Money plus concurrency semantics."
+  },
+  {
+   "id": "be-12",
+   "subagent_type": "general-purpose",
+   "description": "Customer CSV export",
+   "prompt": "Добавь эндпоинт GET /admin/customers/export.csv с фильтрами status, created_from, created_to. Потоковая отдача, чтобы не держать всё в памяти. Колонки: id, name, status, created_at. Только для роли admin (проверка уже есть как декоратор).",
+   "lang": "ru",
+   "domain": "backend",
+   "tags": [
+    "feature",
+    "api"
+   ],
+   "expected_tier": "ordinary",
+   "acceptable_tiers": [
+    "ordinary"
+   ],
+   "min_safe_tier": "ordinary",
+   "ambiguous": false,
+   "why": "Normal feature using existing auth decorator."
+  },
+  {
+   "id": "be-13",
+   "subagent_type": "Explore",
+   "description": "List env variables",
+   "prompt": "List all environment variables read by the service (os.environ / os.getenv / settings.py), names only, with the file where each is read. Do not print any values.",
+   "lang": "en",
+   "domain": "backend",
+   "tags": [
+    "search"
+   ],
+   "expected_tier": "mechanical",
+   "acceptable_tiers": [
+    "mechanical",
+    "ordinary"
+   ],
+   "min_safe_tier": "mechanical",
+   "ambiguous": false,
+   "why": "Search and list."
+  },
+  {
+   "id": "be-14",
+   "subagent_type": "general-purpose",
+   "description": "Atomic wallet balance",
+   "prompt": "Отрефактори работу с кошельком: пополнение и списание должны быть атомарными. Сейчас при параллельных запросах баланс иногда уходит в минус (воспроизводится нагрузочным скриптом scripts/race.py). Нужны блокировки или условные апдейты в одной транзакции, тесты на гонку.",
+   "lang": "ru",
+   "domain": "backend",
+   "tags": [
+    "concurrency",
+    "money"
+   ],
+   "expected_tier": "risky",
+   "acceptable_tiers": [
+    "risky"
+   ],
+   "min_safe_tier": "risky",
+   "ambiguous": false,
+   "why": "Concurrency on balances."
+  },
+  {
+   "id": "be-15",
+   "subagent_type": "general-purpose",
+   "description": "Fix date range filter",
+   "prompt": "The report endpoint /reports/daily drops the last day of the range: for from=2026-03-01&to=2026-03-07 it returns data up to the 6th. Cause is the `<` instead of `<=` on the end date in report_queries.py:73 (comparison against a date column, not a timestamp). Fix and add a regression test.",
+   "lang": "en",
+   "domain": "backend",
+   "tags": [
+    "bugfix"
+   ],
+   "expected_tier": "ordinary",
+   "acceptable_tiers": [
+    "ordinary"
+   ],
+   "min_safe_tier": "ordinary",
+   "ambiguous": false,
+   "why": "Clear small bug with a known cause."
+  },
+  {
+   "id": "be-17",
+   "subagent_type": "general-purpose",
+   "description": "посмотри это",
+   "prompt": "посмотри это\n\n```\nKeyError: 'tenant_id'\n  at app/middleware/tenant.py:31\n```",
+   "lang": "ru",
+   "domain": "backend",
+   "tags": [
+    "trap:ambiguous",
+    "ambiguous"
+   ],
+   "expected_tier": "ordinary",
+   "acceptable_tiers": [
+    "mechanical",
+    "ordinary"
+   ],
+   "min_safe_tier": "mechanical",
+   "ambiguous": true,
+   "why": "No instruction; could be a lookup or a bug fix."
+  },
+  {
+   "id": "data-01",
+   "subagent_type": "data-analyst",
+   "description": "Weekly retention cohorts",
+   "prompt": "Using events.csv (columns: user_id, event, ts) compute weekly retention cohorts: cohort = ISO week of first 'app_open', retention = share of cohort with any event in week N after, N=0..8. Output a table (CSV) and a heatmap PNG, plus 3 sentences of interpretation. Use pandas and matplotlib.",
+   "lang": "en",
+   "domain": "data",
+   "tags": [
+    "analysis"
+   ],
+   "expected_tier": "ordinary",
+   "acceptable_tiers": [
+    "ordinary"
+   ],
+   "min_safe_tier": "ordinary",
+   "ambiguous": false,
+   "why": "Standard data analysis."
+  },
+  {
+   "id": "data-02",
+   "subagent_type": "general-purpose",
+   "description": "Recode CSV files",
+   "prompt": "Перекодируй все CSV в data/legacy/ из cp1251 в UTF-8 и переименуй колонки по таблице соответствия из columns_map.json. Исходные файлы оставь, результат положи в data/clean/.",
+   "lang": "ru",
+   "domain": "data",
+   "tags": [
+    "format",
+    "multi-file"
+   ],
+   "expected_tier": "mechanical",
+   "acceptable_tiers": [
+    "mechanical",
+    "ordinary"
+   ],
+   "min_safe_tier": "mechanical",
+   "ambiguous": false,
+   "why": "Mechanical conversion."
+  },
+  {
+   "id": "data-03",
+   "subagent_type": "general-purpose",
+   "description": "Fuzzy dedupe customers",
+   "prompt": "Напиши скрипт, который дедуплицирует клиентов по email и телефону: нормализация, нечёткое совпадение имён (rapidfuzz), группы дублей. На выходе отчёт CSV со столбцами group_id, id, score и рекомендуемая главная запись. Ничего не удаляй, это только отчёт.",
+   "lang": "ru",
+   "domain": "data",
+   "tags": [
+    "script"
+   ],
+   "expected_tier": "ordinary",
+   "acceptable_tiers": [
+    "ordinary"
+   ],
+   "min_safe_tier": "ordinary",
+   "ambiguous": false,
+   "why": "Small data script."
+  },
+  {
+   "id": "data-04",
+   "subagent_type": "Plan",
+   "description": "Router evaluation methodology",
+   "prompt": "Design an evaluation methodology for an LLM-based model router. We have no ground-truth labels for 'best model per task'. How do we estimate regret from logs with counterfactuals, handle non-stationarity when models are updated, avoid Goodhart effects when the router is tuned on the metric, and validate the methodology itself? Produce a proposal with the statistical approach and its assumptions.",
+   "lang": "en",
+   "domain": "data",
+   "tags": [
+    "research",
+    "methodology"
+   ],
+   "expected_tier": "deep",
+   "acceptable_tiers": [
+    "risky",
+    "deep"
+   ],
+   "min_safe_tier": "risky",
+   "ambiguous": false,
+   "why": "Hard methodological research question."
+  },
+  {
+   "id": "data-05",
+   "subagent_type": "general-purpose",
+   "description": "Backfill corrected user ids",
+   "prompt": "Backfill the events table with corrected user_ids for the last 18 months using the mapping in id_fixes.parquet. The table feeds the monthly billing invoices, so totals must stay reconcilable. Write the backfill job, a dry-run mode with diff counts, and a rollback plan.\n\nСхема и читатели (для справки):\n```\nCREATE TABLE events (\n    id            bigserial PRIMARY KEY,\n    user_id       bigint NOT NULL,\n    payload       jsonb NOT NULL,\n    status        text NOT NULL,\n    provider_ref  text,\n    created_at    timestamptz NOT NULL DEFAULT now(),\n    updated_at    timestamptz NOT NULL DEFAULT now()\n);\nCREATE INDEX events_created_idx ON events(created_at);\nCREATE INDEX events_status_idx ON events(status) WHERE status <> 'settled';\n\n-- readers: reports.monthly_revenue (matview), billing_export.py, admin table\n-- writers: processor.py, webhooks.py (two separate deploy units)\n```",
+   "lang": "en",
+   "domain": "data",
+   "tags": [
+    "persistence",
+    "billing",
+    "migration",
+    "long"
+   ],
+   "expected_tier": "risky",
+   "acceptable_tiers": [
+    "risky"
+   ],
+   "min_safe_tier": "risky",
+   "ambiguous": false,
+   "why": "Bulk rewrite of billing-feeding table."
+  },
+  {
+   "id": "data-06",
+   "subagent_type": "general-purpose",
+   "description": "Smoke train run",
+   "prompt": "Run `python train.py --epochs 1 --smoke` and report whether it finishes without errors and how long it took. Don't change anything.",
+   "lang": "en",
+   "domain": "data",
+   "tags": [
+    "rerun-command"
+   ],
+   "expected_tier": "mechanical",
+   "acceptable_tiers": [
+    "mechanical"
+   ],
+   "min_safe_tier": "mechanical",
+   "ambiguous": false,
+   "why": "Re-run command and report."
+  },
+  {
+   "id": "data-07",
+   "subagent_type": "data-analyst",
+   "description": "A/B test notebook",
+   "prompt": "Подготовь ноутбук с анализом A/B-теста по файлу ab_results.csv (колонки: variant, user_id, converted, revenue). Нужны: размеры групп, конверсия с доверительными интервалами, z-тест для пропорций, bootstrap для revenue, вывод в 5 строк. Проверь, что не было SRM.",
+   "lang": "ru",
+   "domain": "data",
+   "tags": [
+    "analysis"
+   ],
+   "expected_tier": "ordinary",
+   "acceptable_tiers": [
+    "ordinary"
+   ],
+   "min_safe_tier": "ordinary",
+   "ambiguous": false,
+   "why": "Standard stats analysis."
+  },
+  {
+   "id": "data-09",
+   "subagent_type": "general-purpose",
+   "description": "Dataset from support chats",
+   "prompt": "Подготовь датасет для дообучения модели из переписок службы поддержки (папка exports/support_chats, ~300 тыс. диалогов). Нужно убрать персональные данные: имена, телефоны, адреса, номера заказов и карт, и показать, как проверяешь, что ничего не осталось. Результат в jsonl.",
+   "lang": "ru",
+   "domain": "data",
+   "tags": [
+    "privacy",
+    "pii"
+   ],
+   "expected_tier": "risky",
+   "acceptable_tiers": [
+    "risky"
+   ],
+   "min_safe_tier": "risky",
+   "ambiguous": false,
+   "why": "PII handling in training data."
+  },
+  {
+   "id": "data-10",
+   "subagent_type": "general-purpose",
+   "description": "Session length plots",
+   "prompt": "Plot a histogram and a boxplot of session lengths from sessions.csv (column duration_sec) with matplotlib, log-scale x for the histogram, save as PNG to out/. Short script only.",
+   "lang": "en",
+   "domain": "data",
+   "tags": [
+    "script",
+    "plot"
+   ],
+   "expected_tier": "ordinary",
+   "acceptable_tiers": [
+    "mechanical",
+    "ordinary"
+   ],
+   "min_safe_tier": "mechanical",
+   "ambiguous": false,
+   "why": "Small plotting script."
+  },
+  {
+   "id": "data-11",
+   "subagent_type": "Plan",
+   "description": "Perceptual dedup at scale",
+   "prompt": "Предложи алгоритм онлайн-дедупликации видеоконтента по перцептивным хэшам на 2 млрд записей: допустимая доля ложных срабатываний 1e-6, поступление до 5 тыс. новых видео в секунду, задержка ответа до 200 мс. Нужны индекс, оценка памяти и точности, обработка обрезанных и перекодированных копий.",
+   "lang": "ru",
+   "domain": "data",
+   "tags": [
+    "algorithm",
+    "research"
+   ],
+   "expected_tier": "deep",
+   "acceptable_tiers": [
+    "risky",
+    "deep"
+   ],
+   "min_safe_tier": "risky",
+   "ambiguous": false,
+   "why": "Complex algorithm and scale design."
+  },
+  {
+   "id": "doc-01",
+   "subagent_type": "general-purpose",
+   "description": "Fix README typos",
+   "prompt": "Исправь опечатки и пунктуацию в README.md. Смысл и структуру не менять.",
+   "lang": "ru",
+   "domain": "docs",
+   "tags": [
+    "typo"
+   ],
+   "expected_tier": "mechanical",
+   "acceptable_tiers": [
+    "mechanical"
+   ],
+   "min_safe_tier": "mechanical",
+   "ambiguous": false,
+   "why": "Typo fixes."
+  },
+  {
+   "id": "doc-02",
+   "subagent_type": "docs-writer",
+   "description": "Local dev setup guide",
+   "prompt": "Write a how-to page 'Set up your local environment' from the notes below. Audience: new backend engineers. Include prerequisites, steps, a troubleshooting section.\n\nNotes:\n- install Docker Desktop, Python 3.12 via pyenv\n- cp .env.example .env, ask the lead for the sandbox key\n- make up starts postgres and redis\n- make migrate then make seed\n- tests: make test (needs redis up)\n- port 5432 clash with local postgres is the usual problem\n\nRaw terminal history from the last person who did the setup, in case it helps:\n```\n$ brew install pyenv\n$ pyenv install 3.12.4\n$ pyenv local 3.12.4\n$ cp settings.example.yml settings.yml\n$ make up\n[+] Running 2/2\n Container app-postgres-1  Started\n Container app-redis-1     Started\n$ make migrate\nApplying migration 0001_step... OK\nApplying migration 0002_step... OK\nApplying migration 0003_step... OK\nApplying migration 0004_step... OK\nApplying migration 0005_step... OK\nApplying migration 0006_step... OK\nApplying migration 0007_step... OK\nApplying migration 0008_step... OK\nApplying migration 0009_step... OK\nApplying migration 0010_step... OK\nApplying migration 0011_step... OK\nApplying migration 0012_step... OK\nApplying migration 0013_step... OK\nApplying migration 0014_step... OK\nApplying migration 0015_step... OK\nApplying migration 0016_step... OK\nApplying migration 0017_step... OK\nApplying migration 0018_step... OK\nApplying migration 0019_step... OK\nApplying migration 0020_step... OK\nApplying migration 0021_step... OK\nApplying migration 0022_step... OK\nApplying migration 0023_step... OK\nApplying migration 0024_step... OK\n$ make seed\nSeeded 120 users\n$ make test\n=== 212 passed in 41.2s ===\n```",
+   "lang": "en",
+   "domain": "docs",
+   "tags": [
+    "docs",
+    "long"
+   ],
+   "expected_tier": "ordinary",
+   "acceptable_tiers": [
+    "ordinary"
+   ],
+   "min_safe_tier": "ordinary",
+   "ambiguous": false,
+   "why": "Doc page from clear notes."
+  },
+  {
+   "id": "doc-04",
+   "subagent_type": "docs-writer",
+   "description": "ADR for message queue",
+   "prompt": "Оформи ADR «Выбор брокера сообщений». Решение уже принято: RabbitMQ. Причины: команда знает его, нужны очереди с приоритетами, нагрузка до 2 тыс. сообщений/с. Рассмотренные альтернативы: Kafka (избыточно, нет приоритетов), SQS (vendor lock-in). Формат — наш шаблон из docs/adr/0000-template.md.",
+   "lang": "ru",
+   "domain": "docs",
+   "tags": [
+    "docs",
+    "adr"
+   ],
+   "expected_tier": "ordinary",
+   "acceptable_tiers": [
+    "mechanical",
+    "ordinary"
+   ],
+   "min_safe_tier": "mechanical",
+   "ambiguous": false,
+   "why": "Documenting an already-made decision."
+  },
+  {
+   "id": "doc-05",
+   "subagent_type": "general-purpose",
+   "description": "Update copyright years",
+   "prompt": "Update the copyright year to 2026 in all file headers under src/ (lines like `Copyright (c) 2024 Acme Labs`). Don't touch LICENSE.",
+   "lang": "en",
+   "domain": "docs",
+   "tags": [
+    "multi-file"
+   ],
+   "expected_tier": "mechanical",
+   "acceptable_tiers": [
+    "mechanical"
+   ],
+   "min_safe_tier": "mechanical",
+   "ambiguous": false,
+   "why": "Same edit across many files."
+  },
+  {
+   "id": "doc-06",
+   "subagent_type": "docs-writer",
+   "description": "API reference from OpenAPI",
+   "prompt": "Write a human-friendly API reference page (markdown) for these 6 endpoints. For each: purpose, parameters, example request/response (invent realistic values), error codes 401/404/429.\n\n```yaml\npaths:\n  /v1/projects:\n    get:\n      summary: List projects\n      parameters: [limit, cursor]\n      responses:\n        '200': {description: ok}\n  /v1/projects/{id}:\n    get:\n      summary: Get a project\n      parameters: [id]\n      responses:\n        '200': {description: ok}\n  /v1/projects:\n    post:\n      summary: Create a project\n      parameters: [body: name, template]\n      responses:\n        '200': {description: ok}\n  /v1/projects/{id}:\n    delete:\n      summary: Delete a project\n      parameters: [id]\n      responses:\n        '200': {description: ok}\n  /v1/projects/{id}/export:\n    post:\n      summary: Start export\n      parameters: [id, body: format]\n      responses:\n        '200': {description: ok}\n  /v1/exports/{id}:\n    get:\n      summary: Export status\n      parameters: [id]\n      responses:\n        '200': {description: ok}\n```",
+   "lang": "en",
+   "domain": "docs",
+   "tags": [
+    "docs",
+    "long"
+   ],
+   "expected_tier": "ordinary",
+   "acceptable_tiers": [
+    "ordinary"
+   ],
+   "min_safe_tier": "ordinary",
+   "ambiguous": false,
+   "why": "Doc page from a given spec."
+  },
+  {
+   "id": "doc-07",
+   "subagent_type": "general-purpose",
+   "description": "Translate changelog",
+   "prompt": "Переведи этот changelog на русский, сохрани разметку markdown и названия функций как есть:\n\n## 3.4.0\n- Added bulk export for reports\n- Added keyboard shortcuts for the table view\n- Improved loading time of the dashboard by 35%\n- Fixed a bug where filters were lost on reload\n- Fixed misaligned icons on Safari\n- Updated dependencies (react 18.3, vite 5.4)\n- Removed the legacy 'classic' theme\n- Added Ukrainian and Polish translations\n- Fixed tooltip flicker in the chart legend\n- Added a CSV export option to saved searches",
+   "lang": "ru",
+   "domain": "docs",
+   "tags": [
+    "translation"
+   ],
+   "expected_tier": "mechanical",
+   "acceptable_tiers": [
+    "mechanical",
+    "ordinary"
+   ],
+   "min_safe_tier": "mechanical",
+   "ambiguous": false,
+   "why": "Translation of given text."
+  },
+  {
+   "id": "doc-08",
+   "subagent_type": "general-purpose",
+   "description": "Draft release notes",
+   "prompt": "Draft release notes for version 3.4.0 from the merged PR titles below. Group into Features / Fixes / Internal, write in friendly plain English for customers, skip anything purely internal in the customer part.\n\n- #1201 Add bulk export for reports\n- #1204 Fix filter reset on reload\n- #1207 Speed up dashboard queries\n- #1210 Add Polish translation\n- #1213 Remove classic theme\n- #1215 Fix tooltip flicker\n- #1219 Bump vite to 5.4\n- #1220 Add CSV export to saved searches",
+   "lang": "en",
+   "domain": "docs",
+   "tags": [
+    "docs"
+   ],
+   "expected_tier": "ordinary",
+   "acceptable_tiers": [
+    "mechanical",
+    "ordinary"
+   ],
+   "min_safe_tier": "mechanical",
+   "ambiguous": false,
+   "why": "Writing from a given list."
+  },
+  {
+   "id": "doc-09",
+   "subagent_type": "general-purpose",
+   "description": "Fix broken doc links",
+   "prompt": "У нас после переезда папок в документации поломались внутренние ссылки. Прошу сделать аккуратно, правила такие.\n\n1. Относительные ссылки на файлы docs/ должны вести на существующие файлы.\n2. Если файл переименован, ищи его новое имя через git log --follow.\n3. Якоря заголовков в нижнем регистре, пробелы заменяются на дефисы.\n4. Не меняй текст ссылок, только адреса.\n5. Внешние ссылки не проверяй и не меняй.\n6. Если новое место файла не найдено, оставь ссылку как есть и перечисли её в отчёте.\n7. Не трогай блоки кода и front matter.\n8. Не добавляй и не удаляй ничего кроме адресов ссылок.\n\nОбойди все .md в docs/, найди битые внутренние ссылки, исправь по правилам выше. В конце выдай отчёт: сколько ссылок исправлено, какие остались.\n\nПример битой ссылки: `[установка](../setup/install.md)` — файл теперь лежит в `docs/guides/install.md`.\nПример якоря: заголовок «Быстрый старт» превращается в `#быстрый-старт`.\n\nКоммитить не нужно.",
+   "lang": "ru",
+   "domain": "docs",
+   "tags": [
+    "trap:long-simple",
+    "multi-file"
+   ],
+   "expected_tier": "mechanical",
+   "acceptable_tiers": [
+    "mechanical",
+    "ordinary"
+   ],
+   "min_safe_tier": "mechanical",
+   "ambiguous": false,
+   "why": "Long rules but a mechanical link fix."
+  },
+  {
+   "id": "doc-10",
+   "subagent_type": "docs-writer",
+   "description": "TLS rotation runbook",
+   "prompt": "Write a runbook for rotating the TLS certificates on the public load balancers: when, who, prerequisites, step-by-step commands (we use certbot and a Terraform module `lb-tls`), verification, rollback, and a checklist for the on-call. Base it on the notes in docs/infra/tls-notes.md.",
+   "lang": "en",
+   "domain": "docs",
+   "tags": [
+    "docs",
+    "runbook"
+   ],
+   "expected_tier": "ordinary",
+   "acceptable_tiers": [
+    "ordinary"
+   ],
+   "min_safe_tier": "ordinary",
+   "ambiguous": false,
+   "why": "Doc from existing notes."
+  },
+  {
+   "id": "doc-11",
+   "subagent_type": "general-purpose",
+   "description": "Make it better",
+   "prompt": "make this section better\n\n> The system does a lot of things with the data and then it sends the stuff to the other service which processes it more.",
+   "lang": "en",
+   "domain": "docs",
+   "tags": [
+    "trap:ambiguous",
+    "ambiguous"
+   ],
+   "expected_tier": "ordinary",
+   "acceptable_tiers": [
+    "mechanical",
+    "ordinary"
+   ],
+   "min_safe_tier": "mechanical",
+   "ambiguous": true,
+   "why": "Vague instruction with no audience or facts."
+  },
+  {
+   "id": "ops-01",
+   "subagent_type": "general-purpose",
+   "description": "Re-run lint step",
+   "prompt": "Re-run the lint step from the failing CI job locally (`make lint`) and paste the output summary. Don't fix anything.",
+   "lang": "en",
+   "domain": "devops",
+   "tags": [
+    "rerun-command"
+   ],
+   "expected_tier": "mechanical",
+   "acceptable_tiers": [
+    "mechanical"
+   ],
+   "min_safe_tier": "mechanical",
+   "ambiguous": false,
+   "why": "Re-run a command."
+  },
+  {
+   "id": "ops-02",
+   "subagent_type": "general-purpose",
+   "description": "Bump Node in workflows",
+   "prompt": "Поменяй версию Node с 18 на 20 во всех файлах в .github/workflows и в .nvmrc. Больше ничего.",
+   "lang": "ru",
+   "domain": "devops",
+   "tags": [
+    "version-bump",
+    "multi-file"
+   ],
+   "expected_tier": "mechanical",
+   "acceptable_tiers": [
+    "mechanical"
+   ],
+   "min_safe_tier": "mechanical",
+   "ambiguous": false,
+   "why": "Version bump across files."
+  },
+  {
+   "id": "ops-03",
+   "subagent_type": "general-purpose",
+   "description": "Resize production RDS",
+   "prompt": "Write the Terraform change to resize the production RDS instance from db.m5.large to db.m5.2xlarge and enable multi-AZ. Include how to apply with minimal downtime, a maintenance window suggestion and a rollback. Don't apply anything.",
+   "lang": "en",
+   "domain": "devops",
+   "tags": [
+    "infra",
+    "database"
+   ],
+   "expected_tier": "risky",
+   "acceptable_tiers": [
+    "risky"
+   ],
+   "min_safe_tier": "risky",
+   "ambiguous": false,
+   "why": "Production database infra change."
+  },
+  {
+   "id": "ops-04",
+   "subagent_type": "general-purpose",
+   "description": "Secret rotation setup",
+   "prompt": "Настрой ротацию секретов для продовой базы и обнови деплой-пайплайн так, чтобы он подхватывал новые значения без перезапуска всех сервисов. Используем Vault и GitHub Actions. Значения секретов мне не показывай и не печатай в логи.",
+   "lang": "ru",
+   "domain": "devops",
+   "tags": [
+    "trap:ru-forms",
+    "secrets",
+    "infra"
+   ],
+   "expected_tier": "risky",
+   "acceptable_tiers": [
+    "risky"
+   ],
+   "min_safe_tier": "risky",
+   "ambiguous": false,
+   "why": "Secrets and production deploy pipeline."
+  },
+  {
+   "id": "ops-05",
+   "subagent_type": "general-purpose",
+   "description": "Multi-stage Dockerfile",
+   "prompt": "Write a multi-stage Dockerfile for the Go service in cmd/api (build with CGO disabled, run on distroless, non-root user) and a docker-compose.yml for local dev with postgres and the service. Include healthcheck.",
+   "lang": "en",
+   "domain": "devops",
+   "tags": [
+    "docker"
+   ],
+   "expected_tier": "ordinary",
+   "acceptable_tiers": [
+    "ordinary"
+   ],
+   "min_safe_tier": "ordinary",
+   "ambiguous": false,
+   "why": "Standard containerization."
+  },
+  {
+   "id": "ops-06",
+   "subagent_type": "general-purpose",
+   "description": "Tune liveness probes",
+   "prompt": "Change the k8s liveness probe timeouts for the checkout pods, they're restarting too often. Use whatever values look reasonable.",
+   "lang": "en",
+   "domain": "devops",
+   "tags": [
+    "trap:casual-risky",
+    "kubernetes"
+   ],
+   "expected_tier": "risky",
+   "acceptable_tiers": [
+    "risky"
+   ],
+   "min_safe_tier": "risky",
+   "ambiguous": false,
+   "why": "Production checkout pods; casual, 'reasonable values' is risky."
+  },
+  {
+   "id": "ops-07",
+   "subagent_type": "general-purpose",
+   "description": "Filter pod listing",
+   "prompt": "Вот вывод kubectl get pods. Ничего не чини и никуда не ходи, это просто текст. Выдели из него имена подов в статусе CrashLoopBackOff или ImagePullBackOff — по одному в строке.\n\n```\nNAME                         READY   STATUS             RESTARTS   AGE\napi-7d9f6c8b5-2xk4p          1/1   Running            0          3d\napi-7d9f6c8b5-9tq7w          1/1   Running            0          3d\npayment-worker-5c4d7-abcde   0/1   CrashLoopBackOff   14         42m\nauth-proxy-6b7c9-fghij       1/1   Running            1          3d\nsecurity-scan-28391-klmno    0/1   Error              0          12m\nweb-8f5d4c-pqrst             1/1   Running            0          3d\npayment-worker-5c4d7-uvwxy   0/1   CrashLoopBackOff   13         42m\ncron-cleanup-28390-zzzzz     0/1   Completed          0          1h\nworker-9a8b7-aaaaa           1/1   Running            0          3d\nworker-9a8b7-bbbbb           1/1   Running            0          3d\nredis-0                      1/1   Running            0          12d\nredis-1                      1/1   Running            0          12d\nbilling-sync-7f6e5-ccccc     0/1   ImagePullBackOff   0          9m\nweb-8f5d4c-ddddd             1/1   Running            0          3d\n```\n\nПолный листинг ещё раз, на случай если в вставке выше потерялось:\n```\nweb-01 1/1 Running 0 1d\nweb-02 1/1 Running 0 2d\nweb-03 1/1 Running 0 3d\nweb-04 1/1 Running 0 4d\nweb-05 1/1 Running 0 5d\nweb-06 1/1 Running 0 6d\nweb-07 1/1 Running 0 7d\nweb-08 1/1 Running 0 8d\nweb-09 1/1 Running 0 9d\nweb-10 1/1 Running 0 10d\nweb-11 1/1 Running 0 11d\nweb-12 1/1 Running 0 12d\nweb-13 1/1 Running 0 13d\nweb-14 1/1 Running 0 14d\nworker-01 1/1 Running 0 1d\nworker-02 1/1 Running 0 2d\nworker-03 1/1 Running 0 3d\nworker-04 1/1 Running 0 4d\nworker-05 1/1 Running 0 5d\nworker-06 1/1 Running 0 6d\nworker-07 1/1 Running 0 7d\nworker-08 1/1 Running 0 8d\nworker-09 1/1 Running 0 9d\nworker-10 1/1 Running 0 10d\nworker-11 1/1 Running 0 11d\nworker-12 1/1 Running 0 12d\nworker-13 1/1 Running 0 13d\nworker-14 1/1 Running 0 14d\napi-01 1/1 Running 0 1d\napi-02 1/1 Running 0 2d\napi-03 1/1 Running 0 3d\napi-04 1/1 Running 0 4d\napi-05 1/1 Running 0 5d\napi-06 1/1 Running 0 6d\napi-07 1/1 Running 0 7d\napi-08 1/1 Running 0 8d\napi-09 1/1 Running 0 9d\napi-10 1/1 Running 0 10d\napi-11 1/1 Running 0 11d\napi-12 1/1 Running 0 12d\napi-13 1/1 Running 0 13d\napi-14 1/1 Running 0 14d\n```",
+   "lang": "ru",
+   "domain": "devops",
+   "tags": [
+    "trap:log-in-fence",
+    "trap:negation",
+    "summary",
+    "long"
+   ],
+   "expected_tier": "mechanical",
+   "acceptable_tiers": [
+    "mechanical",
+    "ordinary"
+   ],
+   "min_safe_tier": "mechanical",
+   "ambiguous": false,
+   "why": "Pasted listing with scary words; only a text filter."
+  },
+  {
+   "id": "ops-08",
+   "subagent_type": "general-purpose",
+   "description": "PR unit test workflow",
+   "prompt": "Add a GitHub Actions workflow that, on pull requests, caches pip dependencies, runs ruff and pytest with coverage on Python 3.12, and uploads the coverage report as an artifact. Use a matrix of ubuntu-latest only.",
+   "lang": "en",
+   "domain": "devops",
+   "tags": [
+    "ci"
+   ],
+   "expected_tier": "ordinary",
+   "acceptable_tiers": [
+    "ordinary"
+   ],
+   "min_safe_tier": "ordinary",
+   "ambiguous": false,
+   "why": "Standard CI workflow."
+  },
+  {
+   "id": "ops-09",
+   "subagent_type": "Plan",
+   "description": "Multi-cluster deploy strategy",
+   "prompt": "Спроектируй стратегию мультикластерного деплоя для 40 сервисов: canary с автоматическим откатом по метрикам, единый service mesh между кластерами в двух регионах, управление конфигурацией и секретами, порядок выкатки зависимых сервисов и поведение при частичном отказе региона. Сравни варианты (Argo Rollouts + Istio multicluster, Flagger + Linkerd, собственный контроллер) и дай рекомендацию.",
+   "lang": "ru",
+   "domain": "devops",
+   "tags": [
+    "architecture",
+    "cross-system"
+   ],
+   "expected_tier": "deep",
+   "acceptable_tiers": [
+    "risky",
+    "deep"
+   ],
+   "min_safe_tier": "risky",
+   "ambiguous": false,
+   "why": "Cross-system infra architecture decision."
+  },
+  {
+   "id": "ops-11",
+   "subagent_type": "general-purpose",
+   "description": "DB primary disk filling",
+   "prompt": "Production incident: the disk on the Postgres primary is growing ~3% per hour, 61% used now. pg_wal directory is the biggest. WAL archiving to the bucket seems stuck (archive_command exits non-zero since ~6h ago). Investigate, find the cause, and tell me what to run to stop the growth safely. Do not delete WAL files manually.\n\nВыдержка из postgresql.log:\n```\n2026-03-12 00:00:00 UTC [2300] LOG:  archive command failed with exit code 1\n2026-03-12 00:00:00 UTC [2300] DETAIL:  The failed archive command was: aws s3 cp pg_wal/00000001000000A000 s3://example-wal/000\n2026-03-12 00:03:17 UTC [2301] LOG:  checkpoint complete: wrote 813 buffers; 0 WAL file(s) added, 0 removed, 1 recycled\n2026-03-12 00:06:34 UTC [2302] LOG:  checkpoint complete: wrote 826 buffers; 0 WAL file(s) added, 0 removed, 2 recycled\n2026-03-12 00:09:51 UTC [2303] LOG:  archive command failed with exit code 1\n2026-03-12 00:09:51 UTC [2303] DETAIL:  The failed archive command was: aws s3 cp pg_wal/00000001000000A003 s3://example-wal/003\n2026-03-12 00:12:08 UTC [2304] LOG:  checkpoint complete: wrote 852 buffers; 0 WAL file(s) added, 0 removed, 0 recycled\n2026-03-12 00:15:25 UTC [2305] LOG:  checkpoint complete: wrote 865 buffers; 0 WAL file(s) added, 0 removed, 1 recycled\n2026-03-12 00:18:42 UTC [2306] LOG:  archive command failed with exit code 1\n2026-03-12 00:18:42 UTC [2306] DETAIL:  The failed archive command was: aws s3 cp pg_wal/00000001000000A006 s3://example-wal/006\n2026-03-12 00:21:59 UTC [2307] LOG:  checkpoint complete: wrote 891 buffers; 0 WAL file(s) added, 0 removed, 3 recycled\n2026-03-12 00:24:16 UTC [2308] LOG:  checkpoint complete: wrote 904 buffers; 0 WAL file(s) added, 0 removed, 0 recycled\n2026-03-12 00:27:33 UTC [2309] LOG:  archive command failed with exit code 1\n2026-03-12 00:27:33 UTC [2309] DETAIL:  The failed archive command was: aws s3 cp pg_wal/00000001000000A009 s3://example-wal/009\n2026-03-12 00:30:50 UTC [2310] LOG:  checkpoint complete: wrote 930 buffers; 0 WAL file(s) added, 0 removed, 2 recycled\n2026-03-12 00:33:07 UTC [2311] LOG:  checkpoint complete: wrote 943 buffers; 0 WAL file(s) added, 0 removed, 3 recycled\n2026-03-12 00:36:24 UTC [2312] LOG:  archive command failed with exit code 1\n2026-03-12 00:36:24 UTC [2312] DETAIL:  The failed archive command was: aws s3 cp pg_wal/00000001000000A00C s3://example-wal/00C\n2026-03-12 00:39:41 UTC [2313] LOG:  checkpoint complete: wrote 969 buffers; 0 WAL file(s) added, 0 removed, 1 recycled\n2026-03-12 00:42:58 UTC [2314] LOG:  checkpoint complete: wrote 982 buffers; 0 WAL file(s) added, 0 removed, 2 recycled\n2026-03-12 00:45:15 UTC [2315] LOG:  archive command failed with exit code 1\n2026-03-12 00:45:15 UTC [2315] DETAIL:  The failed archive command was: aws s3 cp pg_wal/00000001000000A00F s3://example-wal/00F\n2026-03-12 00:48:32 UTC [2316] LOG:  checkpoint complete: wrote 1008 buffers; 0 WAL file(s) added, 0 removed, 0 recycled\n2026-03-12 00:51:49 UTC [2317] LOG:  checkpoint complete: wrote 1021 buffers; 0 WAL file(s) added, 0 removed, 1 recycled\n2026-03-12 00:54:06 UTC [2318] LOG:  archive command failed with exit code 1\n2026-03-12 00:54:06 UTC [2318] DETAIL:  The failed archive command was: aws s3 cp pg_wal/00000001000000A012 s3://example-wal/012\n2026-03-12 00:57:23 UTC [2319] LOG:  checkpoint complete: wrote 1047 buffers; 0 WAL file(s) added, 0 removed, 3 recycled\n2026-03-12 01:00:40 UTC [2320] LOG:  checkpoint complete: wrote 1060 buffers; 0 WAL file(s) added, 0 removed, 0 recycled\n2026-03-12 01:03:57 UTC [2321] LOG:  archive command failed with exit code 1\n2026-03-12 01:03:57 UTC [2321] DETAIL:  The failed archive command was: aws s3 cp pg_wal/00000001000000A015 s3://example-wal/015\n2026-03-12 01:06:14 UTC [2322] LOG:  checkpoint complete: wrote 1086 buffers; 0 WAL file(s) added, 0 removed, 2 recycled\n2026-03-12 01:09:31 UTC [2323] LOG:  checkpoint complete: wrote 1099 buffers; 0 WAL file(s) added, 0 removed, 3 recycled\n2026-03-12 01:12:48 UTC [2324] LOG:  archive command failed with exit code 1\n2026-03-12 01:12:48 UTC [2324] DETAIL:  The failed archive command was: aws s3 cp pg_wal/00000001000000A018 s3://example-wal/018\n2026-03-12 01:15:05 UTC [2325] LOG:  checkpoint complete: wrote 1125 buffers; 0 WAL file(s) added, 0 removed, 1 recycled\n2026-03-12 01:18:22 UTC [2326] LOG:  checkpoint complete: wrote 1138 buffers; 0 WAL file(s) added, 0 removed, 2 recycled\n2026-03-12 01:21:39 UTC [2327] LOG:  archive command failed with exit code 1\n2026-03-12 01:21:39 UTC [2327] DETAIL:  The failed archive command was: aws s3 cp pg_wal/00000001000000A01B s3://example-wal/01B\n2026-03-12 01:24:56 UTC [2328] LOG:  checkpoint complete: wrote 1164 buffers; 0 WAL file(s) added, 0 removed, 0 recycled\n2026-03-12 01:27:13 UTC [2329] LOG:  checkpoint complete: wrote 1177 buffers; 0 WAL file(s) added, 0 removed, 1 recycled\n2026-03-12 01:30:30 UTC [2330] LOG:  archive command failed with exit code 1\n2026-03-12 01:30:30 UTC [2330] DETAIL:  The failed archive command was: aws s3 cp pg_wal/00000001000000A01E s3://example-wal/01E\n2026-03-12 01:33:47 UTC [2331] LOG:  checkpoint complete: wrote 1203 buffers; 0 WAL file(s) added, 0 removed, 3 recycled\n2026-03-12 01:36:04 UTC [2332] LOG:  checkpoint complete: wrote 1216 buffers; 0 WAL file(s) added, 0 removed, 0 recycled\n2026-03-12 01:39:21 UTC [2333] LOG:  archive command failed with exit code 1\n2026-03-12 01:39:21 UTC [2333] DETAIL:  The failed archive command was: aws s3 cp pg_wal/00000001000000A021 s3://example-wal/021\n2026-03-12 01:42:38 UTC [2334] LOG:  checkpoint complete: wrote 1242 buffers; 0 WAL file(s) added, 0 removed, 2 recycled\n2026-03-12 01:45:55 UTC [2335] LOG:  checkpoint complete: wrote 1255 buffers; 0 WAL file(s) added, 0 removed, 3 recycled\n2026-03-12 01:48:12 UTC [2336] LOG:  archive command failed with exit code 1\n2026-03-12 01:48:12 UTC [2336] DETAIL:  The failed archive command was: aws s3 cp pg_wal/00000001000000A024 s3://example-wal/024\n2026-03-12 01:51:29 UTC [2337] LOG:  checkpoint complete: wrote 1281 buffers; 0 WAL file(s) added, 0 removed, 1 recycled\n2026-03-12 01:54:46 UTC [2338] LOG:  checkpoint complete: wrote 1294 buffers; 0 WAL file(s) added, 0 removed, 2 recycled\n2026-03-12 01:57:03 UTC [2339] LOG:  archive command failed with exit code 1\n2026-03-12 01:57:03 UTC [2339] DETAIL:  The failed archive command was: aws s3 cp pg_wal/00000001000000A027 s3://example-wal/027\n2026-03-12 02:00:20 UTC [2340] LOG:  checkpoint complete: wrote 1320 buffers; 0 WAL file(s) added, 0 removed, 0 recycled\n2026-03-12 02:03:37 UTC [2341] LOG:  checkpoint complete: wrote 1333 buffers; 0 WAL file(s) added, 0 removed, 1 recycled\n2026-03-12 02:06:54 UTC [2342] LOG:  archive command failed with exit code 1\n2026-03-12 02:06:54 UTC [2342] DETAIL:  The failed archive command was: aws s3 cp pg_wal/00000001000000A02A s3://example-wal/02A\n2026-03-12 02:09:11 UTC [2343] LOG:  checkpoint complete: wrote 1359 buffers; 0 WAL file(s) added, 0 removed, 3 recycled\n2026-03-12 02:12:28 UTC [2344] LOG:  checkpoint complete: wrote 1372 buffers; 0 WAL file(s) added, 0 removed, 0 recycled\n```\nИз pg_stat_archiver: last_failed_time 6 часов назад, failed_count растёт.",
+   "lang": "en",
+   "domain": "devops",
+   "tags": [
+    "incident",
+    "database",
+    "long"
+   ],
+   "expected_tier": "risky",
+   "acceptable_tiers": [
+    "risky"
+   ],
+   "min_safe_tier": "risky",
+   "ambiguous": false,
+   "why": "Production incident, data safety."
+  },
+  {
+   "id": "ops-12",
+   "subagent_type": "general-purpose",
+   "description": "Deployment pipeline question",
+   "prompt": "Check which Terraform workspaces exist in infra/ and list their backends. Read-only, don't run plan or apply.",
+   "lang": "en",
+   "domain": "devops",
+   "tags": [
+    "read-only",
+    "trap:negation"
+   ],
+   "expected_tier": "mechanical",
+   "acceptable_tiers": [
+    "mechanical",
+    "ordinary"
+   ],
+   "min_safe_tier": "mechanical",
+   "ambiguous": false,
+   "why": "Read-only listing."
+  },
+  {
+   "id": "gen-01",
+   "subagent_type": "Explore",
+   "description": "Find compute_total callers",
+   "prompt": "Find where the function `compute_total` is defined and list all its callers (file:line).",
+   "lang": "en",
+   "domain": "research",
+   "tags": [
+    "search"
+   ],
+   "expected_tier": "mechanical",
+   "acceptable_tiers": [
+    "mechanical"
+   ],
+   "min_safe_tier": "mechanical",
+   "ambiguous": false,
+   "why": "Simple search."
+  },
+  {
+   "id": "gen-03",
+   "subagent_type": "general-purpose",
+   "description": "Compare job queue libs",
+   "prompt": "Compare three open-source job queue libraries for Python (e.g. Celery, RQ, Dramatiq) for a small team: ops complexity, retries, scheduling, monitoring, community health. Give a table and a recommendation for a service doing ~50 jobs/s with Redis already in the stack.",
+   "lang": "en",
+   "domain": "research",
+   "tags": [
+    "comparison"
+   ],
+   "expected_tier": "ordinary",
+   "acceptable_tiers": [
+    "ordinary"
+   ],
+   "min_safe_tier": "ordinary",
+   "ambiguous": false,
+   "why": "Bounded comparison."
+  },
+  {
+   "id": "gen-04",
+   "subagent_type": "general-purpose",
+   "description": "Approximation proof sketch",
+   "prompt": "Can we prove that our greedy scheduling heuristic (earliest-deadline-first with preemption cost) is within a constant factor of the optimal for weighted completion time on unrelated machines? Survey the literature, state the best known bounds, and produce a proof sketch or a counterexample.",
+   "lang": "en",
+   "domain": "research",
+   "tags": [
+    "research",
+    "algorithm"
+   ],
+   "expected_tier": "deep",
+   "acceptable_tiers": [
+    "risky",
+    "deep"
+   ],
+   "min_safe_tier": "risky",
+   "ambiguous": false,
+   "why": "Hard theoretical research question."
+  },
+  {
+   "id": "gen-05",
+   "subagent_type": "general-purpose",
+   "description": "Onboarding interview questions",
+   "prompt": "Подготовь 10 вопросов для интервью с пользователями о первом дне в приложении: что ожидали, где застряли, что не поняли. Вопросы открытые, без наводящих, короткие. К каждому — зачем он нужен (одна строка).",
+   "lang": "ru",
+   "domain": "research",
+   "tags": [
+    "writing"
+   ],
+   "expected_tier": "ordinary",
+   "acceptable_tiers": [
+    "mechanical",
+    "ordinary"
+   ],
+   "min_safe_tier": "mechanical",
+   "ambiguous": false,
+   "why": "Bounded writing task."
+  },
+  {
+   "id": "gen-06",
+   "subagent_type": "",
+   "description": "List docs by date",
+   "prompt": "list the files in ./docs sorted by last modified time, newest first, with dates",
+   "lang": "en",
+   "domain": "research",
+   "tags": [
+    "read-only"
+   ],
+   "expected_tier": "mechanical",
+   "acceptable_tiers": [
+    "mechanical"
+   ],
+   "min_safe_tier": "mechanical",
+   "ambiguous": false,
+   "why": "Simple listing."
+  },
+  {
+   "id": "gen-07",
+   "subagent_type": "Plan",
+   "description": "Yarn to pnpm migration plan",
+   "prompt": "Plan migrating our monorepo (14 packages, GitHub Actions CI, Docker builds) from Yarn classic to pnpm. Output: steps in order, risks, how to roll back, estimated effort per step. Planning only, don't change anything.",
+   "lang": "en",
+   "domain": "research",
+   "tags": [
+    "planning"
+   ],
+   "expected_tier": "ordinary",
+   "acceptable_tiers": [
+    "ordinary",
+    "risky"
+   ],
+   "min_safe_tier": "ordinary",
+   "ambiguous": false,
+   "why": "Planning of a tooling migration; read-only."
+  },
+  {
+   "id": "gen-08",
+   "subagent_type": "general-purpose",
+   "description": "Password reset security review",
+   "prompt": "Проверь наш флоу восстановления пароля на уязвимости: генерация и хранение токенов, время жизни, одноразовость, rate limiting, утечка информации о существовании аккаунта, порядок инвалидации сессий. Код в app/auth/reset/. Нужен список находок с серьёзностью и предложенными исправлениями.",
+   "lang": "ru",
+   "domain": "research",
+   "tags": [
+    "security",
+    "auth",
+    "review"
+   ],
+   "expected_tier": "risky",
+   "acceptable_tiers": [
+    "risky"
+   ],
+   "min_safe_tier": "risky",
+   "ambiguous": false,
+   "why": "Security review of an auth flow."
+  },
+  {
+   "id": "gen-10",
+   "subagent_type": "Plan",
+   "description": "Split utils module plan",
+   "prompt": "Plan a refactor of the 900-line `utils.py` into cohesive modules. No behaviour changes. List the proposed modules with which functions go where, the import changes, and an order of PRs. Include how to verify nothing breaks.",
+   "lang": "en",
+   "domain": "research",
+   "tags": [
+    "planning"
+   ],
+   "expected_tier": "ordinary",
+   "acceptable_tiers": [
+    "ordinary"
+   ],
+   "min_safe_tier": "ordinary",
+   "ambiguous": false,
+   "why": "Planning a bounded refactor."
+  },
+  {
+   "id": "gen-11",
+   "subagent_type": "general-purpose",
+   "description": "Deterministic GPU rendering",
+   "prompt": "Как сделать детерминированный рендер видео на разных GPU? Нужна схема.",
+   "lang": "ru",
+   "domain": "research",
+   "tags": [
+    "trap:short-deep",
+    "gpu"
+   ],
+   "expected_tier": "deep",
+   "acceptable_tiers": [
+    "risky",
+    "deep"
+   ],
+   "min_safe_tier": "risky",
+   "ambiguous": false,
+   "why": "Very short brief, but deep cross-hardware rendering problem."
+  },
+  {
+   "id": "gen-12",
+   "subagent_type": "general-purpose",
+   "description": "Help with this",
+   "prompt": "help with this",
+   "lang": "en",
+   "domain": "research",
+   "tags": [
+    "trap:ambiguous",
+    "ambiguous"
+   ],
+   "expected_tier": "ordinary",
+   "acceptable_tiers": [
+    "mechanical",
+    "ordinary"
+   ],
+   "min_safe_tier": "mechanical",
+   "ambiguous": true,
+   "why": "No content at all."
+  },
+  {
+   "id": "gen-13",
+   "subagent_type": "",
+   "description": "Посмотри это",
+   "prompt": "посмотри это: src/legacy/sync.ts",
+   "lang": "ru",
+   "domain": "research",
+   "tags": [
+    "trap:ambiguous",
+    "ambiguous"
+   ],
+   "expected_tier": "ordinary",
+   "acceptable_tiers": [
+    "mechanical",
+    "ordinary"
+   ],
+   "min_safe_tier": "mechanical",
+   "ambiguous": true,
+   "why": "Only a path, no instruction."
+  },
+  {
+   "id": "gen-14",
+   "subagent_type": "general-purpose",
+   "description": "Fix it",
+   "prompt": "fix it\n\nTypeError: undefined is not a function",
+   "lang": "en",
+   "domain": "research",
+   "tags": [
+    "trap:ambiguous",
+    "ambiguous"
+   ],
+   "expected_tier": "ordinary",
+   "acceptable_tiers": [
+    "mechanical",
+    "ordinary"
+   ],
+   "min_safe_tier": "mechanical",
+   "ambiguous": true,
+   "why": "No file, no context."
+  },
+  {
+   "id": "gen-15",
+   "subagent_type": "general-purpose",
+   "description": "Same as last time",
+   "prompt": "сделай как в прошлый раз, только для нового проекта",
+   "lang": "ru",
+   "domain": "research",
+   "tags": [
+    "trap:ambiguous",
+    "ambiguous"
+   ],
+   "expected_tier": "ordinary",
+   "acceptable_tiers": [
+    "mechanical",
+    "ordinary"
+   ],
+   "min_safe_tier": "mechanical",
+   "ambiguous": true,
+   "why": "Refers to unseen context."
+  },
+  {
+   "id": "gen-16",
+   "subagent_type": "general-purpose",
+   "description": "Location history retention",
+   "prompt": "Evaluate whether we can store user location history for 24 months under GDPR and our current privacy policy (docs/legal/privacy-policy.md). Cover lawful basis, minimisation, retention and deletion on request, and the technical design (what we store, how we expire it, access controls). Deliver a short memo with a recommended retention design.",
+   "lang": "en",
+   "domain": "research",
+   "tags": [
+    "privacy",
+    "gdpr"
+   ],
+   "expected_tier": "risky",
+   "acceptable_tiers": [
+    "risky"
+   ],
+   "min_safe_tier": "risky",
+   "ambiguous": false,
+   "why": "Privacy and compliance design."
+  },
+  {
+   "id": "gen-17",
+   "subagent_type": "general-purpose",
+   "description": "PHPicker vs PhotosPicker",
+   "prompt": "Compare PHPickerViewController and SwiftUI PhotosPicker for selecting Live Photos on iOS 26: what each returns, limitations, how to get the paired video, and any known bugs. Short write-up with sources.",
+   "lang": "en",
+   "domain": "research",
+   "tags": [
+    "research",
+    "ios"
+   ],
+   "expected_tier": "ordinary",
+   "acceptable_tiers": [
+    "mechanical",
+    "ordinary"
+   ],
+   "min_safe_tier": "mechanical",
+   "ambiguous": false,
+   "why": "Bounded API research."
+  },
+  {
+   "id": "gen-18",
+   "subagent_type": "Explore",
+   "description": "Check LICENSE type",
+   "prompt": "Проверь, есть ли в репозитории файл LICENSE и какого он типа. Also tell me if package.json has a matching `license` field.",
+   "lang": "mixed",
+   "domain": "research",
+   "tags": [
+    "search"
+   ],
+   "expected_tier": "mechanical",
+   "acceptable_tiers": [
+    "mechanical"
+   ],
+   "min_safe_tier": "mechanical",
+   "ambiguous": false,
+   "why": "Simple lookup."
+  },
+  {
+   "id": "gen-19",
+   "subagent_type": "general-purpose",
+   "description": "Rotate SDK key note",
+   "prompt": "Спроси у меня, где лежит ключ SDK, и не открывай файл с секретами. Просто напиши мне готовый вопрос для коллеги из devops, чтобы получить ключ безопасно.",
+   "lang": "ru",
+   "domain": "research",
+   "tags": [
+    "trap:negation",
+    "writing"
+   ],
+   "expected_tier": "mechanical",
+   "acceptable_tiers": [
+    "mechanical",
+    "ordinary"
+   ],
+   "min_safe_tier": "mechanical",
+   "ambiguous": false,
+   "why": "Mentions secrets but only a one-line message to draft."
+  },
+  {
+   "id": "ios-28",
+   "subagent_type": "Explore",
+   "description": "Count preview providers",
+   "prompt": "How many SwiftUI views in Modules/ still use the old PreviewProvider instead of #Preview? Give a count and the top 10 files.",
+   "lang": "en",
+   "domain": "ios",
+   "tags": [
+    "search"
+   ],
+   "expected_tier": "mechanical",
+   "acceptable_tiers": [
+    "mechanical"
+   ],
+   "min_safe_tier": "mechanical",
+   "ambiguous": false,
+   "why": "Search and count."
+  },
+  {
+   "id": "web-18",
+   "subagent_type": "general-purpose",
+   "description": "Format with prettier",
+   "prompt": "Run prettier --write on src/**/*.{ts,tsx,css} using the repo config and report how many files changed.",
+   "lang": "en",
+   "domain": "web",
+   "tags": [
+    "format"
+   ],
+   "expected_tier": "mechanical",
+   "acceptable_tiers": [
+    "mechanical"
+   ],
+   "min_safe_tier": "mechanical",
+   "ambiguous": false,
+   "why": "Format command."
+  },
+  {
+   "id": "be-18",
+   "subagent_type": "general-purpose",
+   "description": "Update Swagger examples",
+   "prompt": "В файле openapi.yaml у эндпоинтов /users добавь примеры ответов (example) по реальным моделям из app/schemas/user.py. Только документация, код не менять.",
+   "lang": "ru",
+   "domain": "backend",
+   "tags": [
+    "docs",
+    "multi-file"
+   ],
+   "expected_tier": "mechanical",
+   "acceptable_tiers": [
+    "mechanical",
+    "ordinary"
+   ],
+   "min_safe_tier": "mechanical",
+   "ambiguous": false,
+   "why": "Doc edit from existing models."
+  },
+  {
+   "id": "ops-13",
+   "subagent_type": "general-purpose",
+   "description": "Pin docker image tags",
+   "prompt": "Replace `:latest` image tags with the pinned versions currently running in staging (listed in staging-versions.txt) in all docker-compose*.yml files.",
+   "lang": "en",
+   "domain": "devops",
+   "tags": [
+    "multi-file",
+    "config"
+   ],
+   "expected_tier": "mechanical",
+   "acceptable_tiers": [
+    "mechanical",
+    "ordinary"
+   ],
+   "min_safe_tier": "mechanical",
+   "ambiguous": false,
+   "why": "Same edit across files from a given list."
+  },
+  {
+   "id": "data-12",
+   "subagent_type": "general-purpose",
+   "description": "Rename dataframe columns",
+   "prompt": "в ноутбуке churn.ipynb переименуй колонки датафрейма df по словарю rename_map (snake_case), обнови все места использования ниже по ноутбуку",
+   "lang": "ru",
+   "domain": "data",
+   "tags": [
+    "rename"
+   ],
+   "expected_tier": "mechanical",
+   "acceptable_tiers": [
+    "mechanical",
+    "ordinary"
+   ],
+   "min_safe_tier": "mechanical",
+   "ambiguous": false,
+   "why": "Rename in one notebook."
+  },
+  {
+   "id": "ios-29",
+   "subagent_type": "general-purpose",
+   "description": "Pasteboard crash log",
+   "prompt": "Вот крэш из Xcode Organizer, посмотри и скажи в чём дело:\n\n```\nFatal error: Index out of range\nApp/ClipListViewModel.swift:204\n0 libswiftCore.dylib _assertionFailure\n1 App ClipListViewModel.moveClip(from:to:) + 312\n2 App ClipListView.onMove + 88\n```\n\nПрилагаю код moveClip: `clips.insert(clips.remove(at: from), at: to)` в строке 204. Список обновляется асинхронно с синхронизацией.\n\nПолный файл:\n```swift\nimport Foundation\n\nfinal class ClipListViewModel {\n    private(set) var clips: [Clip] = []\n    private let syncService: ClipSyncing\n\n    func handleRemoteUpdate0(_ items: [Clip]) {\n        guard !items.isEmpty else { return }\n        clips = merge(clips, with: items, revision: 0)\n    }\n\n    func handleRemoteUpdate1(_ items: [Clip]) {\n        guard !items.isEmpty else { return }\n        clips = merge(clips, with: items, revision: 1)\n    }\n\n    func handleRemoteUpdate2(_ items: [Clip]) {\n        guard !items.isEmpty else { return }\n        clips = merge(clips, with: items, revision: 2)\n    }\n\n    func handleRemoteUpdate3(_ items: [Clip]) {\n        guard !items.isEmpty else { return }\n        clips = merge(clips, with: items, revision: 3)\n    }\n\n    func handleRemoteUpdate4(_ items: [Clip]) {\n        guard !items.isEmpty else { return }\n        clips = merge(clips, with: items, revision: 4)\n    }\n\n    func handleRemoteUpdate5(_ items: [Clip]) {\n        guard !items.isEmpty else { return }\n        clips = merge(clips, with: items, revision: 5)\n    }\n\n    func handleRemoteUpdate6(_ items: [Clip]) {\n        guard !items.isEmpty else { return }\n        clips = merge(clips, with: items, revision: 6)\n    }\n\n    func handleRemoteUpdate7(_ items: [Clip]) {\n        guard !items.isEmpty else { return }\n        clips = merge(clips, with: items, revision: 7)\n    }\n\n    func moveClip(from: Int, to: Int) {\n        clips.insert(clips.remove(at: from), at: to)\n    }\n}\n```",
+   "lang": "ru",
+   "domain": "ios",
+   "tags": [
+    "bugfix",
+    "long"
+   ],
+   "expected_tier": "ordinary",
+   "acceptable_tiers": [
+    "ordinary"
+   ],
+   "min_safe_tier": "ordinary",
+   "ambiguous": false,
+   "why": "Clear location and likely cause, local fix."
+  },
+  {
+   "id": "be-19",
+   "subagent_type": "general-purpose",
+   "description": "Race in cache invalidation",
+   "prompt": "Users sometimes see stale prices after an update in the admin panel, for up to a few minutes. We use a write-through cache in Redis plus a local in-process LRU on each of 8 pods. Find the invalidation gap, explain it with evidence from the code under services/pricing/, and fix it.",
+   "lang": "en",
+   "domain": "backend",
+   "tags": [
+    "unknown-cause",
+    "caching",
+    "concurrency"
+   ],
+   "expected_tier": "risky",
+   "acceptable_tiers": [
+    "risky"
+   ],
+   "min_safe_tier": "risky",
+   "ambiguous": false,
+   "why": "Distributed cache coherence on prices."
+  },
+  {
+   "id": "web-19",
+   "subagent_type": "general-purpose",
+   "description": "OAuth login button",
+   "prompt": "Добавь кнопку «Войти через Google» на страницу логина и обработку OAuth-callback: обмен кода на токен, создание или связывание аккаунта по e-mail, выдача нашей сессии. Клиент и серверные ключи уже настроены в env.",
+   "lang": "ru",
+   "domain": "web",
+   "tags": [
+    "auth",
+    "oauth"
+   ],
+   "expected_tier": "risky",
+   "acceptable_tiers": [
+    "risky"
+   ],
+   "min_safe_tier": "risky",
+   "ambiguous": false,
+   "why": "Auth flow and account linking."
+  },
+  {
+   "id": "ops-14",
+   "subagent_type": "general-purpose",
+   "description": "Cron schedule shift",
+   "prompt": "Move the nightly backup cron job from 02:00 to 03:30 UTC in the Helm values for staging only. Don't touch the prod values file.",
+   "lang": "en",
+   "domain": "devops",
+   "tags": [
+    "config",
+    "trap:negation"
+   ],
+   "expected_tier": "mechanical",
+   "acceptable_tiers": [
+    "mechanical"
+   ],
+   "min_safe_tier": "mechanical",
+   "ambiguous": false,
+   "why": "One config value in staging; prod explicitly untouched."
+  },
+  {
+   "id": "doc-12",
+   "subagent_type": "general-purpose",
+   "description": "Docs question",
+   "prompt": "Объясни простыми словами для нового сотрудника, что такое идемпотентность в API: определение, 2 примера, чем отличается от безопасности метода. До 200 слов.",
+   "lang": "ru",
+   "domain": "docs",
+   "tags": [
+    "writing"
+   ],
+   "expected_tier": "ordinary",
+   "acceptable_tiers": [
+    "mechanical",
+    "ordinary"
+   ],
+   "min_safe_tier": "mechanical",
+   "ambiguous": false,
+   "why": "Short explanatory writing."
+  }
+ ]
+}

@@ -1,0 +1,462 @@
+{"at":"2026-01-01T09:00:00","id":"task-ios-01","type":"Explore","model":"haiku","effort":null,"mode":"auto","reason":"auto: read-only search","main":"opus","tier":"mechanical","chars":121,"description":"Find UserDefaults usages","nested":false}
+{"kind":"usage","at":"2026-01-01T09:01:00","id":"task-ios-01","model":"haiku","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.003,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T09:02:00","id":"task-ios-01","outcome":"ok"}
+{"at":"2026-01-01T09:03:00","id":"task-ios-02","type":"general-purpose","model":"sonnet","effort":"low","mode":"auto","reason":"auto: code change, \"rename\" → mechanical","main":"opus","tier":"mechanical","chars":153,"description":"Rename profile header view","nested":false}
+{"kind":"usage","at":"2026-01-01T09:04:00","id":"task-ios-02","model":"sonnet","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.006,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T09:05:00","id":"task-ios-02","outcome":"ok"}
+{"at":"2026-01-01T09:06:00","id":"task-ios-03","type":"general-purpose","model":"sonnet","effort":"medium","mode":"auto","reason":"auto: code change","main":"opus","tier":"ordinary","chars":6393,"description":"Fix missing import","nested":false}
+{"kind":"usage","at":"2026-01-01T09:07:00","id":"task-ios-03","model":"sonnet","main":"opus","tokens":{"input":63960,"output":6396,"cache_read":0,"cache_write":0},"cost":0.19188,"cost_main":0.38376,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T09:08:00","id":"task-ios-03","outcome":"ok"}
+{"at":"2026-01-01T09:09:00","id":"task-ios-05","type":"general-purpose","model":"opus","effort":null,"mode":"abstain","reason":"auto: abstain (\"оплат\" against a cheap cue, too close to call)","main":"opus","tier":"abstain","chars":141,"description":"Fix button typo","nested":false}
+{"kind":"usage","at":"2026-01-01T09:10:00","id":"task-ios-05","model":"opus","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.012,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T09:11:00","id":"task-ios-05","outcome":"ok"}
+{"at":"2026-01-01T09:12:00","id":"task-ios-07","type":"ios-team:ios-engineer","model":"opus","effort":"medium","mode":"auto","reason":"auto: code change, model left to the agent definition","main":"opus","tier":"ordinary","chars":302,"description":"Swipe to delete drafts","nested":false}
+{"kind":"usage","at":"2026-01-01T09:13:00","id":"task-ios-07","model":"opus","main":"opus","tokens":{"input":3040,"output":304,"cache_read":0,"cache_write":0},"cost":0.01824,"cost_main":0.01824,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T09:14:00","id":"task-ios-07","outcome":"ok"}
+{"at":"2026-01-01T09:15:00","id":"task-ios-08","type":"general-purpose","model":"sonnet","effort":"medium","mode":"auto","reason":"auto: code change","main":"opus","tier":"ordinary","chars":252,"description":"Quiet hours toggle","nested":false}
+{"kind":"usage","at":"2026-01-01T09:16:00","id":"task-ios-08","model":"sonnet","main":"opus","tokens":{"input":2520,"output":252,"cache_read":0,"cache_write":0},"cost":0.00756,"cost_main":0.01512,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T09:17:00","id":"task-ios-08","outcome":"ok"}
+{"at":"2026-01-01T09:18:00","id":"task-ios-09","type":"general-purpose","model":"sonnet","effort":"medium","mode":"auto","reason":"auto: code change","main":"opus","tier":"ordinary","chars":2434,"description":"Tests for DurationFormatter","nested":false}
+{"kind":"usage","at":"2026-01-01T09:19:00","id":"task-ios-09","model":"sonnet","main":"opus","tokens":{"input":24360,"output":2436,"cache_read":0,"cache_write":0},"cost":0.07308,"cost_main":0.14616,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T09:20:00","id":"task-ios-09","outcome":"ok"}
+{"at":"2026-01-01T09:21:00","id":"task-ios-10","type":"general-purpose","model":"opus","effort":"high","mode":"auto","reason":"auto: code change, \"мигрир\" → risky","main":"opus","tier":"risky","chars":241,"description":"Move projects to SwiftData","nested":false}
+{"kind":"usage","at":"2026-01-01T09:22:00","id":"task-ios-10","model":"opus","main":"opus","tokens":{"input":2440,"output":244,"cache_read":0,"cache_write":0},"cost":0.01464,"cost_main":0.01464,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T09:23:00","id":"task-ios-10","outcome":"ok"}
+{"at":"2026-01-01T09:24:00","id":"task-ios-11","type":"general-purpose","model":"opus","effort":"high","mode":"auto","reason":"auto: code change, \"purchase\" → risky","main":"opus","tier":"risky","chars":205,"description":"Restore purchase logic","nested":false}
+{"kind":"usage","at":"2026-01-01T09:25:00","id":"task-ios-11","model":"opus","main":"opus","tokens":{"input":2080,"output":208,"cache_read":0,"cache_write":0},"cost":0.01248,"cost_main":0.01248,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T09:26:00","id":"task-ios-11","outcome":"ok"}
+{"at":"2026-01-01T09:27:00","id":"task-ios-12","type":"general-purpose","model":"opus","effort":"high","mode":"auto","reason":"auto: code change, \"refund\" → risky","main":"opus","tier":"risky","chars":158,"description":"Refund calculation change","nested":false}
+{"kind":"usage","at":"2026-01-01T09:28:00","id":"task-ios-12","model":"opus","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.012,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T09:29:00","id":"task-ios-12","outcome":"ok"}
+{"at":"2026-01-01T09:30:00","id":"task-ios-13","type":"general-purpose","model":"opus","effort":"high","mode":"auto","reason":"auto: code change, \"root cause\" → risky","main":"opus","tier":"risky","chars":3163,"description":"Investigate launch crash","nested":false}
+{"kind":"usage","at":"2026-01-01T09:31:00","id":"task-ios-13","model":"opus","main":"opus","tokens":{"input":31640,"output":3164,"cache_read":0,"cache_write":0},"cost":0.18984,"cost_main":0.18984,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T09:32:00","id":"task-ios-13","outcome":"ok"}
+{"at":"2026-01-01T09:33:00","id":"task-ios-14","type":"general-purpose","model":"opus","effort":"high","mode":"auto","reason":"auto: code change, \"залогин\" → risky","main":"opus","tier":"risky","chars":294,"description":"Export deeplink","nested":false}
+{"kind":"usage","at":"2026-01-01T09:34:00","id":"task-ios-14","model":"opus","main":"opus","tokens":{"input":2960,"output":296,"cache_read":0,"cache_write":0},"cost":0.01776,"cost_main":0.01776,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T09:35:00","id":"task-ios-14","outcome":"ok"}
+{"at":"2026-01-01T09:36:00","id":"task-ios-15","type":"general-purpose","model":"opus","effort":"xhigh","mode":"auto","reason":"auto: code change, \"architecture\" → deep","main":"opus","tier":"deep","chars":383,"description":"Metal compositor architecture","nested":false}
+{"kind":"usage","at":"2026-01-01T09:37:00","id":"task-ios-15","model":"opus","main":"opus","tokens":{"input":3840,"output":384,"cache_read":0,"cache_write":0},"cost":0.02304,"cost_main":0.02304,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T09:38:00","id":"task-ios-15","outcome":"ok"}
+{"at":"2026-01-01T09:39:00","id":"task-ios-16","type":"general-purpose","model":"sonnet","effort":"medium","mode":"auto","reason":"auto: code change","main":"opus","tier":"ordinary","chars":110,"description":"Fix caption desync","nested":false}
+{"kind":"usage","at":"2026-01-01T09:40:00","id":"task-ios-16","model":"sonnet","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.006,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T09:41:00","id":"task-ios-16","outcome":"check"}
+{"at":"2026-01-01T09:42:00","id":"task-ios-16-retry","type":"general-purpose","model":"opus","effort":"high","mode":"escalated","reason":"auto: retry after a failure","main":"opus","tier":"risky","chars":110,"description":"Fix caption desync","nested":false,"escalation":{"from":"sonnet medium","to":"opus high","cause":"tests failed"}}
+{"kind":"usage","at":"2026-01-01T09:43:00","id":"task-ios-16-retry","model":"opus","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.012,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T09:44:00","id":"task-ios-16-retry","outcome":"ok"}
+{"at":"2026-01-01T09:45:00","id":"task-ios-17","type":"Explore","model":"haiku","effort":null,"mode":"auto","reason":"auto: read-only search","main":"opus","tier":"mechanical","chars":91,"description":"List files with previews","nested":false}
+{"kind":"usage","at":"2026-01-01T09:46:00","id":"task-ios-17","model":"haiku","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.003,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T09:47:00","id":"task-ios-17","outcome":"ok"}
+{"at":"2026-01-01T09:48:00","id":"task-ios-18","type":"general-purpose","model":"sonnet","effort":"medium","mode":"auto","reason":"auto: code change","main":"opus","tier":"ordinary","chars":194,"description":"Trim duration label","nested":false}
+{"kind":"usage","at":"2026-01-01T09:49:00","id":"task-ios-18","model":"sonnet","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.006,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T09:50:00","id":"task-ios-18","outcome":"ok"}
+{"at":"2026-01-01T09:51:00","id":"task-ios-20","type":"general-purpose","model":"opus","effort":"high","mode":"auto","reason":"auto: code change, \"production\" → risky","main":"opus","tier":"risky","chars":227,"description":"Rename ownerId attribute","nested":false}
+{"kind":"usage","at":"2026-01-01T09:52:00","id":"task-ios-20","model":"opus","main":"opus","tokens":{"input":2280,"output":228,"cache_read":0,"cache_write":0},"cost":0.01368,"cost_main":0.01368,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T09:53:00","id":"task-ios-20","outcome":"ok"}
+{"at":"2026-01-01T09:54:00","id":"task-ios-21","type":"code-reviewer","model":"opus","effort":"medium","mode":"auto","reason":"auto: review, model left to the agent definition","main":"opus","tier":"ordinary","chars":1890,"description":"Review debounce diff","nested":false}
+{"kind":"usage","at":"2026-01-01T09:55:00","id":"task-ios-21","model":"opus","main":"opus","tokens":{"input":18920,"output":1892,"cache_read":0,"cache_write":0},"cost":0.11352,"cost_main":0.11352,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T09:56:00","id":"task-ios-21","outcome":"ok"}
+{"at":"2026-01-01T09:57:00","id":"task-ios-23","type":"general-purpose","model":"opus","effort":"high","mode":"auto","reason":"auto: code change, \"оплат\" → risky","main":"opus","tier":"risky","chars":180,"description":"Credits not applied","nested":false}
+{"kind":"usage","at":"2026-01-01T09:58:00","id":"task-ios-23","model":"opus","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.012,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T09:59:00","id":"task-ios-23","outcome":"ok"}
+{"at":"2026-01-01T10:00:00","id":"task-ios-24","type":"general-purpose","model":"sonnet","effort":"medium","mode":"auto","reason":"auto: code change","main":"opus","tier":"ordinary","chars":229,"description":"VoiceOver on export","nested":false}
+{"kind":"usage","at":"2026-01-01T10:01:00","id":"task-ios-24","model":"sonnet","main":"opus","tokens":{"input":2320,"output":232,"cache_read":0,"cache_write":0},"cost":0.00696,"cost_main":0.01392,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T10:02:00","id":"task-ios-24","outcome":"ok"}
+{"at":"2026-01-01T10:03:00","id":"task-ios-25","type":"general-purpose","model":"sonnet","effort":"medium","mode":"auto","reason":"auto: code change","main":"opus","tier":"ordinary","chars":2348,"description":"Swap color token name","nested":false}
+{"kind":"usage","at":"2026-01-01T10:04:00","id":"task-ios-25","model":"sonnet","main":"opus","tokens":{"input":23480,"output":2348,"cache_read":0,"cache_write":0},"cost":0.07044,"cost_main":0.14088,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T10:05:00","id":"task-ios-25","outcome":"ok"}
+{"at":"2026-01-01T10:06:00","id":"task-ios-26","type":"Plan","model":"opus","effort":"xhigh","mode":"auto","reason":"auto: planning, \"architecture\" → deep","main":"opus","tier":"deep","chars":469,"description":"Timeline SwiftUI rewrite plan","nested":false}
+{"kind":"usage","at":"2026-01-01T10:07:00","id":"task-ios-26","model":"opus","main":"opus","tokens":{"input":4720,"output":472,"cache_read":0,"cache_write":0},"cost":0.02832,"cost_main":0.02832,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T10:08:00","id":"task-ios-26","outcome":"ok"}
+{"at":"2026-01-01T10:09:00","id":"task-ios-27","type":"general-purpose","model":"sonnet","effort":"medium","mode":"auto","reason":"auto: code change","main":"opus","tier":"ordinary","chars":239,"description":"Add empty-state copy","nested":false}
+{"kind":"usage","at":"2026-01-01T10:10:00","id":"task-ios-27","model":"sonnet","main":"opus","tokens":{"input":2400,"output":240,"cache_read":0,"cache_write":0},"cost":0.0072,"cost_main":0.0144,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T10:11:00","id":"task-ios-27","outcome":"ok"}
+{"at":"2026-01-01T10:12:00","id":"task-web-01","type":"general-purpose","model":"sonnet","effort":"medium","mode":"auto","reason":"auto: code change","main":"opus","tier":"ordinary","chars":135,"description":"Convert var to const","nested":false}
+{"kind":"usage","at":"2026-01-01T10:13:00","id":"task-web-01","model":"sonnet","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.006,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T10:14:00","id":"task-web-01","outcome":"ok"}
+{"at":"2026-01-01T10:15:00","id":"task-web-02","type":"general-purpose","model":"sonnet","effort":"medium","mode":"auto","reason":"auto: code change","main":"opus","tier":"ordinary","chars":141,"description":"Update button blue","nested":false}
+{"kind":"usage","at":"2026-01-01T10:16:00","id":"task-web-02","model":"sonnet","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.006,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T10:17:00","id":"task-web-02","outcome":"ok"}
+{"at":"2026-01-01T10:18:00","id":"task-web-03","type":"general-purpose","model":"sonnet","effort":"medium","mode":"auto","reason":"auto: code change","main":"opus","tier":"ordinary","chars":200,"description":"Pricing table component","nested":false}
+{"kind":"usage","at":"2026-01-01T10:19:00","id":"task-web-03","model":"sonnet","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.006,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T10:20:00","id":"task-web-03","outcome":"ok"}
+{"at":"2026-01-01T10:21:00","id":"task-web-04","type":"general-purpose","model":"sonnet","effort":"medium","mode":"auto","reason":"auto: code change","main":"opus","tier":"ordinary","chars":190,"description":"Signup form validation","nested":false}
+{"kind":"usage","at":"2026-01-01T10:22:00","id":"task-web-04","model":"sonnet","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.006,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T10:23:00","id":"task-web-04","outcome":"ok"}
+{"at":"2026-01-01T10:24:00","id":"task-web-05","type":"general-purpose","model":"opus","effort":"high","mode":"auto","reason":"auto: code change, \"login\" → risky","main":"opus","tier":"risky","chars":236,"description":"Harden SPA session handling","nested":false}
+{"kind":"usage","at":"2026-01-01T10:25:00","id":"task-web-05","model":"opus","main":"opus","tokens":{"input":2360,"output":236,"cache_read":0,"cache_write":0},"cost":0.01416,"cost_main":0.01416,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T10:26:00","id":"task-web-05","outcome":"ok"}
+{"at":"2026-01-01T10:27:00","id":"task-web-06","type":"general-purpose","model":"sonnet","effort":"medium","mode":"auto","reason":"auto: code change","main":"opus","tier":"ordinary","chars":137,"description":"Change session expiry","nested":false}
+{"kind":"usage","at":"2026-01-01T10:28:00","id":"task-web-06","model":"sonnet","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.006,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T10:29:00","id":"task-web-06","outcome":"check"}
+{"at":"2026-01-01T10:30:00","id":"task-web-06-retry","type":"general-purpose","model":"opus","effort":"high","mode":"escalated","reason":"auto: retry after a failure","main":"opus","tier":"risky","chars":137,"description":"Change session expiry","nested":false,"escalation":{"from":"sonnet medium","to":"opus high","cause":"tests failed"}}
+{"kind":"usage","at":"2026-01-01T10:31:00","id":"task-web-06-retry","model":"opus","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.012,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T10:32:00","id":"task-web-06-retry","outcome":"ok"}
+{"at":"2026-01-01T10:33:00","id":"task-web-07","type":"general-purpose","model":"sonnet","effort":"medium","mode":"auto","reason":"auto: code change","main":"opus","tier":"ordinary","chars":2114,"description":"Update copy snapshots","nested":false}
+{"kind":"usage","at":"2026-01-01T10:34:00","id":"task-web-07","model":"sonnet","main":"opus","tokens":{"input":21160,"output":2116,"cache_read":0,"cache_write":0},"cost":0.06348,"cost_main":0.12696,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T10:35:00","id":"task-web-07","outcome":"ok"}
+{"at":"2026-01-01T10:36:00","id":"task-web-08","type":"general-purpose","model":"sonnet","effort":"medium","mode":"auto","reason":"auto: code change","main":"opus","tier":"ordinary","chars":203,"description":"Orders table pagination","nested":false}
+{"kind":"usage","at":"2026-01-01T10:37:00","id":"task-web-08","model":"sonnet","main":"opus","tokens":{"input":2040,"output":204,"cache_read":0,"cache_write":0},"cost":0.00612,"cost_main":0.01224,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T10:38:00","id":"task-web-08","outcome":"ok"}
+{"at":"2026-01-01T10:39:00","id":"task-web-09","type":"Explore","model":"haiku","effort":null,"mode":"auto","reason":"auto: read-only search","main":"opus","tier":"mechanical","chars":160,"description":"Find dangerouslySetInnerHTML","nested":false}
+{"kind":"usage","at":"2026-01-01T10:40:00","id":"task-web-09","model":"haiku","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.003,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T10:41:00","id":"task-web-09","outcome":"ok"}
+{"at":"2026-01-01T10:42:00","id":"task-web-10","type":"Plan","model":"opus","effort":"high","mode":"auto","reason":"auto: planning, \"migrat\" → risky","main":"opus","tier":"risky","chars":329,"description":"Collaborative editing design","nested":false}
+{"kind":"usage","at":"2026-01-01T10:43:00","id":"task-web-10","model":"opus","main":"opus","tokens":{"input":3320,"output":332,"cache_read":0,"cache_write":0},"cost":0.01992,"cost_main":0.01992,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T10:44:00","id":"task-web-10","outcome":"ok"}
+{"at":"2026-01-01T10:45:00","id":"task-web-11","type":"general-purpose","model":"sonnet","effort":"medium","mode":"auto","reason":"auto: code change","main":"opus","tier":"ordinary","chars":233,"description":"Dark mode toggle","nested":false}
+{"kind":"usage","at":"2026-01-01T10:46:00","id":"task-web-11","model":"sonnet","main":"opus","tokens":{"input":2360,"output":236,"cache_read":0,"cache_write":0},"cost":0.00708,"cost_main":0.01416,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T10:47:00","id":"task-web-11","outcome":"ok"}
+{"at":"2026-01-01T10:48:00","id":"task-web-13","type":"general-purpose","model":"opus","effort":"high","mode":"auto","reason":"auto: code change, \"monorepo\" → risky","main":"opus","tier":"risky","chars":281,"description":"Upgrade shared webpack config","nested":false}
+{"kind":"usage","at":"2026-01-01T10:49:00","id":"task-web-13","model":"opus","main":"opus","tokens":{"input":2840,"output":284,"cache_read":0,"cache_write":0},"cost":0.01704,"cost_main":0.01704,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T10:50:00","id":"task-web-13","outcome":"ok"}
+{"at":"2026-01-01T10:51:00","id":"task-web-14","type":"general-purpose","model":"sonnet","effort":"medium","mode":"auto","reason":"auto: code change","main":"opus","tier":"ordinary","chars":182,"description":"Fix dropdown scrollbar bug","nested":false}
+{"kind":"usage","at":"2026-01-01T10:52:00","id":"task-web-14","model":"sonnet","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.006,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T10:53:00","id":"task-web-14","outcome":"ok"}
+{"at":"2026-01-01T10:54:00","id":"task-web-16","type":"general-purpose","model":"sonnet","effort":"medium","mode":"auto","reason":"auto: code change","main":"opus","tier":"ordinary","chars":255,"description":"Checkout e2e tests","nested":false}
+{"kind":"usage","at":"2026-01-01T10:55:00","id":"task-web-16","model":"sonnet","main":"opus","tokens":{"input":2560,"output":256,"cache_read":0,"cache_write":0},"cost":0.00768,"cost_main":0.01536,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T10:56:00","id":"task-web-16","outcome":"ok"}
+{"at":"2026-01-01T10:57:00","id":"task-web-17","type":"general-purpose","model":"sonnet","effort":"medium","mode":"auto","reason":"auto: code change","main":"opus","tier":"ordinary","chars":203,"description":"Lighthouse accessibility fixes","nested":false}
+{"kind":"usage","at":"2026-01-01T10:58:00","id":"task-web-17","model":"sonnet","main":"opus","tokens":{"input":2040,"output":204,"cache_read":0,"cache_write":0},"cost":0.00612,"cost_main":0.01224,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T10:59:00","id":"task-web-17","outcome":"ok"}
+{"at":"2026-01-01T11:00:00","id":"task-be-01","type":"general-purpose","model":"sonnet","effort":"medium","mode":"auto","reason":"auto: code change","main":"opus","tier":"ordinary","chars":142,"description":"Add healthz endpoint","nested":false}
+{"kind":"usage","at":"2026-01-01T11:01:00","id":"task-be-01","model":"sonnet","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.006,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T11:02:00","id":"task-be-01","outcome":"ok"}
+{"at":"2026-01-01T11:03:00","id":"task-be-02","type":"general-purpose","model":"sonnet","effort":"low","mode":"auto","reason":"auto: code change, \"bump\" → mechanical","main":"opus","tier":"mechanical","chars":103,"description":"Bump requests version","nested":false}
+{"kind":"usage","at":"2026-01-01T11:04:00","id":"task-be-02","model":"sonnet","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.006,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T11:05:00","id":"task-be-02","outcome":"ok"}
+{"at":"2026-01-01T11:06:00","id":"task-be-03","type":"general-purpose","model":"opus","effort":"high","mode":"auto","reason":"auto: code change, \"migrat\" → risky","main":"opus","tier":"risky","chars":954,"description":"Payments amount split migration","nested":false}
+{"kind":"usage","at":"2026-01-01T11:07:00","id":"task-be-03","model":"opus","main":"opus","tokens":{"input":9560,"output":956,"cache_read":0,"cache_write":0},"cost":0.05736,"cost_main":0.05736,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T11:08:00","id":"task-be-03","outcome":"ok"}
+{"at":"2026-01-01T11:09:00","id":"task-be-04","type":"general-purpose","model":"opus","effort":"high","mode":"auto","reason":"auto: code change, \"login\" → risky","main":"opus","tier":"risky","chars":158,"description":"Tweak refresh token expiry","nested":false}
+{"kind":"usage","at":"2026-01-01T11:10:00","id":"task-be-04","model":"opus","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.012,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T11:11:00","id":"task-be-04","outcome":"ok"}
+{"at":"2026-01-01T11:12:00","id":"task-be-05","type":"general-purpose","model":"opus","effort":"high","mode":"auto","reason":"auto: code change, \"prod\" → risky","main":"opus","tier":"risky","chars":234,"description":"Rename users email column","nested":false}
+{"kind":"usage","at":"2026-01-01T11:13:00","id":"task-be-05","model":"opus","main":"opus","tokens":{"input":2360,"output":236,"cache_read":0,"cache_write":0},"cost":0.01416,"cost_main":0.01416,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T11:14:00","id":"task-be-05","outcome":"ok"}
+{"at":"2026-01-01T11:15:00","id":"task-be-06","type":"general-purpose","model":"sonnet","effort":"medium","mode":"auto","reason":"auto: code change","main":"opus","tier":"ordinary","chars":185,"description":"Cursor pagination for notes","nested":false}
+{"kind":"usage","at":"2026-01-01T11:16:00","id":"task-be-06","model":"sonnet","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.006,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T11:17:00","id":"task-be-06","outcome":"ok"}
+{"at":"2026-01-01T11:18:00","id":"task-be-07","type":"general-purpose","model":"sonnet","effort":"medium","mode":"auto","reason":"auto: code change","main":"opus","tier":"ordinary","chars":217,"description":"Email sending via queue","nested":false}
+{"kind":"usage","at":"2026-01-01T11:19:00","id":"task-be-07","model":"sonnet","main":"opus","tokens":{"input":2200,"output":220,"cache_read":0,"cache_write":0},"cost":0.0066,"cost_main":0.0132,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T11:20:00","id":"task-be-07","outcome":"ok"}
+{"at":"2026-01-01T11:21:00","id":"task-be-08","type":"general-purpose","model":"opus","effort":"high","mode":"auto","reason":"auto: code change, \"проде\" → risky","main":"opus","tier":"risky","chars":5393,"description":"Investigate periodic 502s","nested":false}
+{"kind":"usage","at":"2026-01-01T11:22:00","id":"task-be-08","model":"opus","main":"opus","tokens":{"input":53960,"output":5396,"cache_read":0,"cache_write":0},"cost":0.32376,"cost_main":0.32376,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T11:23:00","id":"task-be-08","outcome":"ok"}
+{"at":"2026-01-01T11:24:00","id":"task-be-09","type":"general-purpose","model":"sonnet","effort":"medium","mode":"auto","reason":"auto: code change","main":"opus","tier":"ordinary","chars":3093,"description":"Add missing uuid import","nested":false}
+{"kind":"usage","at":"2026-01-01T11:25:00","id":"task-be-09","model":"sonnet","main":"opus","tokens":{"input":30960,"output":3096,"cache_read":0,"cache_write":0},"cost":0.09288,"cost_main":0.18576,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T11:26:00","id":"task-be-09","outcome":"ok"}
+{"at":"2026-01-01T11:27:00","id":"task-be-10","type":"Plan","model":"opus","effort":"xhigh","mode":"auto","reason":"auto: planning, \"architecture\" → deep","main":"opus","tier":"deep","chars":341,"description":"Multi-region order service","nested":false}
+{"kind":"usage","at":"2026-01-01T11:28:00","id":"task-be-10","model":"opus","main":"opus","tokens":{"input":3440,"output":344,"cache_read":0,"cache_write":0},"cost":0.02064,"cost_main":0.02064,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T11:29:00","id":"task-be-10","outcome":"ok"}
+{"at":"2026-01-01T11:30:00","id":"task-be-11","type":"general-purpose","model":"opus","effort":"high","mode":"auto","reason":"auto: code change, \"concurren\" → risky","main":"opus","tier":"risky","chars":257,"description":"Idempotent refunds","nested":false}
+{"kind":"usage","at":"2026-01-01T11:31:00","id":"task-be-11","model":"opus","main":"opus","tokens":{"input":2600,"output":260,"cache_read":0,"cache_write":0},"cost":0.0156,"cost_main":0.0156,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T11:32:00","id":"task-be-11","outcome":"ok"}
+{"at":"2026-01-01T11:33:00","id":"task-be-12","type":"general-purpose","model":"sonnet","effort":"medium","mode":"auto","reason":"auto: code change","main":"opus","tier":"ordinary","chars":238,"description":"Customer CSV export","nested":false}
+{"kind":"usage","at":"2026-01-01T11:34:00","id":"task-be-12","model":"sonnet","main":"opus","tokens":{"input":2400,"output":240,"cache_read":0,"cache_write":0},"cost":0.0072,"cost_main":0.0144,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T11:35:00","id":"task-be-12","outcome":"ok"}
+{"at":"2026-01-01T11:36:00","id":"task-be-13","type":"Explore","model":"haiku","effort":null,"mode":"auto","reason":"auto: read-only search","main":"opus","tier":"mechanical","chars":161,"description":"List env variables","nested":false}
+{"kind":"usage","at":"2026-01-01T11:37:00","id":"task-be-13","model":"haiku","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.003,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T11:38:00","id":"task-be-13","outcome":"ok"}
+{"at":"2026-01-01T11:39:00","id":"task-be-14","type":"general-purpose","model":"opus","effort":"high","mode":"auto","reason":"auto: code change, \"atomic\" → risky","main":"opus","tier":"risky","chars":269,"description":"Atomic wallet balance","nested":false}
+{"kind":"usage","at":"2026-01-01T11:40:00","id":"task-be-14","model":"opus","main":"opus","tokens":{"input":2720,"output":272,"cache_read":0,"cache_write":0},"cost":0.01632,"cost_main":0.01632,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T11:41:00","id":"task-be-14","outcome":"ok"}
+{"at":"2026-01-01T11:42:00","id":"task-be-15","type":"general-purpose","model":"sonnet","effort":"medium","mode":"auto","reason":"auto: code change","main":"opus","tier":"ordinary","chars":289,"description":"Fix date range filter","nested":false}
+{"kind":"usage","at":"2026-01-01T11:43:00","id":"task-be-15","model":"sonnet","main":"opus","tokens":{"input":2920,"output":292,"cache_read":0,"cache_write":0},"cost":0.00876,"cost_main":0.01752,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T11:44:00","id":"task-be-15","outcome":"ok"}
+{"at":"2026-01-01T11:45:00","id":"task-be-17","type":"general-purpose","model":"opus","effort":null,"mode":"abstain","reason":"auto: abstain (brief too short to judge)","main":"opus","tier":"abstain","chars":76,"description":"посмотри это","nested":false}
+{"kind":"usage","at":"2026-01-01T11:46:00","id":"task-be-17","model":"opus","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.012,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T11:47:00","id":"task-be-17","outcome":"ok"}
+{"at":"2026-01-01T11:48:00","id":"task-data-01","type":"data-analyst","model":"opus","effort":"medium","mode":"auto","reason":"auto: planning, model left to the agent definition","main":"opus","tier":"ordinary","chars":290,"description":"Weekly retention cohorts","nested":false}
+{"kind":"usage","at":"2026-01-01T11:49:00","id":"task-data-01","model":"opus","main":"opus","tokens":{"input":2920,"output":292,"cache_read":0,"cache_write":0},"cost":0.01752,"cost_main":0.01752,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T11:50:00","id":"task-data-01","outcome":"ok"}
+{"at":"2026-01-01T11:51:00","id":"task-data-02","type":"general-purpose","model":"sonnet","effort":"low","mode":"auto","reason":"auto: code change, \"переимен\" → mechanical","main":"opus","tier":"mechanical","chars":173,"description":"Recode CSV files","nested":false}
+{"kind":"usage","at":"2026-01-01T11:52:00","id":"task-data-02","model":"sonnet","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.006,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T11:53:00","id":"task-data-02","outcome":"ok"}
+{"at":"2026-01-01T11:54:00","id":"task-data-03","type":"general-purpose","model":"sonnet","effort":"medium","mode":"auto","reason":"auto: code change","main":"opus","tier":"ordinary","chars":254,"description":"Fuzzy dedupe customers","nested":false}
+{"kind":"usage","at":"2026-01-01T11:55:00","id":"task-data-03","model":"sonnet","main":"opus","tokens":{"input":2560,"output":256,"cache_read":0,"cache_write":0},"cost":0.00768,"cost_main":0.01536,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T11:56:00","id":"task-data-03","outcome":"ok"}
+{"at":"2026-01-01T11:57:00","id":"task-data-04","type":"Plan","model":"sonnet","effort":"medium","mode":"auto","reason":"auto: planning","main":"opus","tier":"ordinary","chars":398,"description":"Router evaluation methodology","nested":false}
+{"kind":"usage","at":"2026-01-01T11:58:00","id":"task-data-04","model":"sonnet","main":"opus","tokens":{"input":4000,"output":400,"cache_read":0,"cache_write":0},"cost":0.012,"cost_main":0.024,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T11:59:00","id":"task-data-04","outcome":"check"}
+{"at":"2026-01-01T12:00:00","id":"task-data-04-retry","type":"Plan","model":"opus","effort":"high","mode":"escalated","reason":"auto: retry after a failure","main":"opus","tier":"risky","chars":398,"description":"Router evaluation methodology","nested":false,"escalation":{"from":"sonnet medium","to":"opus high","cause":"tests failed"}}
+{"kind":"usage","at":"2026-01-01T12:01:00","id":"task-data-04-retry","model":"opus","main":"opus","tokens":{"input":4000,"output":400,"cache_read":0,"cache_write":0},"cost":0.024,"cost_main":0.024,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T12:02:00","id":"task-data-04-retry","outcome":"ok"}
+{"at":"2026-01-01T12:03:00","id":"task-data-05","type":"general-purpose","model":"opus","effort":"high","mode":"auto","reason":"auto: code change, \"billing\" → risky","main":"opus","tier":"risky","chars":885,"description":"Backfill corrected user ids","nested":false}
+{"kind":"usage","at":"2026-01-01T12:04:00","id":"task-data-05","model":"opus","main":"opus","tokens":{"input":8880,"output":888,"cache_read":0,"cache_write":0},"cost":0.05328,"cost_main":0.05328,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T12:05:00","id":"task-data-05","outcome":"ok"}
+{"at":"2026-01-01T12:06:00","id":"task-data-06","type":"general-purpose","model":"sonnet","effort":"medium","mode":"auto","reason":"auto: code change","main":"opus","tier":"ordinary","chars":131,"description":"Smoke train run","nested":false}
+{"kind":"usage","at":"2026-01-01T12:07:00","id":"task-data-06","model":"sonnet","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.006,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T12:08:00","id":"task-data-06","outcome":"ok"}
+{"at":"2026-01-01T12:09:00","id":"task-data-07","type":"data-analyst","model":"opus","effort":"medium","mode":"auto","reason":"auto: planning, model left to the agent definition","main":"opus","tier":"ordinary","chars":261,"description":"A/B test notebook","nested":false}
+{"kind":"usage","at":"2026-01-01T12:10:00","id":"task-data-07","model":"opus","main":"opus","tokens":{"input":2640,"output":264,"cache_read":0,"cache_write":0},"cost":0.01584,"cost_main":0.01584,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T12:11:00","id":"task-data-07","outcome":"ok"}
+{"at":"2026-01-01T12:12:00","id":"task-data-09","type":"general-purpose","model":"opus","effort":"high","mode":"auto","reason":"auto: code change, \"персональные данные\" → risky","main":"opus","tier":"risky","chars":273,"description":"Dataset from support chats","nested":false}
+{"kind":"usage","at":"2026-01-01T12:13:00","id":"task-data-09","model":"opus","main":"opus","tokens":{"input":2760,"output":276,"cache_read":0,"cache_write":0},"cost":0.01656,"cost_main":0.01656,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T12:14:00","id":"task-data-09","outcome":"ok"}
+{"at":"2026-01-01T12:15:00","id":"task-data-10","type":"general-purpose","model":"sonnet","effort":"medium","mode":"auto","reason":"auto: code change","main":"opus","tier":"ordinary","chars":177,"description":"Session length plots","nested":false}
+{"kind":"usage","at":"2026-01-01T12:16:00","id":"task-data-10","model":"sonnet","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.006,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T12:17:00","id":"task-data-10","outcome":"ok"}
+{"at":"2026-01-01T12:18:00","id":"task-data-11","type":"Plan","model":"sonnet","effort":"medium","mode":"auto","reason":"auto: planning","main":"opus","tier":"ordinary","chars":293,"description":"Perceptual dedup at scale","nested":false}
+{"kind":"usage","at":"2026-01-01T12:19:00","id":"task-data-11","model":"sonnet","main":"opus","tokens":{"input":2960,"output":296,"cache_read":0,"cache_write":0},"cost":0.00888,"cost_main":0.01776,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T12:20:00","id":"task-data-11","outcome":"check"}
+{"at":"2026-01-01T12:21:00","id":"task-data-11-retry","type":"Plan","model":"opus","effort":"high","mode":"escalated","reason":"auto: retry after a failure","main":"opus","tier":"risky","chars":293,"description":"Perceptual dedup at scale","nested":false,"escalation":{"from":"sonnet medium","to":"opus high","cause":"tests failed"}}
+{"kind":"usage","at":"2026-01-01T12:22:00","id":"task-data-11-retry","model":"opus","main":"opus","tokens":{"input":2960,"output":296,"cache_read":0,"cache_write":0},"cost":0.01776,"cost_main":0.01776,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T12:23:00","id":"task-data-11-retry","outcome":"ok"}
+{"at":"2026-01-01T12:24:00","id":"task-doc-01","type":"general-purpose","model":"sonnet","effort":"low","mode":"auto","reason":"auto: code change, \"typo\" → mechanical","main":"opus","tier":"mechanical","chars":71,"description":"Fix README typos","nested":false}
+{"kind":"usage","at":"2026-01-01T12:25:00","id":"task-doc-01","model":"sonnet","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.006,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T12:26:00","id":"task-doc-01","outcome":"ok"}
+{"at":"2026-01-01T12:27:00","id":"task-doc-02","type":"docs-writer","model":"opus","effort":"high","mode":"auto","reason":"auto: code change, \"migrat\" → risky, model left to the agent definition","main":"opus","tier":"risky","chars":1649,"description":"Local dev setup guide","nested":false}
+{"kind":"usage","at":"2026-01-01T12:28:00","id":"task-doc-02","model":"opus","main":"opus","tokens":{"input":16520,"output":1652,"cache_read":0,"cache_write":0},"cost":0.09912,"cost_main":0.09912,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T12:29:00","id":"task-doc-02","outcome":"ok"}
+{"at":"2026-01-01T12:30:00","id":"task-doc-04","type":"docs-writer","model":"opus","effort":"medium","mode":"auto","reason":"auto: code change, model left to the agent definition","main":"opus","tier":"ordinary","chars":294,"description":"ADR for message queue","nested":false}
+{"kind":"usage","at":"2026-01-01T12:31:00","id":"task-doc-04","model":"opus","main":"opus","tokens":{"input":2960,"output":296,"cache_read":0,"cache_write":0},"cost":0.01776,"cost_main":0.01776,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T12:32:00","id":"task-doc-04","outcome":"ok"}
+{"at":"2026-01-01T12:33:00","id":"task-doc-05","type":"general-purpose","model":"sonnet","effort":"low","mode":"auto","reason":"auto: code change, \"copyright year\" → mechanical","main":"opus","tier":"mechanical","chars":130,"description":"Update copyright years","nested":false}
+{"kind":"usage","at":"2026-01-01T12:34:00","id":"task-doc-05","model":"sonnet","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.006,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T12:35:00","id":"task-doc-05","outcome":"ok"}
+{"at":"2026-01-01T12:36:00","id":"task-doc-06","type":"docs-writer","model":"opus","effort":"medium","mode":"auto","reason":"auto: code change, model left to the agent definition","main":"opus","tier":"ordinary","chars":1044,"description":"API reference from OpenAPI","nested":false}
+{"kind":"usage","at":"2026-01-01T12:37:00","id":"task-doc-06","model":"opus","main":"opus","tokens":{"input":10440,"output":1044,"cache_read":0,"cache_write":0},"cost":0.06264,"cost_main":0.06264,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T12:38:00","id":"task-doc-06","outcome":"ok"}
+{"at":"2026-01-01T12:39:00","id":"task-doc-07","type":"general-purpose","model":"sonnet","effort":"medium","mode":"auto","reason":"auto: code change","main":"opus","tier":"ordinary","chars":524,"description":"Translate changelog","nested":false}
+{"kind":"usage","at":"2026-01-01T12:40:00","id":"task-doc-07","model":"sonnet","main":"opus","tokens":{"input":5240,"output":524,"cache_read":0,"cache_write":0},"cost":0.01572,"cost_main":0.03144,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T12:41:00","id":"task-doc-07","outcome":"ok"}
+{"at":"2026-01-01T12:42:00","id":"task-doc-08","type":"general-purpose","model":"sonnet","effort":"medium","mode":"auto","reason":"auto: code change","main":"opus","tier":"ordinary","chars":470,"description":"Draft release notes","nested":false}
+{"kind":"usage","at":"2026-01-01T12:43:00","id":"task-doc-08","model":"sonnet","main":"opus","tokens":{"input":4720,"output":472,"cache_read":0,"cache_write":0},"cost":0.01416,"cost_main":0.02832,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T12:44:00","id":"task-doc-08","outcome":"ok"}
+{"at":"2026-01-01T12:45:00","id":"task-doc-09","type":"general-purpose","model":"sonnet","effort":"medium","mode":"auto","reason":"auto: code change","main":"opus","tier":"ordinary","chars":935,"description":"Fix broken doc links","nested":false}
+{"kind":"usage","at":"2026-01-01T12:46:00","id":"task-doc-09","model":"sonnet","main":"opus","tokens":{"input":9360,"output":936,"cache_read":0,"cache_write":0},"cost":0.02808,"cost_main":0.05616,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T12:47:00","id":"task-doc-09","outcome":"ok"}
+{"at":"2026-01-01T12:48:00","id":"task-doc-10","type":"docs-writer","model":"opus","effort":"medium","mode":"auto","reason":"auto: code change, model left to the agent definition","main":"opus","tier":"ordinary","chars":283,"description":"TLS rotation runbook","nested":false}
+{"kind":"usage","at":"2026-01-01T12:49:00","id":"task-doc-10","model":"opus","main":"opus","tokens":{"input":2840,"output":284,"cache_read":0,"cache_write":0},"cost":0.01704,"cost_main":0.01704,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T12:50:00","id":"task-doc-10","outcome":"ok"}
+{"at":"2026-01-01T12:51:00","id":"task-doc-11","type":"general-purpose","model":"sonnet","effort":"medium","mode":"auto","reason":"auto: code change","main":"opus","tier":"ordinary","chars":147,"description":"Make it better","nested":false}
+{"kind":"usage","at":"2026-01-01T12:52:00","id":"task-doc-11","model":"sonnet","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.006,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T12:53:00","id":"task-doc-11","outcome":"ok"}
+{"at":"2026-01-01T12:54:00","id":"task-ops-01","type":"general-purpose","model":"sonnet","effort":"low","mode":"auto","reason":"auto: code change, \"re-run\" → mechanical","main":"opus","tier":"mechanical","chars":116,"description":"Re-run lint step","nested":false}
+{"kind":"usage","at":"2026-01-01T12:55:00","id":"task-ops-01","model":"sonnet","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.006,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T12:56:00","id":"task-ops-01","outcome":"ok"}
+{"at":"2026-01-01T12:57:00","id":"task-ops-02","type":"general-purpose","model":"sonnet","effort":"low","mode":"auto","reason":"auto: code change, \"bump\" → mechanical","main":"opus","tier":"mechanical","chars":92,"description":"Bump Node in workflows","nested":false}
+{"kind":"usage","at":"2026-01-01T12:58:00","id":"task-ops-02","model":"sonnet","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.006,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T12:59:00","id":"task-ops-02","outcome":"ok"}
+{"at":"2026-01-01T13:00:00","id":"task-ops-03","type":"general-purpose","model":"opus","effort":"high","mode":"auto","reason":"auto: code change, \"production\" → risky","main":"opus","tier":"risky","chars":233,"description":"Resize production RDS","nested":false}
+{"kind":"usage","at":"2026-01-01T13:01:00","id":"task-ops-03","model":"opus","main":"opus","tokens":{"input":2360,"output":236,"cache_read":0,"cache_write":0},"cost":0.01416,"cost_main":0.01416,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T13:02:00","id":"task-ops-03","outcome":"ok"}
+{"at":"2026-01-01T13:03:00","id":"task-ops-04","type":"general-purpose","model":"opus","effort":"high","mode":"auto","reason":"auto: code change, \"secret\" → risky","main":"opus","tier":"risky","chars":230,"description":"Secret rotation setup","nested":false}
+{"kind":"usage","at":"2026-01-01T13:04:00","id":"task-ops-04","model":"opus","main":"opus","tokens":{"input":2320,"output":232,"cache_read":0,"cache_write":0},"cost":0.01392,"cost_main":0.01392,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T13:05:00","id":"task-ops-04","outcome":"ok"}
+{"at":"2026-01-01T13:06:00","id":"task-ops-05","type":"general-purpose","model":"sonnet","effort":"medium","mode":"auto","reason":"auto: code change","main":"opus","tier":"ordinary","chars":211,"description":"Multi-stage Dockerfile","nested":false}
+{"kind":"usage","at":"2026-01-01T13:07:00","id":"task-ops-05","model":"sonnet","main":"opus","tokens":{"input":2120,"output":212,"cache_read":0,"cache_write":0},"cost":0.00636,"cost_main":0.01272,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T13:08:00","id":"task-ops-05","outcome":"ok"}
+{"at":"2026-01-01T13:09:00","id":"task-ops-06","type":"general-purpose","model":"opus","effort":"high","mode":"auto","reason":"auto: code change, \"k8s\" → risky","main":"opus","tier":"risky","chars":128,"description":"Tune liveness probes","nested":false}
+{"kind":"usage","at":"2026-01-01T13:10:00","id":"task-ops-06","model":"opus","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.012,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T13:11:00","id":"task-ops-06","outcome":"ok"}
+{"at":"2026-01-01T13:12:00","id":"task-ops-07","type":"general-purpose","model":"sonnet","effort":"medium","mode":"auto","reason":"auto: code change","main":"opus","tier":"ordinary","chars":2352,"description":"Filter pod listing","nested":false}
+{"kind":"usage","at":"2026-01-01T13:13:00","id":"task-ops-07","model":"sonnet","main":"opus","tokens":{"input":23520,"output":2352,"cache_read":0,"cache_write":0},"cost":0.07056,"cost_main":0.14112,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T13:14:00","id":"task-ops-07","outcome":"ok"}
+{"at":"2026-01-01T13:15:00","id":"task-ops-08","type":"general-purpose","model":"sonnet","effort":"medium","mode":"auto","reason":"auto: code change","main":"opus","tier":"ordinary","chars":213,"description":"PR unit test workflow","nested":false}
+{"kind":"usage","at":"2026-01-01T13:16:00","id":"task-ops-08","model":"sonnet","main":"opus","tokens":{"input":2160,"output":216,"cache_read":0,"cache_write":0},"cost":0.00648,"cost_main":0.01296,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T13:17:00","id":"task-ops-08","outcome":"ok"}
+{"at":"2026-01-01T13:18:00","id":"task-ops-09","type":"Plan","model":"opus","effort":"xhigh","mode":"auto","reason":"auto: planning, \"спроектир\" → deep","main":"opus","tier":"deep","chars":393,"description":"Multi-cluster deploy strategy","nested":false}
+{"kind":"usage","at":"2026-01-01T13:19:00","id":"task-ops-09","model":"opus","main":"opus","tokens":{"input":3960,"output":396,"cache_read":0,"cache_write":0},"cost":0.02376,"cost_main":0.02376,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T13:20:00","id":"task-ops-09","outcome":"ok"}
+{"at":"2026-01-01T13:21:00","id":"task-ops-11","type":"general-purpose","model":"opus","effort":"high","mode":"auto","reason":"auto: code change, \"production\" → risky","main":"opus","tier":"risky","chars":7148,"description":"DB primary disk filling","nested":false}
+{"kind":"usage","at":"2026-01-01T13:22:00","id":"task-ops-11","model":"opus","main":"opus","tokens":{"input":71480,"output":7148,"cache_read":0,"cache_write":0},"cost":0.42888,"cost_main":0.42888,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T13:23:00","id":"task-ops-11","outcome":"ok"}
+{"at":"2026-01-01T13:24:00","id":"task-ops-12","type":"general-purpose","model":"sonnet","effort":"medium","mode":"auto","reason":"auto: code change","main":"opus","tier":"ordinary","chars":109,"description":"Deployment pipeline question","nested":false}
+{"kind":"usage","at":"2026-01-01T13:25:00","id":"task-ops-12","model":"sonnet","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.006,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T13:26:00","id":"task-ops-12","outcome":"ok"}
+{"at":"2026-01-01T13:27:00","id":"task-gen-01","type":"Explore","model":"haiku","effort":null,"mode":"auto","reason":"auto: read-only search","main":"opus","tier":"mechanical","chars":88,"description":"Find compute_total callers","nested":false}
+{"kind":"usage","at":"2026-01-01T13:28:00","id":"task-gen-01","model":"haiku","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.003,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T13:29:00","id":"task-gen-01","outcome":"ok"}
+{"at":"2026-01-01T13:30:00","id":"task-gen-03","type":"general-purpose","model":"sonnet","effort":"medium","mode":"auto","reason":"auto: code change","main":"opus","tier":"ordinary","chars":267,"description":"Compare job queue libs","nested":false}
+{"kind":"usage","at":"2026-01-01T13:31:00","id":"task-gen-03","model":"sonnet","main":"opus","tokens":{"input":2680,"output":268,"cache_read":0,"cache_write":0},"cost":0.00804,"cost_main":0.01608,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T13:32:00","id":"task-gen-03","outcome":"ok"}
+{"at":"2026-01-01T13:33:00","id":"task-gen-04","type":"general-purpose","model":"sonnet","effort":"medium","mode":"auto","reason":"auto: code change","main":"opus","tier":"ordinary","chars":291,"description":"Approximation proof sketch","nested":false}
+{"kind":"usage","at":"2026-01-01T13:34:00","id":"task-gen-04","model":"sonnet","main":"opus","tokens":{"input":2920,"output":292,"cache_read":0,"cache_write":0},"cost":0.00876,"cost_main":0.01752,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T13:35:00","id":"task-gen-04","outcome":"check"}
+{"at":"2026-01-01T13:36:00","id":"task-gen-04-retry","type":"general-purpose","model":"opus","effort":"high","mode":"escalated","reason":"auto: retry after a failure","main":"opus","tier":"risky","chars":291,"description":"Approximation proof sketch","nested":false,"escalation":{"from":"sonnet medium","to":"opus high","cause":"tests failed"}}
+{"kind":"usage","at":"2026-01-01T13:37:00","id":"task-gen-04-retry","model":"opus","main":"opus","tokens":{"input":2920,"output":292,"cache_read":0,"cache_write":0},"cost":0.01752,"cost_main":0.01752,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T13:38:00","id":"task-gen-04-retry","outcome":"ok"}
+{"at":"2026-01-01T13:39:00","id":"task-gen-05","type":"general-purpose","model":"sonnet","effort":"medium","mode":"auto","reason":"auto: code change","main":"opus","tier":"ordinary","chars":205,"description":"Onboarding interview questions","nested":false}
+{"kind":"usage","at":"2026-01-01T13:40:00","id":"task-gen-05","model":"sonnet","main":"opus","tokens":{"input":2080,"output":208,"cache_read":0,"cache_write":0},"cost":0.00624,"cost_main":0.01248,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T13:41:00","id":"task-gen-05","outcome":"ok"}
+{"at":"2026-01-01T13:42:00","id":"task-gen-06","type":"general-purpose","model":"haiku","effort":null,"mode":"auto","reason":"auto: code change","main":"opus","tier":"mechanical","chars":79,"description":"List docs by date","nested":false}
+{"kind":"usage","at":"2026-01-01T13:43:00","id":"task-gen-06","model":"haiku","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.003,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T13:44:00","id":"task-gen-06","outcome":"ok"}
+{"at":"2026-01-01T13:45:00","id":"task-gen-07","type":"Plan","model":"opus","effort":"high","mode":"auto","reason":"auto: planning, \"migrat\" → risky","main":"opus","tier":"risky","chars":216,"description":"Yarn to pnpm migration plan","nested":false}
+{"kind":"usage","at":"2026-01-01T13:46:00","id":"task-gen-07","model":"opus","main":"opus","tokens":{"input":2160,"output":216,"cache_read":0,"cache_write":0},"cost":0.01296,"cost_main":0.01296,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T13:47:00","id":"task-gen-07","outcome":"ok"}
+{"at":"2026-01-01T13:48:00","id":"task-gen-08","type":"general-purpose","model":"opus","effort":"high","mode":"auto","reason":"auto: code change, \"security\" → risky","main":"opus","tier":"risky","chars":288,"description":"Password reset security review","nested":false}
+{"kind":"usage","at":"2026-01-01T13:49:00","id":"task-gen-08","model":"opus","main":"opus","tokens":{"input":2880,"output":288,"cache_read":0,"cache_write":0},"cost":0.01728,"cost_main":0.01728,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T13:50:00","id":"task-gen-08","outcome":"ok"}
+{"at":"2026-01-01T13:51:00","id":"task-gen-10","type":"Plan","model":"sonnet","effort":"medium","mode":"auto","reason":"auto: planning","main":"opus","tier":"ordinary","chars":223,"description":"Split utils module plan","nested":false}
+{"kind":"usage","at":"2026-01-01T13:52:00","id":"task-gen-10","model":"sonnet","main":"opus","tokens":{"input":2240,"output":224,"cache_read":0,"cache_write":0},"cost":0.00672,"cost_main":0.01344,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T13:53:00","id":"task-gen-10","outcome":"ok"}
+{"at":"2026-01-01T13:54:00","id":"task-gen-11","type":"general-purpose","model":"opus","effort":"high","mode":"auto","reason":"auto: code change, \"determinis\" → risky","main":"opus","tier":"risky","chars":70,"description":"Deterministic GPU rendering","nested":false}
+{"kind":"usage","at":"2026-01-01T13:55:00","id":"task-gen-11","model":"opus","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.012,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T13:56:00","id":"task-gen-11","outcome":"ok"}
+{"at":"2026-01-01T13:57:00","id":"task-gen-12","type":"general-purpose","model":"opus","effort":null,"mode":"abstain","reason":"auto: abstain (brief too short to judge)","main":"opus","tier":"abstain","chars":14,"description":"Help with this","nested":false}
+{"kind":"usage","at":"2026-01-01T13:58:00","id":"task-gen-12","model":"opus","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.012,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T13:59:00","id":"task-gen-12","outcome":"ok"}
+{"at":"2026-01-01T14:00:00","id":"task-gen-13","type":"general-purpose","model":"opus","effort":null,"mode":"abstain","reason":"auto: abstain (brief too short to judge)","main":"opus","tier":"abstain","chars":32,"description":"Посмотри это","nested":false}
+{"kind":"usage","at":"2026-01-01T14:01:00","id":"task-gen-13","model":"opus","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.012,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T14:02:00","id":"task-gen-13","outcome":"ok"}
+{"at":"2026-01-01T14:03:00","id":"task-gen-14","type":"general-purpose","model":"opus","effort":null,"mode":"abstain","reason":"auto: abstain (brief too short to judge)","main":"opus","tier":"abstain","chars":46,"description":"Fix it","nested":false}
+{"kind":"usage","at":"2026-01-01T14:04:00","id":"task-gen-14","model":"opus","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.012,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T14:05:00","id":"task-gen-14","outcome":"ok"}
+{"at":"2026-01-01T14:06:00","id":"task-gen-15","type":"general-purpose","model":"opus","effort":null,"mode":"abstain","reason":"auto: abstain (refers to an earlier context)","main":"opus","tier":"abstain","chars":51,"description":"Same as last time","nested":false}
+{"kind":"usage","at":"2026-01-01T14:07:00","id":"task-gen-15","model":"opus","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.012,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T14:08:00","id":"task-gen-15","outcome":"ok"}
+{"at":"2026-01-01T14:09:00","id":"task-gen-16","type":"general-purpose","model":"opus","effort":"high","mode":"auto","reason":"auto: code change, \"access control\" → risky","main":"opus","tier":"risky","chars":343,"description":"Location history retention","nested":false}
+{"kind":"usage","at":"2026-01-01T14:10:00","id":"task-gen-16","model":"opus","main":"opus","tokens":{"input":3440,"output":344,"cache_read":0,"cache_write":0},"cost":0.02064,"cost_main":0.02064,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T14:11:00","id":"task-gen-16","outcome":"ok"}
+{"at":"2026-01-01T14:12:00","id":"task-gen-17","type":"general-purpose","model":"sonnet","effort":"medium","mode":"auto","reason":"auto: code change","main":"opus","tier":"ordinary","chars":202,"description":"PHPicker vs PhotosPicker","nested":false}
+{"kind":"usage","at":"2026-01-01T14:13:00","id":"task-gen-17","model":"sonnet","main":"opus","tokens":{"input":2040,"output":204,"cache_read":0,"cache_write":0},"cost":0.00612,"cost_main":0.01224,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T14:14:00","id":"task-gen-17","outcome":"ok"}
+{"at":"2026-01-01T14:15:00","id":"task-gen-18","type":"Explore","model":"haiku","effort":null,"mode":"auto","reason":"auto: read-only search","main":"opus","tier":"mechanical","chars":122,"description":"Check LICENSE type","nested":false}
+{"kind":"usage","at":"2026-01-01T14:16:00","id":"task-gen-18","model":"haiku","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.003,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T14:17:00","id":"task-gen-18","outcome":"ok"}
+{"at":"2026-01-01T14:18:00","id":"task-gen-19","type":"general-purpose","model":"sonnet","effort":"medium","mode":"auto","reason":"auto: code change","main":"opus","tier":"ordinary","chars":153,"description":"Rotate SDK key note","nested":false}
+{"kind":"usage","at":"2026-01-01T14:19:00","id":"task-gen-19","model":"sonnet","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.006,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T14:20:00","id":"task-gen-19","outcome":"ok"}
+{"at":"2026-01-01T14:21:00","id":"task-ios-28","type":"Explore","model":"haiku","effort":null,"mode":"auto","reason":"auto: read-only search","main":"opus","tier":"mechanical","chars":124,"description":"Count preview providers","nested":false}
+{"kind":"usage","at":"2026-01-01T14:22:00","id":"task-ios-28","model":"haiku","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.003,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T14:23:00","id":"task-ios-28","outcome":"ok"}
+{"at":"2026-01-01T14:24:00","id":"task-web-18","type":"general-purpose","model":"sonnet","effort":"low","mode":"auto","reason":"auto: code change, \"format\" → mechanical","main":"opus","tier":"mechanical","chars":102,"description":"Format with prettier","nested":false}
+{"kind":"usage","at":"2026-01-01T14:25:00","id":"task-web-18","model":"sonnet","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.006,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T14:26:00","id":"task-web-18","outcome":"ok"}
+{"at":"2026-01-01T14:27:00","id":"task-be-18","type":"general-purpose","model":"sonnet","effort":"medium","mode":"auto","reason":"auto: code change","main":"opus","tier":"ordinary","chars":153,"description":"Update Swagger examples","nested":false}
+{"kind":"usage","at":"2026-01-01T14:28:00","id":"task-be-18","model":"sonnet","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.006,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T14:29:00","id":"task-be-18","outcome":"ok"}
+{"at":"2026-01-01T14:30:00","id":"task-ops-13","type":"general-purpose","model":"sonnet","effort":"medium","mode":"auto","reason":"auto: code change","main":"opus","tier":"ordinary","chars":149,"description":"Pin docker image tags","nested":false}
+{"kind":"usage","at":"2026-01-01T14:31:00","id":"task-ops-13","model":"sonnet","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.006,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T14:32:00","id":"task-ops-13","outcome":"ok"}
+{"at":"2026-01-01T14:33:00","id":"task-data-12","type":"general-purpose","model":"sonnet","effort":"low","mode":"auto","reason":"auto: code change, \"rename\" → mechanical","main":"opus","tier":"mechanical","chars":139,"description":"Rename dataframe columns","nested":false}
+{"kind":"usage","at":"2026-01-01T14:34:00","id":"task-data-12","model":"sonnet","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.006,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T14:35:00","id":"task-data-12","outcome":"ok"}
+{"at":"2026-01-01T14:36:00","id":"task-ios-29","type":"general-purpose","model":"sonnet","effort":"medium","mode":"auto","reason":"auto: code change","main":"opus","tier":"ordinary","chars":1886,"description":"Pasteboard crash log","nested":false}
+{"kind":"usage","at":"2026-01-01T14:37:00","id":"task-ios-29","model":"sonnet","main":"opus","tokens":{"input":18880,"output":1888,"cache_read":0,"cache_write":0},"cost":0.05664,"cost_main":0.11328,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T14:38:00","id":"task-ios-29","outcome":"ok"}
+{"at":"2026-01-01T14:39:00","id":"task-be-19","type":"general-purpose","model":"opus","effort":"high","mode":"auto","reason":"auto: code change, \"race\" → risky","main":"opus","tier":"risky","chars":281,"description":"Race in cache invalidation","nested":false}
+{"kind":"usage","at":"2026-01-01T14:40:00","id":"task-be-19","model":"opus","main":"opus","tokens":{"input":2840,"output":284,"cache_read":0,"cache_write":0},"cost":0.01704,"cost_main":0.01704,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T14:41:00","id":"task-be-19","outcome":"ok"}
+{"at":"2026-01-01T14:42:00","id":"task-web-19","type":"general-purpose","model":"opus","effort":"high","mode":"auto","reason":"auto: code change, \"oauth\" → risky","main":"opus","tier":"risky","chars":213,"description":"OAuth login button","nested":false}
+{"kind":"usage","at":"2026-01-01T14:43:00","id":"task-web-19","model":"opus","main":"opus","tokens":{"input":2160,"output":216,"cache_read":0,"cache_write":0},"cost":0.01296,"cost_main":0.01296,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T14:44:00","id":"task-web-19","outcome":"ok"}
+{"at":"2026-01-01T14:45:00","id":"task-ops-14","type":"general-purpose","model":"sonnet","effort":"low","mode":"auto","reason":"auto: code change, \"move\" → mechanical","main":"opus","tier":"mechanical","chars":127,"description":"Cron schedule shift","nested":false}
+{"kind":"usage","at":"2026-01-01T14:46:00","id":"task-ops-14","model":"sonnet","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.006,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T14:47:00","id":"task-ops-14","outcome":"ok"}
+{"at":"2026-01-01T14:48:00","id":"task-doc-12","type":"general-purpose","model":"opus","effort":"high","mode":"auto","reason":"auto: code change, \"безопасность\" → risky","main":"opus","tier":"risky","chars":156,"description":"Docs question","nested":false}
+{"kind":"usage","at":"2026-01-01T14:49:00","id":"task-doc-12","model":"opus","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.012,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T14:50:00","id":"task-doc-12","outcome":"ok"}
+{"at":"2026-01-01T14:51:00","id":"ch-01-failed-check-twice-1","type":"general-purpose","model":"sonnet","effort":"medium","mode":"auto","reason":"auto: code change","main":"opus","tier":null,"chars":116,"description":"Fix pagination bug","nested":false}
+{"kind":"usage","at":"2026-01-01T14:52:00","id":"ch-01-failed-check-twice-1","model":"sonnet","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.006,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T14:53:00","id":"ch-01-failed-check-twice-1","outcome":"check"}
+{"at":"2026-01-01T14:54:00","id":"ch-01-failed-check-twice-2","type":"general-purpose","model":"sonnet","effort":"medium","mode":"auto","reason":"auto: code change","main":"opus","tier":null,"chars":220,"description":"Fix pagination bug","nested":false}
+{"kind":"usage","at":"2026-01-01T14:55:00","id":"ch-01-failed-check-twice-2","model":"sonnet","main":"opus","tokens":{"input":2200,"output":220,"cache_read":0,"cache_write":0},"cost":0.0066,"cost_main":0.0132,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T14:56:00","id":"ch-01-failed-check-twice-2","outcome":"check"}
+{"at":"2026-01-01T14:57:00","id":"ch-01-failed-check-twice-3","type":"general-purpose","model":"opus","effort":"high","mode":"escalated","reason":"auto: retry after a failure on sonnet medium (still failing)","main":"opus","tier":null,"chars":117,"description":"Fix pagination bug","nested":false,"escalation":{"from":"sonnet medium","to":"opus high","cause":"ok"}}
+{"kind":"usage","at":"2026-01-01T14:58:00","id":"ch-01-failed-check-twice-3","model":"opus","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.012,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T14:59:00","id":"ch-01-failed-check-twice-3","outcome":"ok"}
+{"at":"2026-01-01T15:00:00","id":"ch-02-error-once-1","type":"general-purpose","model":"opus","effort":"high","mode":"auto","reason":"auto: code change, \"migrat\" → risky","main":"opus","tier":null,"chars":65,"description":"Migrate settings storage","nested":false}
+{"kind":"usage","at":"2026-01-01T15:01:00","id":"ch-02-error-once-1","model":"opus","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.012,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T15:02:00","id":"ch-02-error-once-1","outcome":"error"}
+{"at":"2026-01-01T15:03:00","id":"ch-02-error-once-2","type":"general-purpose","model":"opus","effort":"xhigh","mode":"escalated","reason":"auto: retry after a failure on opus high (Error: tool execution crashed: Edit failed, 'old_string' not unique in SettingsV)","main":"opus","tier":null,"chars":65,"description":"Migrate settings storage","nested":false,"escalation":{"from":"opus high","to":"opus xhigh","cause":"ok"}}
+{"kind":"usage","at":"2026-01-01T15:04:00","id":"ch-02-error-once-2","model":"opus","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.012,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T15:05:00","id":"ch-02-error-once-2","outcome":"ok"}
+{"at":"2026-01-01T15:06:00","id":"ch-03-context-overflow-1","type":"Explore","model":"haiku","effort":null,"mode":"auto","reason":"auto: read-only search","main":"opus","tier":null,"chars":88,"description":"Summarize all services","nested":false}
+{"kind":"usage","at":"2026-01-01T15:07:00","id":"ch-03-context-overflow-1","model":"haiku","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.003,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T15:08:00","id":"ch-03-context-overflow-1","outcome":"overflow"}
+{"at":"2026-01-01T15:09:00","id":"ch-03-context-overflow-2","type":"Explore","model":"sonnet","effort":"medium","mode":"escalated","reason":"auto: retry after a failure on haiku (Context limit reached after reading 212 files; could not finish. Partial: auth, )","main":"opus","tier":null,"chars":141,"description":"Summarize all services","nested":false,"escalation":{"from":"haiku","to":"sonnet medium","cause":"ok"}}
+{"kind":"usage","at":"2026-01-01T15:10:00","id":"ch-03-context-overflow-2","model":"sonnet","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.006,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T15:11:00","id":"ch-03-context-overflow-2","outcome":"ok"}
+{"at":"2026-01-01T15:12:00","id":"ch-04-refusal-1","type":"general-purpose","model":"haiku","effort":null,"mode":"auto","reason":"auto: code change","main":"opus","tier":null,"chars":135,"description":"Scrape private profiles","nested":false}
+{"kind":"usage","at":"2026-01-01T15:13:00","id":"ch-04-refusal-1","model":"haiku","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.003,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T15:14:00","id":"ch-04-refusal-1","outcome":"refusal"}
+{"at":"2026-01-01T15:15:00","id":"ch-05-timeout-then-escalate-1","type":"general-purpose","model":"sonnet","effort":"medium","mode":"auto","reason":"auto: code change","main":"opus","tier":null,"chars":59,"description":"Run full e2e suite","nested":false}
+{"kind":"usage","at":"2026-01-01T15:16:00","id":"ch-05-timeout-then-escalate-1","model":"sonnet","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.006,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T15:17:00","id":"ch-05-timeout-then-escalate-1","outcome":"transient"}
+{"at":"2026-01-01T15:18:00","id":"ch-05-timeout-then-escalate-2","type":"general-purpose","model":"sonnet","effort":"medium","mode":"auto","reason":"auto: code change","main":"opus","tier":null,"chars":59,"description":"Run full e2e suite","nested":false}
+{"kind":"usage","at":"2026-01-01T15:19:00","id":"ch-05-timeout-then-escalate-2","model":"sonnet","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.006,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T15:20:00","id":"ch-05-timeout-then-escalate-2","outcome":"transient"}
+{"at":"2026-01-01T15:21:00","id":"ch-05-timeout-then-escalate-3","type":"general-purpose","model":"opus","effort":"high","mode":"escalated","reason":"auto: retry after a failure on sonnet medium (Timed out again after 600s, 41 of 312 tests completed.)","main":"opus","tier":null,"chars":102,"description":"Run full e2e suite","nested":false,"escalation":{"from":"sonnet medium","to":"opus high","cause":"ok"}}
+{"kind":"usage","at":"2026-01-01T15:22:00","id":"ch-05-timeout-then-escalate-3","model":"opus","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.012,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T15:23:00","id":"ch-05-timeout-then-escalate-3","outcome":"ok"}
+{"at":"2026-01-01T15:24:00","id":"ch-06-escalate-signal-1","type":"general-purpose","model":"sonnet","effort":"medium","mode":"auto","reason":"auto: code change","main":"opus","tier":null,"chars":61,"description":"Tweak cache TTL","nested":false}
+{"kind":"usage","at":"2026-01-01T15:25:00","id":"ch-06-escalate-signal-1","model":"sonnet","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.006,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T15:26:00","id":"ch-06-escalate-signal-1","outcome":"signal"}
+{"at":"2026-01-01T15:27:00","id":"ch-06-escalate-signal-2","type":"general-purpose","model":"opus","effort":"high","mode":"escalated","reason":"auto: retry after a failure on sonnet medium (the TTL is also read by the invalidation job and the price service, changing it affects price consistency across regions; this needs a deeper review than a config edit.)","main":"opus","tier":null,"chars":197,"description":"Tweak cache TTL","nested":false,"escalation":{"from":"sonnet medium","to":"opus high","cause":"ok"}}
+{"kind":"usage","at":"2026-01-01T15:28:00","id":"ch-06-escalate-signal-2","model":"opus","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.012,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T15:29:00","id":"ch-06-escalate-signal-2","outcome":"ok"}
+{"at":"2026-01-01T15:30:00","id":"ch-07-user-retry-ru-1","type":"general-purpose","model":"sonnet","effort":"medium","mode":"auto","reason":"auto: code change","main":"opus","tier":null,"chars":81,"description":"Починить фильтр дат","nested":false}
+{"kind":"usage","at":"2026-01-01T15:31:00","id":"ch-07-user-retry-ru-1","model":"sonnet","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.006,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T15:32:00","id":"ch-07-user-retry-ru-1","outcome":"ok"}
+{"at":"2026-01-01T15:33:00","id":"ch-07-user-retry-ru-2","type":"general-purpose","model":"opus","effort":"high","mode":"escalated","reason":"auto: retry after a failure on sonnet medium (the person says it still does not work)","main":"opus","tier":null,"chars":76,"description":"Починить фильтр дат","nested":false,"escalation":{"from":"sonnet medium","to":"opus high","cause":"ok"}}
+{"kind":"usage","at":"2026-01-01T15:34:00","id":"ch-07-user-retry-ru-2","model":"opus","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.012,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T15:35:00","id":"ch-07-user-retry-ru-2","outcome":"ok"}
+{"at":"2026-01-01T15:36:00","id":"ch-07-user-retry-ru-3","type":"general-purpose","model":"opus","effort":"high","mode":"auto","reason":"auto: retry on the same rung opus high (не удалось)","main":"opus","tier":null,"chars":82,"description":"Починить фильтр дат","nested":false}
+{"kind":"usage","at":"2026-01-01T15:37:00","id":"ch-07-user-retry-ru-3","model":"opus","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.012,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T15:38:00","id":"ch-07-user-retry-ru-3","outcome":"ok"}
+{"at":"2026-01-01T15:39:00","id":"ch-08-user-retry-en-1","type":"general-purpose","model":"opus","effort":"high","mode":"auto","reason":"auto: code change, \"persist\" → risky","main":"opus","tier":null,"chars":71,"description":"Fix dark mode toggle","nested":false}
+{"kind":"usage","at":"2026-01-01T15:40:00","id":"ch-08-user-retry-en-1","model":"opus","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.012,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T15:41:00","id":"ch-08-user-retry-en-1","outcome":"ok"}
+{"at":"2026-01-01T15:42:00","id":"ch-08-user-retry-en-2","type":"general-purpose","model":"opus","effort":"xhigh","mode":"escalated","reason":"auto: retry after a failure on opus high (the person says it still does not work)","main":"opus","tier":null,"chars":65,"description":"Fix dark mode toggle","nested":false,"escalation":{"from":"opus high","to":"opus xhigh","cause":"ok"}}
+{"kind":"usage","at":"2026-01-01T15:43:00","id":"ch-08-user-retry-en-2","model":"opus","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.012,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T15:44:00","id":"ch-08-user-retry-en-2","outcome":"ok"}
+{"at":"2026-01-01T15:45:00","id":"ch-09-different-task-1","type":"general-purpose","model":"opus","effort":"high","mode":"auto","reason":"auto: code change, \"flaky\" → risky","main":"opus","tier":null,"chars":56,"description":"Fix flaky test","nested":false}
+{"kind":"usage","at":"2026-01-01T15:46:00","id":"ch-09-different-task-1","model":"opus","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.012,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T15:47:00","id":"ch-09-different-task-1","outcome":"check"}
+{"at":"2026-01-01T15:48:00","id":"ch-09-different-task-2","type":"Explore","model":"haiku","effort":null,"mode":"auto","reason":"auto: read-only search","main":"opus","tier":null,"chars":50,"description":"List TODO comments","nested":false}
+{"kind":"usage","at":"2026-01-01T15:49:00","id":"ch-09-different-task-2","model":"haiku","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.003,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T15:50:00","id":"ch-09-different-task-2","outcome":"ok"}
+{"at":"2026-01-01T15:51:00","id":"ch-09-different-task-3","type":"general-purpose","model":"sonnet","effort":"medium","mode":"auto","reason":"auto: code change","main":"opus","tier":null,"chars":62,"description":"Update README badge","nested":false}
+{"kind":"usage","at":"2026-01-01T15:52:00","id":"ch-09-different-task-3","model":"sonnet","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.006,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T15:53:00","id":"ch-09-different-task-3","outcome":"ok"}
+{"at":"2026-01-01T15:54:00","id":"ch-10-success-1","type":"general-purpose","model":"sonnet","effort":"medium","mode":"auto","reason":"auto: code change","main":"opus","tier":null,"chars":52,"description":"Add healthz endpoint","nested":false}
+{"kind":"usage","at":"2026-01-01T15:55:00","id":"ch-10-success-1","model":"sonnet","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.006,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T15:56:00","id":"ch-10-success-1","outcome":"ok"}
+{"at":"2026-01-01T15:57:00","id":"ch-11-top-of-ladder-1","type":"general-purpose","model":"opus","effort":"xhigh","mode":"auto","reason":"auto: code change, \"race\" → risky, model as the caller set it","main":"opus","tier":null,"chars":85,"description":"Fix GPU texture race","nested":false}
+{"kind":"usage","at":"2026-01-01T15:58:00","id":"ch-11-top-of-ladder-1","model":"opus","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.012,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T15:59:00","id":"ch-11-top-of-ladder-1","outcome":"check"}
+{"at":"2026-01-01T16:00:00","id":"ch-11-top-of-ladder-2","type":"general-purpose","model":"opus","effort":"xhigh","mode":"auto","reason":"auto: code change, \"race\" → risky, model as the caller set it","main":"opus","tier":null,"chars":139,"description":"Fix GPU texture race","nested":false}
+{"kind":"usage","at":"2026-01-01T16:01:00","id":"ch-11-top-of-ladder-2","model":"opus","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.012,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T16:02:00","id":"ch-11-top-of-ladder-2","outcome":"check"}
+{"at":"2026-01-01T16:03:00","id":"ch-11-top-of-ladder-3","type":"general-purpose","model":"opus","effort":"xhigh","mode":"auto","reason":"auto: retry on the same rung opus xhigh (test still fails)","main":"opus","tier":null,"chars":106,"description":"Fix GPU texture race","nested":false}
+{"kind":"usage","at":"2026-01-01T16:04:00","id":"ch-11-top-of-ladder-3","model":"opus","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.012,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T16:05:00","id":"ch-11-top-of-ladder-3","outcome":"error"}
+{"at":"2026-01-01T16:06:00","id":"ch-12-fail-then-ok-1","type":"general-purpose","model":"sonnet","effort":"medium","mode":"auto","reason":"auto: code change","main":"opus","tier":null,"chars":60,"description":"Add form validation","nested":false}
+{"kind":"usage","at":"2026-01-01T16:07:00","id":"ch-12-fail-then-ok-1","model":"sonnet","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.006,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T16:08:00","id":"ch-12-fail-then-ok-1","outcome":"check"}
+{"at":"2026-01-01T16:09:00","id":"ch-12-fail-then-ok-2","type":"general-purpose","model":"sonnet","effort":"medium","mode":"auto","reason":"auto: retry on the same rung sonnet medium (lint fails)","main":"opus","tier":null,"chars":109,"description":"Add form validation","nested":false}
+{"kind":"usage","at":"2026-01-01T16:10:00","id":"ch-12-fail-then-ok-2","model":"sonnet","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.006,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T16:11:00","id":"ch-12-fail-then-ok-2","outcome":"ok"}
+{"at":"2026-01-01T16:12:00","id":"ch-13-error-then-failed-check-1","type":"general-purpose","model":"sonnet","effort":"medium","mode":"auto","reason":"auto: code change","main":"opus","tier":null,"chars":79,"description":"Optimize image loader","nested":false}
+{"kind":"usage","at":"2026-01-01T16:13:00","id":"ch-13-error-then-failed-check-1","model":"sonnet","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.006,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T16:14:00","id":"ch-13-error-then-failed-check-1","outcome":"error"}
+{"at":"2026-01-01T16:15:00","id":"ch-13-error-then-failed-check-2","type":"general-purpose","model":"opus","effort":"high","mode":"escalated","reason":"auto: retry after a failure on sonnet medium (Error: build failed in ImageLoader.swift: cannot convert value of type 'Data?' t)","main":"opus","tier":null,"chars":136,"description":"Optimize image loader","nested":false,"escalation":{"from":"sonnet medium","to":"opus high","cause":"failed_check"}}
+{"kind":"usage","at":"2026-01-01T16:16:00","id":"ch-13-error-then-failed-check-2","model":"opus","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.012,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T16:17:00","id":"ch-13-error-then-failed-check-2","outcome":"check"}
+{"at":"2026-01-01T16:18:00","id":"ch-13-error-then-failed-check-3","type":"general-purpose","model":"opus","effort":"high","mode":"auto","reason":"auto: retry on the same rung opus high (ImageLoaderTests.testEvictionOnLowDisk fails)","main":"opus","tier":null,"chars":120,"description":"Optimize image loader","nested":false}
+{"kind":"usage","at":"2026-01-01T16:19:00","id":"ch-13-error-then-failed-check-3","model":"opus","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.012,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T16:20:00","id":"ch-13-error-then-failed-check-3","outcome":"check"}
+{"at":"2026-01-01T16:21:00","id":"ch-13-error-then-failed-check-4","type":"general-purpose","model":"opus","effort":"xhigh","mode":"escalated","reason":"auto: retry after a failure on opus high (testEvictionOnLowDisk still fails)","main":"opus","tier":null,"chars":95,"description":"Optimize image loader","nested":false,"escalation":{"from":"opus high","to":"opus xhigh","cause":"ok"}}
+{"kind":"usage","at":"2026-01-01T16:22:00","id":"ch-13-error-then-failed-check-4","model":"opus","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.012,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T16:23:00","id":"ch-13-error-then-failed-check-4","outcome":"ok"}
+{"at":"2026-01-01T16:24:00","id":"ch-14-refusal-then-new-task-1","type":"general-purpose","model":"sonnet","effort":"medium","mode":"auto","reason":"auto: code change","main":"opus","tier":null,"chars":72,"description":"Bypass paywall check","nested":false}
+{"kind":"usage","at":"2026-01-01T16:25:00","id":"ch-14-refusal-then-new-task-1","model":"sonnet","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.006,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T16:26:00","id":"ch-14-refusal-then-new-task-1","outcome":"refusal"}
+{"at":"2026-01-01T16:27:00","id":"ch-14-refusal-then-new-task-2","type":"general-purpose","model":"sonnet","effort":"medium","mode":"auto","reason":"auto: code change","main":"opus","tier":null,"chars":98,"description":"Write trial feature","nested":false}
+{"kind":"usage","at":"2026-01-01T16:28:00","id":"ch-14-refusal-then-new-task-2","model":"sonnet","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.006,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T16:29:00","id":"ch-14-refusal-then-new-task-2","outcome":"ok"}
+{"at":"2026-01-01T16:30:00","id":"ch-15-timeout-twice-then-escalate-chain-1","type":"general-purpose","model":"sonnet","effort":"medium","mode":"auto","reason":"auto: code change","main":"opus","tier":null,"chars":107,"description":"Reindex search data","nested":false}
+{"kind":"usage","at":"2026-01-01T16:31:00","id":"ch-15-timeout-twice-then-escalate-chain-1","model":"sonnet","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.006,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T16:32:00","id":"ch-15-timeout-twice-then-escalate-chain-1","outcome":"transient"}
+{"at":"2026-01-01T16:33:00","id":"ch-15-timeout-twice-then-escalate-chain-2","type":"general-purpose","model":"sonnet","effort":"medium","mode":"auto","reason":"auto: code change","main":"opus","tier":null,"chars":107,"description":"Reindex search data","nested":false}
+{"kind":"usage","at":"2026-01-01T16:34:00","id":"ch-15-timeout-twice-then-escalate-chain-2","model":"sonnet","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.006,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T16:35:00","id":"ch-15-timeout-twice-then-escalate-chain-2","outcome":"transient"}
+{"at":"2026-01-01T16:36:00","id":"ch-15-timeout-twice-then-escalate-chain-3","type":"general-purpose","model":"opus","effort":"high","mode":"escalated","reason":"auto: retry after a failure on sonnet medium (Timed out again after 900s at about 41%.)","main":"opus","tier":null,"chars":141,"description":"Reindex search data","nested":false,"escalation":{"from":"sonnet medium","to":"opus high","cause":"escalate_signal"}}
+{"kind":"usage","at":"2026-01-01T16:37:00","id":"ch-15-timeout-twice-then-escalate-chain-3","model":"opus","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.012,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T16:38:00","id":"ch-15-timeout-twice-then-escalate-chain-3","outcome":"signal"}
+{"at":"2026-01-01T16:39:00","id":"ch-15-timeout-twice-then-escalate-chain-4","type":"general-purpose","model":"opus","effort":"xhigh","mode":"escalated","reason":"auto: retry after a failure on opus high (the analyzer config has a memory leak that makes every batch slower; this needs someone to investigate the plugin, not just retry.)","main":"opus","tier":null,"chars":87,"description":"Reindex search data","nested":false,"escalation":{"from":"opus high","to":"opus xhigh","cause":"error"}}
+{"kind":"usage","at":"2026-01-01T16:40:00","id":"ch-15-timeout-twice-then-escalate-chain-4","model":"opus","main":"opus","tokens":{"input":2000,"output":200,"cache_read":0,"cache_write":0},"cost":0.012,"cost_main":0.012,"source":"agent-result"}
+{"kind":"outcome","at":"2026-01-01T16:41:00","id":"ch-15-timeout-twice-then-escalate-chain-4","outcome":"error"}

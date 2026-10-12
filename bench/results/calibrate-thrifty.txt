@@ -1,0 +1,6 @@
+agent-router calibrate — 185 spawns, 185 routed by the router (proposals only; nothing is written)
+on the strong model: 29%   cheap-tier spawns that needed escalation: 28.2%   abstained: 3.2%
+- keywords.risky: "investigate" — in 2 cheap-tier spawns that failed and were escalated, 0 that passed on a cheap tier
+- keywords.risky: "expiry" — in 2 cheap-tier spawns that failed and were escalated, 0 that passed on a cheap tier
+- keywords.risky: "session" — in 2 cheap-tier spawns that failed and were escalated, 1 that passed on a cheap tier
+- strong_share: 49 — 28.2% of cheap-tier spawns failed and needed a stronger model; aim for about 49% on opus (now 29%) by adding keywords or rules for those tasks

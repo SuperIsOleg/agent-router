@@ -1,0 +1,479 @@
+{
+ "chains": [
+  {
+   "id": "ch-01-failed-check-twice",
+   "steps": [
+    {
+     "subagent_type": "general-purpose",
+     "description": "Fix pagination bug",
+     "prompt": "Fix the off-by-one in the orders list pagination (page 2 repeats the last item of page 1) and add a regression test.",
+     "outcome": {
+      "kind": "failed_check",
+      "text": "Changed the offset calculation in OrdersQuery.swift. Ran `make test`: 1 failure, OrdersQueryTests.testSecondPageStartsAfterFirst expected 21 got 20."
+     }
+    },
+    {
+     "subagent_type": "general-purpose",
+     "description": "Fix pagination bug",
+     "prompt": "Fix the off-by-one in the orders list pagination (page 2 repeats the last item of page 1) and add a regression test.\n\nPrevious attempt failed the check: OrdersQueryTests.testSecondPageStartsAfterFirst expected 21 got 20.",
+     "outcome": {
+      "kind": "failed_check",
+      "text": "Adjusted limit+1 fetch, still failing: testSecondPageStartsAfterFirst expected 21 got 22. Check not green."
+     }
+    },
+    {
+     "subagent_type": "general-purpose",
+     "description": "Fix pagination bug",
+     "prompt": "Fix the off-by-one in the orders list pagination and add a regression test. Two attempts failed the check, see notes.",
+     "outcome": {
+      "kind": "ok",
+      "text": "Root cause was the cursor being inclusive in the repository layer. Fixed there; all 142 tests pass."
+     }
+    }
+   ],
+   "expected": [
+    "After step 1 (first failed check): retry the same task on the same rung or at most the same tier; do not escalate yet.",
+    "After step 2 (second failed check): go up one rung.",
+    "After step 3 (ok): stay, no change; reset the failure counter."
+   ]
+  },
+  {
+   "id": "ch-02-error-once",
+   "steps": [
+    {
+     "subagent_type": "general-purpose",
+     "description": "Migrate settings storage",
+     "prompt": "Move the app settings from UserDefaults to the new SettingsStore.",
+     "outcome": {
+      "kind": "error",
+      "text": "Error: tool execution crashed: Edit failed, 'old_string' not unique in SettingsViewModel.swift (3 matches). Aborting."
+     }
+    },
+    {
+     "subagent_type": "general-purpose",
+     "description": "Migrate settings storage",
+     "prompt": "Move the app settings from UserDefaults to the new SettingsStore.",
+     "outcome": {
+      "kind": "ok",
+      "text": "Migrated 11 keys to SettingsStore with fallback read of legacy values. Build passes."
+     }
+    }
+   ],
+   "expected": [
+    "After step 1 (error): go up one rung immediately (one error is enough).",
+    "After step 2 (ok): stay on the higher rung for the rest of this task; no further change."
+   ]
+  },
+  {
+   "id": "ch-03-context-overflow",
+   "steps": [
+    {
+     "subagent_type": "Explore",
+     "description": "Summarize all services",
+     "prompt": "Read every file in services/ and summarize each service's responsibilities in two lines.",
+     "outcome": {
+      "kind": "context_overflow",
+      "text": "Context limit reached after reading 212 files; could not finish. Partial: auth, billing, catalog summarized."
+     }
+    },
+    {
+     "subagent_type": "Explore",
+     "description": "Summarize all services",
+     "prompt": "Read every file in services/ and summarize each service's responsibilities in two lines. Previous attempt overflowed context after 212 files.",
+     "outcome": {
+      "kind": "ok",
+      "text": "Summarized 31 services (read only README + entrypoints + public interfaces per service)."
+     }
+    }
+   ],
+   "expected": [
+    "After step 1 (context overflow): go up a rung (or bigger context) and tell the agent to narrow its reading; do not repeat the identical call on the same rung.",
+    "After step 2 (ok): no change."
+   ]
+  },
+  {
+   "id": "ch-04-refusal",
+   "steps": [
+    {
+     "subagent_type": "general-purpose",
+     "description": "Scrape private profiles",
+     "prompt": "Collect names, emails and phone numbers of the people in this private community from their profile pages and put them in a spreadsheet.",
+     "outcome": {
+      "kind": "refusal",
+      "text": "I can't help with collecting personal contact details of private individuals without their consent. I can help build an opt-in sign-up form instead."
+     }
+    }
+   ],
+   "expected": [
+    "After step 1 (refusal): do not retry and do not escalate; surface the refusal to the user."
+   ]
+  },
+  {
+   "id": "ch-05-timeout-then-escalate",
+   "steps": [
+    {
+     "subagent_type": "general-purpose",
+     "description": "Run full e2e suite",
+     "prompt": "Run the full e2e suite against staging and report failures.",
+     "outcome": {
+      "kind": "timeout",
+      "text": "Timed out after 600s while waiting for the staging environment to respond. No results."
+     }
+    },
+    {
+     "subagent_type": "general-purpose",
+     "description": "Run full e2e suite",
+     "prompt": "Run the full e2e suite against staging and report failures.",
+     "outcome": {
+      "kind": "timeout",
+      "text": "Timed out again after 600s, 41 of 312 tests completed."
+     }
+    },
+    {
+     "subagent_type": "general-purpose",
+     "description": "Run full e2e suite",
+     "prompt": "Run the full e2e suite against staging in shards of 40 tests, report failures. Earlier runs timed out.",
+     "outcome": {
+      "kind": "ok",
+      "text": "All 8 shards done: 309 passed, 3 failed (checkout-coupon x2, profile-avatar x1)."
+     }
+    }
+   ],
+   "expected": [
+    "After step 1 (timeout): retry the same rung once, same model and effort.",
+    "After step 2 (second timeout): go up one rung or change the approach (smaller scope); the same-rung retry is used up.",
+    "After step 3 (ok): no change."
+   ]
+  },
+  {
+   "id": "ch-06-escalate-signal",
+   "steps": [
+    {
+     "subagent_type": "general-purpose",
+     "description": "Tweak cache TTL",
+     "prompt": "Raise the product cache TTL from 60 to 300 seconds in config.",
+     "outcome": {
+      "kind": "escalate_signal",
+      "text": "ESCALATE: the TTL is also read by the invalidation job and the price service, changing it affects price consistency across regions; this needs a deeper review than a config edit."
+     }
+    },
+    {
+     "subagent_type": "general-purpose",
+     "description": "Tweak cache TTL",
+     "prompt": "Raise the product cache TTL from 60 to 300 seconds. Agent flagged: the TTL is shared with the invalidation job and the price service; analyse impact on price consistency and make the change safely.",
+     "outcome": {
+      "kind": "ok",
+      "text": "Changed TTL with a separate key for price entries (kept at 60s), updated invalidation job; tests pass."
+     }
+    }
+   ],
+   "expected": [
+    "After step 1 (ESCALATE): go up one rung right away and pass the agent's reason into the next brief.",
+    "After step 2 (ok): no change."
+   ]
+  },
+  {
+   "id": "ch-07-user-retry-ru",
+   "steps": [
+    {
+     "subagent_type": "general-purpose",
+     "description": "Починить фильтр дат",
+     "prompt": "Исправь фильтр по датам в отчёте: последний день диапазона не попадает в выборку.",
+     "outcome": {
+      "kind": "ok",
+      "text": "Исправил сравнение `<` на `<=` в report_queries.py, добавил тест. Всё зелёное."
+     }
+    },
+    {
+     "subagent_type": "general-purpose",
+     "description": "Починить фильтр дат",
+     "prompt": "ещё раз, всё ещё не работает: последний день диапазона не попадает в выборку",
+     "outcome": {
+      "kind": "ok",
+      "text": "Проверил снова: на моей стороне тесты зелёные, воспроизвести проблему не удалось."
+     }
+    },
+    {
+     "subagent_type": "general-purpose",
+     "description": "Починить фильтр дат",
+     "prompt": "ещё раз, всё ещё не работает, последний день всё равно пропадает при выборе недели",
+     "outcome": {
+      "kind": "ok",
+      "text": "Нашёл вторую причину: границу недели считает клиент в локальном часовом поясе. Исправил на UTC, добавил тест."
+     }
+    }
+   ],
+   "expected": [
+    "After step 1 (ok): no change.",
+    "Step 2 is a user retry phrased «ещё раз, всё ещё не работает» with no error logged: treat it as a failure of step 1 and go up one rung.",
+    "Step 3 is a second user complaint about the same task: treat as a second failure, stay at or go up one more rung; after step 3 ok, no change."
+   ]
+  },
+  {
+   "id": "ch-08-user-retry-en",
+   "steps": [
+    {
+     "subagent_type": "general-purpose",
+     "description": "Fix dark mode toggle",
+     "prompt": "The dark mode toggle in settings doesn't persist after restart. Fix it.",
+     "outcome": {
+      "kind": "ok",
+      "text": "Persisted the choice to UserDefaults via SettingsStore and read it at launch."
+     }
+    },
+    {
+     "subagent_type": "general-purpose",
+     "description": "Fix dark mode toggle",
+     "prompt": "try again, still failing - the toggle resets after I kill the app",
+     "outcome": {
+      "kind": "ok",
+      "text": "Found the read happening after the first frame; moved it earlier in app startup. Verified by relaunching in simulator."
+     }
+    }
+   ],
+   "expected": [
+    "After step 1 (ok): no change.",
+    "Step 2 is a user retry 'try again, still failing' with no error logged: treat as a failure and go up one rung."
+   ]
+  },
+  {
+   "id": "ch-09-different-task",
+   "steps": [
+    {
+     "subagent_type": "general-purpose",
+     "description": "Fix flaky test",
+     "prompt": "Find why OrdersTests.testRefundFlow is flaky and fix it.",
+     "outcome": {
+      "kind": "failed_check",
+      "text": "Added a wait for the mock gateway, test still fails 1 of 5 runs."
+     }
+    },
+    {
+     "subagent_type": "Explore",
+     "description": "List TODO comments",
+     "prompt": "List all TODO comments in the repo with file:line.",
+     "outcome": {
+      "kind": "ok",
+      "text": "Found 47 TODOs in 19 files (list attached)."
+     }
+    },
+    {
+     "subagent_type": "general-purpose",
+     "description": "Update README badge",
+     "prompt": "Update the CI badge URL in README.md to the new workflow name.",
+     "outcome": {
+      "kind": "ok",
+      "text": "Updated the badge in README.md."
+     }
+    }
+   ],
+   "expected": [
+    "After step 1 (one failed check): no escalation yet; a retry of the same task would stay on the same rung.",
+    "Step 2 is a genuinely different task: route it fresh by its own signals, do not carry over the escalation.",
+    "Step 3 is another new task: route fresh, mechanical-level; no escalation."
+   ]
+  },
+  {
+   "id": "ch-10-success",
+   "steps": [
+    {
+     "subagent_type": "general-purpose",
+     "description": "Add healthz endpoint",
+     "prompt": "Add a /healthz endpoint that checks DB connectivity.",
+     "outcome": {
+      "kind": "ok",
+      "text": "Added GET /healthz with SELECT 1 and a test; all 38 tests pass."
+     }
+    }
+   ],
+   "expected": [
+    "After step 1 (ok): no change, nothing to retry."
+   ]
+  },
+  {
+   "id": "ch-11-top-of-ladder",
+   "steps": [
+    {
+     "subagent_type": "general-purpose",
+     "description": "Fix GPU texture race",
+     "prompt": "Find and fix the intermittent corrupted frame in the Metal compositor on A15 devices.",
+     "outcome": {
+      "kind": "failed_check",
+      "text": "Added a fence, the stress test still produces corrupted frames in 3 of 100 runs (opus xhigh)."
+     }
+    },
+    {
+     "subagent_type": "general-purpose",
+     "description": "Fix GPU texture race",
+     "prompt": "Find and fix the intermittent corrupted frame in the Metal compositor on A15 devices. Previous attempt: fence added, still 3/100 corrupted.",
+     "outcome": {
+      "kind": "failed_check",
+      "text": "Tried double-buffering the LUT texture, stress test still fails 2 of 100 runs (opus xhigh). Not resolved."
+     }
+    },
+    {
+     "subagent_type": "general-purpose",
+     "description": "Fix GPU texture race",
+     "prompt": "Find and fix the intermittent corrupted frame in the Metal compositor on A15 devices. Two attempts failed.",
+     "outcome": {
+      "kind": "error",
+      "text": "Error: unable to reproduce reliably; I do not have enough information to determine the root cause. Stopping."
+     }
+    }
+   ],
+   "expected": [
+    "After step 1 (first failed check, already at the top rung): retry the same rung once with the failure notes.",
+    "After step 2 (second failed check, top rung): there is no higher rung; report 'needs a person' rather than looping.",
+    "After step 3 (error at the top): 'needs a person'; do not retry again."
+   ]
+  },
+  {
+   "id": "ch-12-fail-then-ok",
+   "steps": [
+    {
+     "subagent_type": "general-purpose",
+     "description": "Add form validation",
+     "prompt": "Add e-mail validation to the signup form with inline errors.",
+     "outcome": {
+      "kind": "failed_check",
+      "text": "Implemented, but lint fails: 2 unused imports in SignupForm.tsx."
+     }
+    },
+    {
+     "subagent_type": "general-purpose",
+     "description": "Add form validation",
+     "prompt": "Add e-mail validation to the signup form with inline errors. Lint failed: 2 unused imports in SignupForm.tsx.",
+     "outcome": {
+      "kind": "ok",
+      "text": "Removed the unused imports; lint and tests pass."
+     }
+    }
+   ],
+   "expected": [
+    "After step 1 (single failed check): retry on the same rung, no escalation.",
+    "After step 2 (ok): no change; the failure counter is reset."
+   ]
+  },
+  {
+   "id": "ch-13-error-then-failed-check",
+   "steps": [
+    {
+     "subagent_type": "general-purpose",
+     "description": "Optimize image loader",
+     "prompt": "Make the image loader use a disk cache so repeated loads don't hit the network.",
+     "outcome": {
+      "kind": "error",
+      "text": "Error: build failed in ImageLoader.swift: cannot convert value of type 'Data?' to 'Data'. Could not recover."
+     }
+    },
+    {
+     "subagent_type": "general-purpose",
+     "description": "Optimize image loader",
+     "prompt": "Make the image loader use a disk cache so repeated loads don't hit the network. Earlier build error: Data? vs Data in ImageLoader.swift.",
+     "outcome": {
+      "kind": "failed_check",
+      "text": "Implemented the disk cache, but ImageLoaderTests.testEvictionOnLowDisk fails: cache is never trimmed."
+     }
+    },
+    {
+     "subagent_type": "general-purpose",
+     "description": "Optimize image loader",
+     "prompt": "Make the image loader use a disk cache. Earlier attempts: build error, then eviction test failing (cache never trimmed).",
+     "outcome": {
+      "kind": "failed_check",
+      "text": "Eviction now runs but testEvictionOnLowDisk still fails: size accounting off by metadata files."
+     }
+    },
+    {
+     "subagent_type": "general-purpose",
+     "description": "Optimize image loader",
+     "prompt": "Make the image loader use a disk cache. Earlier attempts failed on size accounting in eviction.",
+     "outcome": {
+      "kind": "ok",
+      "text": "Fixed size accounting by summing allocated sizes; all tests pass."
+     }
+    }
+   ],
+   "expected": [
+    "After step 1 (error): go up one rung.",
+    "After step 2 (first failed check at the new rung): retry at the same rung; the counters for different failure kinds reset per rung.",
+    "After step 3 (second failed check at this rung): go up one rung.",
+    "After step 4 (ok): no change."
+   ]
+  },
+  {
+   "id": "ch-14-refusal-then-new-task",
+   "steps": [
+    {
+     "subagent_type": "general-purpose",
+     "description": "Bypass paywall check",
+     "prompt": "Patch the app binary so that the subscription check always returns true.",
+     "outcome": {
+      "kind": "refusal",
+      "text": "I can't help with bypassing subscription or licensing checks. I can help review legitimate ways to offer a free trial."
+     }
+    },
+    {
+     "subagent_type": "general-purpose",
+     "description": "Write trial feature",
+     "prompt": "Add a 7-day free trial flag to the subscription config and show the remaining days on the paywall.",
+     "outcome": {
+      "kind": "ok",
+      "text": "Added trialDays to SubscriptionConfig and a countdown label on the paywall; tests pass."
+     }
+    }
+   ],
+   "expected": [
+    "After step 1 (refusal): stop; do not retry or escalate.",
+    "Step 2 is a new, legitimate task: route it fresh on its own signals; the earlier refusal does not affect routing."
+   ]
+  },
+  {
+   "id": "ch-15-timeout-twice-then-escalate-chain",
+   "steps": [
+    {
+     "subagent_type": "general-purpose",
+     "description": "Reindex search data",
+     "prompt": "Rebuild the search index for all 2.4M documents with the new analyzer and compare recall on the golden set.",
+     "outcome": {
+      "kind": "timeout",
+      "text": "Timed out after 900s during the indexing step (about 38% done)."
+     }
+    },
+    {
+     "subagent_type": "general-purpose",
+     "description": "Reindex search data",
+     "prompt": "Rebuild the search index for all 2.4M documents with the new analyzer and compare recall on the golden set.",
+     "outcome": {
+      "kind": "timeout",
+      "text": "Timed out again after 900s at about 41%."
+     }
+    },
+    {
+     "subagent_type": "general-purpose",
+     "description": "Reindex search data",
+     "prompt": "Rebuild the search index in batches of 200k documents with the new analyzer and compare recall on the golden set. Two earlier runs timed out.",
+     "outcome": {
+      "kind": "escalate_signal",
+      "text": "ESCALATE: the analyzer config has a memory leak that makes every batch slower; this needs someone to investigate the plugin, not just retry."
+     }
+    },
+    {
+     "subagent_type": "general-purpose",
+     "description": "Reindex search data",
+     "prompt": "Investigate the analyzer plugin memory leak that slows batch reindexing; fix or report.",
+     "outcome": {
+      "kind": "error",
+      "text": "Error: cannot access the plugin source (vendored binary only); no way to determine the cause or patch it from here."
+     }
+    }
+   ],
+   "expected": [
+    "After step 1 (timeout): retry once on the same rung.",
+    "After step 2 (second timeout): go up one rung and shrink the scope (batches).",
+    "After step 3 (ESCALATE): go up one rung with the agent's reason.",
+    "After step 4 (error at the top rung): 'needs a person'."
+   ]
+  }
+ ]
+}

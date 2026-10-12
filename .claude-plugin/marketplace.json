@@ -1,0 +1,6 @@
+{
+  "name": "agent-router",
+  "description": "agent-router: a model and a reasoning effort for every Claude Code subagent spawn.",
+  "owner": { "name": "Oleg Kalistratov" },
+  "plugins": [{ "name": "agent-router", "source": "./" }]
+}

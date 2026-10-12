@@ -1,0 +1,3811 @@
+{
+ "label": "stage2",
+ "version": "0.1.0",
+ "preset": null,
+ "assumptions": {
+  "SESSION_MODEL": "opus",
+  "SESSION_EFFORT": "high",
+  "IN_MULT": 40,
+  "OUT_MULT": 4,
+  "EFFORT_OUT": {
+   "low": 0.6,
+   "medium": 1,
+   "high": 1.4,
+   "xhigh": 1.8,
+   "max": 2.2
+  },
+  "PRICE": {
+   "haiku": [
+    1,
+    5
+   ],
+   "sonnet": [
+    2,
+    10
+   ],
+   "opus": [
+    4,
+    20
+   ],
+   "fable": [
+    10,
+    50
+   ]
+  }
+ },
+ "tasks": {
+  "all": {
+   "n": 112,
+   "under": 5,
+   "under_pct": 4.5,
+   "exact": 96,
+   "exact_pct": 85.7,
+   "within": 99,
+   "within_pct": 88.4,
+   "correct": 104,
+   "correct_pct": 92.9,
+   "over": 2,
+   "over_pct": 1.8,
+   "abstain": 6,
+   "abstain_pct": 5.4,
+   "ambiguous": 6,
+   "abstain_on_ambiguous": 5,
+   "cost_usd": 3.1752,
+   "cost_all_opus_usd": 4.541,
+   "cost_vs_opus_pct": 69.9,
+   "traps": {
+    "trap:log-in-fence": {
+     "n": 4,
+     "correct": 4,
+     "under": 0,
+     "over": 0,
+     "abstain": 0
+    },
+    "trap:ru-forms": {
+     "n": 4,
+     "correct": 4,
+     "under": 0,
+     "over": 0,
+     "abstain": 0
+    },
+    "trap:negation": {
+     "n": 8,
+     "correct": 7,
+     "under": 0,
+     "over": 0,
+     "abstain": 1
+    },
+    "trap:casual-risky": {
+     "n": 5,
+     "correct": 4,
+     "under": 1,
+     "over": 0,
+     "abstain": 0
+    },
+    "trap:short-deep": {
+     "n": 2,
+     "correct": 1,
+     "under": 1,
+     "over": 0,
+     "abstain": 0
+    },
+    "trap:rename-risky": {
+     "n": 2,
+     "correct": 2,
+     "under": 0,
+     "over": 0,
+     "abstain": 0
+    },
+    "trap:long-simple": {
+     "n": 2,
+     "correct": 2,
+     "under": 0,
+     "over": 0,
+     "abstain": 0
+    },
+    "trap:keyword-security": {
+     "n": 1,
+     "correct": 1,
+     "under": 0,
+     "over": 0,
+     "abstain": 0
+    },
+    "trap:ambiguous": {
+     "n": 6,
+     "correct": 6,
+     "under": 0,
+     "over": 0,
+     "abstain": 5
+    }
+   },
+   "by_model": {
+    "haiku": 8,
+    "sonnet low": 10,
+    "sonnet medium": 47,
+    "abstain": 6,
+    "opus medium": 7,
+    "opus high": 30,
+    "opus xhigh": 4
+   }
+  },
+  "dev": {
+   "n": 55,
+   "under": 0,
+   "under_pct": 0,
+   "exact": 50,
+   "exact_pct": 90.9,
+   "within": 51,
+   "within_pct": 92.7,
+   "correct": 54,
+   "correct_pct": 98.2,
+   "over": 0,
+   "over_pct": 0,
+   "abstain": 4,
+   "abstain_pct": 7.3,
+   "ambiguous": 3,
+   "abstain_on_ambiguous": 3,
+   "cost_usd": 1.8932,
+   "cost_all_opus_usd": 2.7853,
+   "cost_vs_opus_pct": 68,
+   "traps": {
+    "trap:log-in-fence": {
+     "n": 3,
+     "correct": 3,
+     "under": 0,
+     "over": 0,
+     "abstain": 0
+    },
+    "trap:ru-forms": {
+     "n": 2,
+     "correct": 2,
+     "under": 0,
+     "over": 0,
+     "abstain": 0
+    },
+    "trap:negation": {
+     "n": 5,
+     "correct": 4,
+     "under": 0,
+     "over": 0,
+     "abstain": 1
+    },
+    "trap:rename-risky": {
+     "n": 1,
+     "correct": 1,
+     "under": 0,
+     "over": 0,
+     "abstain": 0
+    },
+    "trap:long-simple": {
+     "n": 2,
+     "correct": 2,
+     "under": 0,
+     "over": 0,
+     "abstain": 0
+    },
+    "trap:casual-risky": {
+     "n": 2,
+     "correct": 2,
+     "under": 0,
+     "over": 0,
+     "abstain": 0
+    },
+    "trap:short-deep": {
+     "n": 1,
+     "correct": 1,
+     "under": 0,
+     "over": 0,
+     "abstain": 0
+    },
+    "trap:ambiguous": {
+     "n": 3,
+     "correct": 3,
+     "under": 0,
+     "over": 0,
+     "abstain": 3
+    }
+   },
+   "by_model": {
+    "haiku": 4,
+    "sonnet low": 6,
+    "sonnet medium": 21,
+    "abstain": 4,
+    "opus high": 15,
+    "opus medium": 3,
+    "opus xhigh": 2
+   }
+  },
+  "holdout": {
+   "n": 57,
+   "under": 5,
+   "under_pct": 8.8,
+   "exact": 46,
+   "exact_pct": 80.7,
+   "within": 48,
+   "within_pct": 84.2,
+   "correct": 50,
+   "correct_pct": 87.7,
+   "over": 2,
+   "over_pct": 3.5,
+   "abstain": 2,
+   "abstain_pct": 3.5,
+   "ambiguous": 3,
+   "abstain_on_ambiguous": 2,
+   "cost_usd": 1.282,
+   "cost_all_opus_usd": 1.7558,
+   "cost_vs_opus_pct": 73,
+   "traps": {
+    "trap:casual-risky": {
+     "n": 3,
+     "correct": 2,
+     "under": 1,
+     "over": 0,
+     "abstain": 0
+    },
+    "trap:short-deep": {
+     "n": 1,
+     "correct": 0,
+     "under": 1,
+     "over": 0,
+     "abstain": 0
+    },
+    "trap:keyword-security": {
+     "n": 1,
+     "correct": 1,
+     "under": 0,
+     "over": 0,
+     "abstain": 0
+    },
+    "trap:ru-forms": {
+     "n": 2,
+     "correct": 2,
+     "under": 0,
+     "over": 0,
+     "abstain": 0
+    },
+    "trap:rename-risky": {
+     "n": 1,
+     "correct": 1,
+     "under": 0,
+     "over": 0,
+     "abstain": 0
+    },
+    "trap:ambiguous": {
+     "n": 3,
+     "correct": 3,
+     "under": 0,
+     "over": 0,
+     "abstain": 2
+    },
+    "trap:log-in-fence": {
+     "n": 1,
+     "correct": 1,
+     "under": 0,
+     "over": 0,
+     "abstain": 0
+    },
+    "trap:negation": {
+     "n": 3,
+     "correct": 3,
+     "under": 0,
+     "over": 0,
+     "abstain": 0
+    }
+   },
+   "by_model": {
+    "opus medium": 4,
+    "sonnet medium": 26,
+    "opus high": 15,
+    "opus xhigh": 2,
+    "haiku": 4,
+    "sonnet low": 4,
+    "abstain": 2
+   }
+  }
+ },
+ "chains": {
+  "points": 38,
+  "correct": 38,
+  "correct_pct": 100,
+  "by_expected": {
+   "escalate": {
+    "n": 12,
+    "correct": 12
+   },
+   "retry-same": {
+    "n": 7,
+    "correct": 7
+   },
+   "stop": {
+    "n": 2,
+    "correct": 2
+   },
+   "no-change": {
+    "n": 14,
+    "correct": 14
+   },
+   "needs-person": {
+    "n": 3,
+    "correct": 3
+   }
+  },
+  "rows": [
+   {
+    "chain": "ch-01-failed-check-twice",
+    "point": "after 1",
+    "on": "spawn 2",
+    "expected": [
+     "retry-same"
+    ],
+    "action": "retry-same",
+    "ok": true,
+    "route": "sonnet medium"
+   },
+   {
+    "chain": "ch-01-failed-check-twice",
+    "point": "after 2",
+    "on": "spawn 3",
+    "expected": [
+     "escalate"
+    ],
+    "action": "escalate",
+    "ok": true,
+    "route": "opus high"
+   },
+   {
+    "chain": "ch-01-failed-check-twice",
+    "point": "after 3",
+    "on": "repeat of step 3",
+    "expected": [
+     "no-change"
+    ],
+    "action": "no-change",
+    "ok": true,
+    "route": "opus high"
+   },
+   {
+    "chain": "ch-02-error-once",
+    "point": "after 1",
+    "on": "spawn 2",
+    "expected": [
+     "escalate"
+    ],
+    "action": "escalate",
+    "ok": true,
+    "route": "opus xhigh"
+   },
+   {
+    "chain": "ch-02-error-once",
+    "point": "after 2",
+    "on": "repeat of step 2",
+    "expected": [
+     "no-change"
+    ],
+    "action": "no-change",
+    "ok": true,
+    "route": "opus xhigh"
+   },
+   {
+    "chain": "ch-03-context-overflow",
+    "point": "after 1",
+    "on": "spawn 2",
+    "expected": [
+     "escalate"
+    ],
+    "action": "escalate",
+    "ok": true,
+    "route": "sonnet medium"
+   },
+   {
+    "chain": "ch-03-context-overflow",
+    "point": "after 2",
+    "on": "repeat of step 2",
+    "expected": [
+     "no-change"
+    ],
+    "action": "no-change",
+    "ok": true,
+    "route": "sonnet medium"
+   },
+   {
+    "chain": "ch-04-refusal",
+    "point": "after 1",
+    "on": "repeat of step 1",
+    "expected": [
+     "stop"
+    ],
+    "action": "stop",
+    "ok": true,
+    "route": "haiku"
+   },
+   {
+    "chain": "ch-05-timeout-then-escalate",
+    "point": "after 1",
+    "on": "spawn 2",
+    "expected": [
+     "retry-same"
+    ],
+    "action": "retry-same",
+    "ok": true,
+    "route": "sonnet medium"
+   },
+   {
+    "chain": "ch-05-timeout-then-escalate",
+    "point": "after 2",
+    "on": "spawn 3",
+    "expected": [
+     "escalate"
+    ],
+    "action": "escalate",
+    "ok": true,
+    "route": "opus high"
+   },
+   {
+    "chain": "ch-05-timeout-then-escalate",
+    "point": "after 3",
+    "on": "repeat of step 3",
+    "expected": [
+     "no-change"
+    ],
+    "action": "no-change",
+    "ok": true,
+    "route": "opus high"
+   },
+   {
+    "chain": "ch-06-escalate-signal",
+    "point": "after 1",
+    "on": "spawn 2",
+    "expected": [
+     "escalate"
+    ],
+    "action": "escalate",
+    "ok": true,
+    "route": "opus high"
+   },
+   {
+    "chain": "ch-06-escalate-signal",
+    "point": "after 2",
+    "on": "repeat of step 2",
+    "expected": [
+     "no-change"
+    ],
+    "action": "no-change",
+    "ok": true,
+    "route": "opus high"
+   },
+   {
+    "chain": "ch-07-user-retry-ru",
+    "point": "after 1",
+    "on": "repeat of step 1",
+    "expected": [
+     "no-change"
+    ],
+    "action": "no-change",
+    "ok": true,
+    "route": "sonnet medium"
+   },
+   {
+    "chain": "ch-07-user-retry-ru",
+    "point": "step 2",
+    "on": "spawn 2",
+    "expected": [
+     "escalate"
+    ],
+    "action": "escalate",
+    "ok": true,
+    "route": "opus high"
+   },
+   {
+    "chain": "ch-07-user-retry-ru",
+    "point": "step 3",
+    "on": "spawn 3",
+    "expected": [
+     "escalate",
+     "same-rung"
+    ],
+    "action": "no-change",
+    "ok": true,
+    "route": "opus high"
+   },
+   {
+    "chain": "ch-07-user-retry-ru",
+    "point": "after 3",
+    "on": "repeat of step 3",
+    "expected": [
+     "no-change"
+    ],
+    "action": "no-change",
+    "ok": true,
+    "route": "opus high"
+   },
+   {
+    "chain": "ch-08-user-retry-en",
+    "point": "after 1",
+    "on": "repeat of step 1",
+    "expected": [
+     "no-change"
+    ],
+    "action": "no-change",
+    "ok": true,
+    "route": "opus high"
+   },
+   {
+    "chain": "ch-08-user-retry-en",
+    "point": "step 2",
+    "on": "spawn 2",
+    "expected": [
+     "escalate"
+    ],
+    "action": "escalate",
+    "ok": true,
+    "route": "opus xhigh"
+   },
+   {
+    "chain": "ch-09-different-task",
+    "point": "after 1",
+    "on": "repeat of step 1",
+    "expected": [
+     "retry-same"
+    ],
+    "action": "retry-same",
+    "ok": true,
+    "route": "opus high"
+   },
+   {
+    "chain": "ch-09-different-task",
+    "point": "step 2",
+    "on": "spawn 2",
+    "expected": [
+     "no-change"
+    ],
+    "action": "no-change",
+    "ok": true,
+    "route": "haiku"
+   },
+   {
+    "chain": "ch-09-different-task",
+    "point": "step 3",
+    "on": "spawn 3",
+    "expected": [
+     "no-change"
+    ],
+    "action": "no-change",
+    "ok": true,
+    "route": "sonnet medium"
+   },
+   {
+    "chain": "ch-10-success",
+    "point": "after 1",
+    "on": "repeat of step 1",
+    "expected": [
+     "no-change"
+    ],
+    "action": "no-change",
+    "ok": true,
+    "route": "sonnet medium"
+   },
+   {
+    "chain": "ch-11-top-of-ladder",
+    "point": "after 1",
+    "on": "spawn 2",
+    "expected": [
+     "retry-same"
+    ],
+    "action": "retry-same",
+    "ok": true,
+    "route": "opus xhigh"
+   },
+   {
+    "chain": "ch-11-top-of-ladder",
+    "point": "after 2",
+    "on": "spawn 3",
+    "expected": [
+     "needs-person"
+    ],
+    "action": "needs-person",
+    "ok": true,
+    "route": "opus xhigh"
+   },
+   {
+    "chain": "ch-11-top-of-ladder",
+    "point": "after 3",
+    "on": "repeat of step 3",
+    "expected": [
+     "needs-person"
+    ],
+    "action": "needs-person",
+    "ok": true,
+    "route": "opus xhigh"
+   },
+   {
+    "chain": "ch-12-fail-then-ok",
+    "point": "after 1",
+    "on": "spawn 2",
+    "expected": [
+     "retry-same"
+    ],
+    "action": "retry-same",
+    "ok": true,
+    "route": "sonnet medium"
+   },
+   {
+    "chain": "ch-12-fail-then-ok",
+    "point": "after 2",
+    "on": "repeat of step 2",
+    "expected": [
+     "no-change"
+    ],
+    "action": "no-change",
+    "ok": true,
+    "route": "sonnet medium"
+   },
+   {
+    "chain": "ch-13-error-then-failed-check",
+    "point": "after 1",
+    "on": "spawn 2",
+    "expected": [
+     "escalate"
+    ],
+    "action": "escalate",
+    "ok": true,
+    "route": "opus high"
+   },
+   {
+    "chain": "ch-13-error-then-failed-check",
+    "point": "after 2",
+    "on": "spawn 3",
+    "expected": [
+     "retry-same"
+    ],
+    "action": "retry-same",
+    "ok": true,
+    "route": "opus high"
+   },
+   {
+    "chain": "ch-13-error-then-failed-check",
+    "point": "after 3",
+    "on": "spawn 4",
+    "expected": [
+     "escalate"
+    ],
+    "action": "escalate",
+    "ok": true,
+    "route": "opus xhigh"
+   },
+   {
+    "chain": "ch-13-error-then-failed-check",
+    "point": "after 4",
+    "on": "repeat of step 4",
+    "expected": [
+     "no-change"
+    ],
+    "action": "no-change",
+    "ok": true,
+    "route": "opus xhigh"
+   },
+   {
+    "chain": "ch-14-refusal-then-new-task",
+    "point": "after 1",
+    "on": "repeat of step 1",
+    "expected": [
+     "stop"
+    ],
+    "action": "stop",
+    "ok": true,
+    "route": "sonnet medium"
+   },
+   {
+    "chain": "ch-14-refusal-then-new-task",
+    "point": "step 2",
+    "on": "spawn 2",
+    "expected": [
+     "no-change"
+    ],
+    "action": "no-change",
+    "ok": true,
+    "route": "sonnet medium"
+   },
+   {
+    "chain": "ch-15-timeout-twice-then-escalate-chain",
+    "point": "after 1",
+    "on": "spawn 2",
+    "expected": [
+     "retry-same"
+    ],
+    "action": "retry-same",
+    "ok": true,
+    "route": "sonnet medium"
+   },
+   {
+    "chain": "ch-15-timeout-twice-then-escalate-chain",
+    "point": "after 2",
+    "on": "spawn 3",
+    "expected": [
+     "escalate"
+    ],
+    "action": "escalate",
+    "ok": true,
+    "route": "opus high"
+   },
+   {
+    "chain": "ch-15-timeout-twice-then-escalate-chain",
+    "point": "after 3",
+    "on": "spawn 4",
+    "expected": [
+     "escalate"
+    ],
+    "action": "escalate",
+    "ok": true,
+    "route": "opus xhigh"
+   },
+   {
+    "chain": "ch-15-timeout-twice-then-escalate-chain",
+    "point": "after 4",
+    "on": "repeat of step 4",
+    "expected": [
+     "needs-person"
+    ],
+    "action": "needs-person",
+    "ok": true,
+    "route": "opus xhigh"
+   }
+  ]
+ },
+ "rows": [
+  {
+   "id": "ios-01",
+   "split": "dev",
+   "lang": "ru",
+   "tags": [
+    "search"
+   ],
+   "ambiguous": false,
+   "expected": "mechanical",
+   "acceptable": [
+    "mechanical",
+    "ordinary"
+   ],
+   "min_safe": "mechanical",
+   "model": "haiku",
+   "effort": null,
+   "abstain": false,
+   "tier": "mechanical",
+   "why": "auto: read-only search",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.003,
+   "cost_opus": 0.0136,
+   "correct": true
+  },
+  {
+   "id": "ios-02",
+   "split": "dev",
+   "lang": "en",
+   "tags": [
+    "rename"
+   ],
+   "ambiguous": false,
+   "expected": "mechanical",
+   "acceptable": [
+    "mechanical"
+   ],
+   "min_safe": "mechanical",
+   "model": "sonnet",
+   "effort": "low",
+   "abstain": false,
+   "tier": "mechanical",
+   "why": "auto: code change, \"rename\" → mechanical",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.0052,
+   "cost_opus": 0.0136,
+   "correct": true
+  },
+  {
+   "id": "ios-03",
+   "split": "dev",
+   "lang": "ru",
+   "tags": [
+    "trap:log-in-fence",
+    "trap:ru-forms",
+    "long"
+   ],
+   "ambiguous": false,
+   "expected": "mechanical",
+   "acceptable": [
+    "mechanical",
+    "ordinary"
+   ],
+   "min_safe": "mechanical",
+   "model": "sonnet",
+   "effort": "medium",
+   "abstain": false,
+   "tier": "ordinary",
+   "why": "auto: code change",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.19188,
+   "cost_opus": 0.434928,
+   "correct": true
+  },
+  {
+   "id": "ios-05",
+   "split": "dev",
+   "lang": "ru",
+   "tags": [
+    "trap:negation",
+    "typo"
+   ],
+   "ambiguous": false,
+   "expected": "mechanical",
+   "acceptable": [
+    "mechanical"
+   ],
+   "min_safe": "mechanical",
+   "model": "opus",
+   "effort": null,
+   "abstain": true,
+   "tier": "abstain",
+   "why": "auto: abstain (\"оплат\" against a cheap cue, too close to call)",
+   "exact": false,
+   "within": false,
+   "under": false,
+   "over": false,
+   "cost": 0.0136,
+   "cost_opus": 0.0136,
+   "correct": false
+  },
+  {
+   "id": "ios-07",
+   "split": "holdout",
+   "lang": "en",
+   "tags": [
+    "feature"
+   ],
+   "ambiguous": false,
+   "expected": "ordinary",
+   "acceptable": [
+    "ordinary"
+   ],
+   "min_safe": "ordinary",
+   "model": "opus",
+   "effort": "medium",
+   "abstain": false,
+   "tier": "ordinary",
+   "why": "auto: code change, model left to the agent definition",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.01824,
+   "cost_opus": 0.020672,
+   "correct": true
+  },
+  {
+   "id": "ios-08",
+   "split": "holdout",
+   "lang": "ru",
+   "tags": [
+    "feature"
+   ],
+   "ambiguous": false,
+   "expected": "ordinary",
+   "acceptable": [
+    "ordinary"
+   ],
+   "min_safe": "ordinary",
+   "model": "sonnet",
+   "effort": "medium",
+   "abstain": false,
+   "tier": "ordinary",
+   "why": "auto: code change",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.00756,
+   "cost_opus": 0.017136,
+   "correct": true
+  },
+  {
+   "id": "ios-09",
+   "split": "dev",
+   "lang": "en",
+   "tags": [
+    "tests",
+    "long"
+   ],
+   "ambiguous": false,
+   "expected": "ordinary",
+   "acceptable": [
+    "ordinary"
+   ],
+   "min_safe": "ordinary",
+   "model": "sonnet",
+   "effort": "medium",
+   "abstain": false,
+   "tier": "ordinary",
+   "why": "auto: code change",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.07308,
+   "cost_opus": 0.165648,
+   "correct": true
+  },
+  {
+   "id": "ios-10",
+   "split": "dev",
+   "lang": "ru",
+   "tags": [
+    "trap:ru-forms",
+    "persistence",
+    "migration"
+   ],
+   "ambiguous": false,
+   "expected": "risky",
+   "acceptable": [
+    "risky"
+   ],
+   "min_safe": "risky",
+   "model": "opus",
+   "effort": "high",
+   "abstain": false,
+   "tier": "risky",
+   "why": "auto: code change, \"мигрир\" → risky",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.016592,
+   "cost_opus": 0.016592,
+   "correct": true
+  },
+  {
+   "id": "ios-11",
+   "split": "holdout",
+   "lang": "en",
+   "tags": [
+    "trap:casual-risky",
+    "payments"
+   ],
+   "ambiguous": false,
+   "expected": "risky",
+   "acceptable": [
+    "risky"
+   ],
+   "min_safe": "risky",
+   "model": "opus",
+   "effort": "high",
+   "abstain": false,
+   "tier": "risky",
+   "why": "auto: code change, \"purchase\" → risky",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.014144,
+   "cost_opus": 0.014144,
+   "correct": true
+  },
+  {
+   "id": "ios-12",
+   "split": "holdout",
+   "lang": "ru",
+   "tags": [
+    "trap:casual-risky",
+    "money"
+   ],
+   "ambiguous": false,
+   "expected": "risky",
+   "acceptable": [
+    "risky"
+   ],
+   "min_safe": "risky",
+   "model": "opus",
+   "effort": "high",
+   "abstain": false,
+   "tier": "risky",
+   "why": "auto: code change, \"refund\" → risky",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.0136,
+   "cost_opus": 0.0136,
+   "correct": true
+  },
+  {
+   "id": "ios-13",
+   "split": "dev",
+   "lang": "en",
+   "tags": [
+    "long",
+    "unknown-cause"
+   ],
+   "ambiguous": false,
+   "expected": "risky",
+   "acceptable": [
+    "risky"
+   ],
+   "min_safe": "risky",
+   "model": "opus",
+   "effort": "high",
+   "abstain": false,
+   "tier": "risky",
+   "why": "auto: code change, \"root cause\" → risky",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.215152,
+   "cost_opus": 0.215152,
+   "correct": true
+  },
+  {
+   "id": "ios-14",
+   "split": "dev",
+   "lang": "ru",
+   "tags": [
+    "navigation",
+    "deeplink"
+   ],
+   "ambiguous": false,
+   "expected": "risky",
+   "acceptable": [
+    "risky"
+   ],
+   "min_safe": "risky",
+   "model": "opus",
+   "effort": "high",
+   "abstain": false,
+   "tier": "risky",
+   "why": "auto: code change, \"залогин\" → risky",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.020128,
+   "cost_opus": 0.020128,
+   "correct": true
+  },
+  {
+   "id": "ios-15",
+   "split": "holdout",
+   "lang": "en",
+   "tags": [
+    "gpu",
+    "architecture"
+   ],
+   "ambiguous": false,
+   "expected": "deep",
+   "acceptable": [
+    "risky",
+    "deep"
+   ],
+   "min_safe": "risky",
+   "model": "opus",
+   "effort": "xhigh",
+   "abstain": false,
+   "tier": "deep",
+   "why": "auto: code change, \"architecture\" → deep",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.029184,
+   "cost_opus": 0.026112,
+   "correct": true
+  },
+  {
+   "id": "ios-16",
+   "split": "holdout",
+   "lang": "ru",
+   "tags": [
+    "trap:short-deep",
+    "rendering"
+   ],
+   "ambiguous": false,
+   "expected": "deep",
+   "acceptable": [
+    "risky",
+    "deep"
+   ],
+   "min_safe": "risky",
+   "model": "sonnet",
+   "effort": "medium",
+   "abstain": false,
+   "tier": "ordinary",
+   "why": "auto: code change",
+   "exact": false,
+   "within": false,
+   "under": true,
+   "over": false,
+   "cost": 0.006,
+   "cost_opus": 0.0136,
+   "correct": false
+  },
+  {
+   "id": "ios-17",
+   "split": "holdout",
+   "lang": "en",
+   "tags": [
+    "search"
+   ],
+   "ambiguous": false,
+   "expected": "mechanical",
+   "acceptable": [
+    "mechanical",
+    "ordinary"
+   ],
+   "min_safe": "mechanical",
+   "model": "haiku",
+   "effort": null,
+   "abstain": false,
+   "tier": "mechanical",
+   "why": "auto: read-only search",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.003,
+   "cost_opus": 0.0136,
+   "correct": true
+  },
+  {
+   "id": "ios-18",
+   "split": "dev",
+   "lang": "ru",
+   "tags": [
+    "feature",
+    "ui"
+   ],
+   "ambiguous": false,
+   "expected": "ordinary",
+   "acceptable": [
+    "ordinary"
+   ],
+   "min_safe": "ordinary",
+   "model": "sonnet",
+   "effort": "medium",
+   "abstain": false,
+   "tier": "ordinary",
+   "why": "auto: code change",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.006,
+   "cost_opus": 0.0136,
+   "correct": true
+  },
+  {
+   "id": "ios-20",
+   "split": "dev",
+   "lang": "en",
+   "tags": [
+    "trap:rename-risky",
+    "migration",
+    "persistence"
+   ],
+   "ambiguous": false,
+   "expected": "risky",
+   "acceptable": [
+    "risky"
+   ],
+   "min_safe": "risky",
+   "model": "opus",
+   "effort": "high",
+   "abstain": false,
+   "tier": "risky",
+   "why": "auto: code change, \"production\" → risky",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.015504,
+   "cost_opus": 0.015504,
+   "correct": true
+  },
+  {
+   "id": "ios-21",
+   "split": "dev",
+   "lang": "en",
+   "tags": [
+    "review",
+    "long"
+   ],
+   "ambiguous": false,
+   "expected": "ordinary",
+   "acceptable": [
+    "ordinary"
+   ],
+   "min_safe": "ordinary",
+   "model": "opus",
+   "effort": "medium",
+   "abstain": false,
+   "tier": "ordinary",
+   "why": "auto: review, model left to the agent definition",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.11352,
+   "cost_opus": 0.128656,
+   "correct": true
+  },
+  {
+   "id": "ios-23",
+   "split": "holdout",
+   "lang": "ru",
+   "tags": [
+    "payments",
+    "unknown-cause"
+   ],
+   "ambiguous": false,
+   "expected": "risky",
+   "acceptable": [
+    "risky"
+   ],
+   "min_safe": "risky",
+   "model": "opus",
+   "effort": "high",
+   "abstain": false,
+   "tier": "risky",
+   "why": "auto: code change, \"оплат\" → risky",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.0136,
+   "cost_opus": 0.0136,
+   "correct": true
+  },
+  {
+   "id": "ios-24",
+   "split": "holdout",
+   "lang": "en",
+   "tags": [
+    "accessibility",
+    "ui"
+   ],
+   "ambiguous": false,
+   "expected": "ordinary",
+   "acceptable": [
+    "ordinary"
+   ],
+   "min_safe": "ordinary",
+   "model": "sonnet",
+   "effort": "medium",
+   "abstain": false,
+   "tier": "ordinary",
+   "why": "auto: code change",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.00696,
+   "cost_opus": 0.015776,
+   "correct": true
+  },
+  {
+   "id": "ios-25",
+   "split": "dev",
+   "lang": "ru",
+   "tags": [
+    "trap:long-simple",
+    "rename",
+    "multi-file",
+    "long"
+   ],
+   "ambiguous": false,
+   "expected": "mechanical",
+   "acceptable": [
+    "mechanical",
+    "ordinary"
+   ],
+   "min_safe": "mechanical",
+   "model": "sonnet",
+   "effort": "medium",
+   "abstain": false,
+   "tier": "ordinary",
+   "why": "auto: code change",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.07044,
+   "cost_opus": 0.159664,
+   "correct": true
+  },
+  {
+   "id": "ios-26",
+   "split": "dev",
+   "lang": "en",
+   "tags": [
+    "architecture",
+    "big-decision"
+   ],
+   "ambiguous": false,
+   "expected": "deep",
+   "acceptable": [
+    "risky",
+    "deep"
+   ],
+   "min_safe": "risky",
+   "model": "opus",
+   "effort": "xhigh",
+   "abstain": false,
+   "tier": "deep",
+   "why": "auto: planning, \"architecture\" → deep",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.035872,
+   "cost_opus": 0.032096,
+   "correct": true
+  },
+  {
+   "id": "ios-27",
+   "split": "holdout",
+   "lang": "en",
+   "tags": [
+    "feature",
+    "localization"
+   ],
+   "ambiguous": false,
+   "expected": "ordinary",
+   "acceptable": [
+    "ordinary"
+   ],
+   "min_safe": "ordinary",
+   "model": "sonnet",
+   "effort": "medium",
+   "abstain": false,
+   "tier": "ordinary",
+   "why": "auto: code change",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.0072,
+   "cost_opus": 0.01632,
+   "correct": true
+  },
+  {
+   "id": "web-01",
+   "split": "dev",
+   "lang": "en",
+   "tags": [
+    "refactor",
+    "multi-file"
+   ],
+   "ambiguous": false,
+   "expected": "mechanical",
+   "acceptable": [
+    "mechanical"
+   ],
+   "min_safe": "mechanical",
+   "model": "sonnet",
+   "effort": "medium",
+   "abstain": false,
+   "tier": "ordinary",
+   "why": "auto: code change",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.006,
+   "cost_opus": 0.0136,
+   "correct": true
+  },
+  {
+   "id": "web-02",
+   "split": "holdout",
+   "lang": "ru",
+   "tags": [
+    "css"
+   ],
+   "ambiguous": false,
+   "expected": "mechanical",
+   "acceptable": [
+    "mechanical",
+    "ordinary"
+   ],
+   "min_safe": "mechanical",
+   "model": "sonnet",
+   "effort": "medium",
+   "abstain": false,
+   "tier": "ordinary",
+   "why": "auto: code change",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.006,
+   "cost_opus": 0.0136,
+   "correct": true
+  },
+  {
+   "id": "web-03",
+   "split": "dev",
+   "lang": "en",
+   "tags": [
+    "feature",
+    "react"
+   ],
+   "ambiguous": false,
+   "expected": "ordinary",
+   "acceptable": [
+    "ordinary"
+   ],
+   "min_safe": "ordinary",
+   "model": "sonnet",
+   "effort": "medium",
+   "abstain": false,
+   "tier": "ordinary",
+   "why": "auto: code change",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.006,
+   "cost_opus": 0.0136,
+   "correct": true
+  },
+  {
+   "id": "web-04",
+   "split": "dev",
+   "lang": "ru",
+   "tags": [
+    "feature",
+    "forms",
+    "trap:negation"
+   ],
+   "ambiguous": false,
+   "expected": "ordinary",
+   "acceptable": [
+    "ordinary"
+   ],
+   "min_safe": "ordinary",
+   "model": "sonnet",
+   "effort": "medium",
+   "abstain": false,
+   "tier": "ordinary",
+   "why": "auto: code change",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.006,
+   "cost_opus": 0.0136,
+   "correct": true
+  },
+  {
+   "id": "web-05",
+   "split": "dev",
+   "lang": "en",
+   "tags": [
+    "auth",
+    "security"
+   ],
+   "ambiguous": false,
+   "expected": "risky",
+   "acceptable": [
+    "risky"
+   ],
+   "min_safe": "risky",
+   "model": "opus",
+   "effort": "high",
+   "abstain": false,
+   "tier": "risky",
+   "why": "auto: code change, \"login\" → risky",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.016048,
+   "cost_opus": 0.016048,
+   "correct": true
+  },
+  {
+   "id": "web-06",
+   "split": "holdout",
+   "lang": "ru",
+   "tags": [
+    "trap:casual-risky",
+    "auth",
+    "sessions"
+   ],
+   "ambiguous": false,
+   "expected": "risky",
+   "acceptable": [
+    "risky"
+   ],
+   "min_safe": "risky",
+   "model": "sonnet",
+   "effort": "medium",
+   "abstain": false,
+   "tier": "ordinary",
+   "why": "auto: code change",
+   "exact": false,
+   "within": false,
+   "under": true,
+   "over": false,
+   "cost": 0.006,
+   "cost_opus": 0.0136,
+   "correct": false
+  },
+  {
+   "id": "web-07",
+   "split": "dev",
+   "lang": "en",
+   "tags": [
+    "trap:log-in-fence",
+    "rerun-command",
+    "long"
+   ],
+   "ambiguous": false,
+   "expected": "mechanical",
+   "acceptable": [
+    "mechanical",
+    "ordinary"
+   ],
+   "min_safe": "mechanical",
+   "model": "sonnet",
+   "effort": "medium",
+   "abstain": false,
+   "tier": "ordinary",
+   "why": "auto: code change",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.06348,
+   "cost_opus": 0.143888,
+   "correct": true
+  },
+  {
+   "id": "web-08",
+   "split": "dev",
+   "lang": "ru",
+   "tags": [
+    "feature",
+    "react"
+   ],
+   "ambiguous": false,
+   "expected": "ordinary",
+   "acceptable": [
+    "ordinary"
+   ],
+   "min_safe": "ordinary",
+   "model": "sonnet",
+   "effort": "medium",
+   "abstain": false,
+   "tier": "ordinary",
+   "why": "auto: code change",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.00612,
+   "cost_opus": 0.013872,
+   "correct": true
+  },
+  {
+   "id": "web-09",
+   "split": "holdout",
+   "lang": "en",
+   "tags": [
+    "search",
+    "trap:keyword-security"
+   ],
+   "ambiguous": false,
+   "expected": "mechanical",
+   "acceptable": [
+    "mechanical",
+    "ordinary"
+   ],
+   "min_safe": "mechanical",
+   "model": "haiku",
+   "effort": null,
+   "abstain": false,
+   "tier": "mechanical",
+   "why": "auto: read-only search",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.003,
+   "cost_opus": 0.0136,
+   "correct": true
+  },
+  {
+   "id": "web-10",
+   "split": "holdout",
+   "lang": "en",
+   "tags": [
+    "architecture",
+    "algorithm"
+   ],
+   "ambiguous": false,
+   "expected": "deep",
+   "acceptable": [
+    "risky",
+    "deep"
+   ],
+   "min_safe": "risky",
+   "model": "opus",
+   "effort": "high",
+   "abstain": false,
+   "tier": "risky",
+   "why": "auto: planning, \"migrat\" → risky",
+   "exact": false,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.022576,
+   "cost_opus": 0.022576,
+   "correct": true
+  },
+  {
+   "id": "web-11",
+   "split": "holdout",
+   "lang": "ru",
+   "tags": [
+    "feature",
+    "css"
+   ],
+   "ambiguous": false,
+   "expected": "ordinary",
+   "acceptable": [
+    "ordinary"
+   ],
+   "min_safe": "ordinary",
+   "model": "sonnet",
+   "effort": "medium",
+   "abstain": false,
+   "tier": "ordinary",
+   "why": "auto: code change",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.00708,
+   "cost_opus": 0.016048,
+   "correct": true
+  },
+  {
+   "id": "web-13",
+   "split": "dev",
+   "lang": "en",
+   "tags": [
+    "shared-core",
+    "build"
+   ],
+   "ambiguous": false,
+   "expected": "risky",
+   "acceptable": [
+    "risky"
+   ],
+   "min_safe": "risky",
+   "model": "opus",
+   "effort": "high",
+   "abstain": false,
+   "tier": "risky",
+   "why": "auto: code change, \"monorepo\" → risky",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.019312,
+   "cost_opus": 0.019312,
+   "correct": true
+  },
+  {
+   "id": "web-14",
+   "split": "dev",
+   "lang": "ru",
+   "tags": [
+    "bugfix",
+    "ui"
+   ],
+   "ambiguous": false,
+   "expected": "ordinary",
+   "acceptable": [
+    "ordinary"
+   ],
+   "min_safe": "ordinary",
+   "model": "sonnet",
+   "effort": "medium",
+   "abstain": false,
+   "tier": "ordinary",
+   "why": "auto: code change",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.006,
+   "cost_opus": 0.0136,
+   "correct": true
+  },
+  {
+   "id": "web-16",
+   "split": "dev",
+   "lang": "en",
+   "tags": [
+    "tests",
+    "trap:negation"
+   ],
+   "ambiguous": false,
+   "expected": "ordinary",
+   "acceptable": [
+    "ordinary"
+   ],
+   "min_safe": "ordinary",
+   "model": "sonnet",
+   "effort": "medium",
+   "abstain": false,
+   "tier": "ordinary",
+   "why": "auto: code change",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.00768,
+   "cost_opus": 0.017408,
+   "correct": true
+  },
+  {
+   "id": "web-17",
+   "split": "dev",
+   "lang": "en",
+   "tags": [
+    "a11y",
+    "css"
+   ],
+   "ambiguous": false,
+   "expected": "ordinary",
+   "acceptable": [
+    "mechanical",
+    "ordinary"
+   ],
+   "min_safe": "mechanical",
+   "model": "sonnet",
+   "effort": "medium",
+   "abstain": false,
+   "tier": "ordinary",
+   "why": "auto: code change",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.00612,
+   "cost_opus": 0.013872,
+   "correct": true
+  },
+  {
+   "id": "be-01",
+   "split": "dev",
+   "lang": "en",
+   "tags": [
+    "feature"
+   ],
+   "ambiguous": false,
+   "expected": "ordinary",
+   "acceptable": [
+    "mechanical",
+    "ordinary"
+   ],
+   "min_safe": "mechanical",
+   "model": "sonnet",
+   "effort": "medium",
+   "abstain": false,
+   "tier": "ordinary",
+   "why": "auto: code change",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.006,
+   "cost_opus": 0.0136,
+   "correct": true
+  },
+  {
+   "id": "be-02",
+   "split": "holdout",
+   "lang": "ru",
+   "tags": [
+    "version-bump",
+    "rerun-command"
+   ],
+   "ambiguous": false,
+   "expected": "mechanical",
+   "acceptable": [
+    "mechanical"
+   ],
+   "min_safe": "mechanical",
+   "model": "sonnet",
+   "effort": "low",
+   "abstain": false,
+   "tier": "mechanical",
+   "why": "auto: code change, \"bump\" → mechanical",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.0052,
+   "cost_opus": 0.0136,
+   "correct": true
+  },
+  {
+   "id": "be-03",
+   "split": "holdout",
+   "lang": "ru",
+   "tags": [
+    "trap:ru-forms",
+    "migration",
+    "payments",
+    "long"
+   ],
+   "ambiguous": false,
+   "expected": "risky",
+   "acceptable": [
+    "risky"
+   ],
+   "min_safe": "risky",
+   "model": "opus",
+   "effort": "high",
+   "abstain": false,
+   "tier": "risky",
+   "why": "auto: code change, \"migrat\" → risky",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.065008,
+   "cost_opus": 0.065008,
+   "correct": true
+  },
+  {
+   "id": "be-04",
+   "split": "dev",
+   "lang": "en",
+   "tags": [
+    "trap:casual-risky",
+    "auth"
+   ],
+   "ambiguous": false,
+   "expected": "risky",
+   "acceptable": [
+    "risky"
+   ],
+   "min_safe": "risky",
+   "model": "opus",
+   "effort": "high",
+   "abstain": false,
+   "tier": "risky",
+   "why": "auto: code change, \"login\" → risky",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.0136,
+   "cost_opus": 0.0136,
+   "correct": true
+  },
+  {
+   "id": "be-05",
+   "split": "holdout",
+   "lang": "en",
+   "tags": [
+    "trap:rename-risky",
+    "migration"
+   ],
+   "ambiguous": false,
+   "expected": "risky",
+   "acceptable": [
+    "risky"
+   ],
+   "min_safe": "risky",
+   "model": "opus",
+   "effort": "high",
+   "abstain": false,
+   "tier": "risky",
+   "why": "auto: code change, \"prod\" → risky",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.016048,
+   "cost_opus": 0.016048,
+   "correct": true
+  },
+  {
+   "id": "be-06",
+   "split": "holdout",
+   "lang": "en",
+   "tags": [
+    "feature",
+    "api"
+   ],
+   "ambiguous": false,
+   "expected": "ordinary",
+   "acceptable": [
+    "ordinary"
+   ],
+   "min_safe": "ordinary",
+   "model": "sonnet",
+   "effort": "medium",
+   "abstain": false,
+   "tier": "ordinary",
+   "why": "auto: code change",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.006,
+   "cost_opus": 0.0136,
+   "correct": true
+  },
+  {
+   "id": "be-07",
+   "split": "holdout",
+   "lang": "ru",
+   "tags": [
+    "feature"
+   ],
+   "ambiguous": false,
+   "expected": "ordinary",
+   "acceptable": [
+    "ordinary"
+   ],
+   "min_safe": "ordinary",
+   "model": "sonnet",
+   "effort": "medium",
+   "abstain": false,
+   "tier": "ordinary",
+   "why": "auto: code change",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.0066,
+   "cost_opus": 0.01496,
+   "correct": true
+  },
+  {
+   "id": "be-08",
+   "split": "holdout",
+   "lang": "ru",
+   "tags": [
+    "incident",
+    "unknown-cause",
+    "long"
+   ],
+   "ambiguous": false,
+   "expected": "risky",
+   "acceptable": [
+    "risky"
+   ],
+   "min_safe": "risky",
+   "model": "opus",
+   "effort": "high",
+   "abstain": false,
+   "tier": "risky",
+   "why": "auto: code change, \"проде\" → risky",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.366928,
+   "cost_opus": 0.366928,
+   "correct": true
+  },
+  {
+   "id": "be-09",
+   "split": "dev",
+   "lang": "ru",
+   "tags": [
+    "trap:log-in-fence",
+    "trap:negation",
+    "long"
+   ],
+   "ambiguous": false,
+   "expected": "mechanical",
+   "acceptable": [
+    "mechanical",
+    "ordinary"
+   ],
+   "min_safe": "mechanical",
+   "model": "sonnet",
+   "effort": "medium",
+   "abstain": false,
+   "tier": "ordinary",
+   "why": "auto: code change",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.09288,
+   "cost_opus": 0.210528,
+   "correct": true
+  },
+  {
+   "id": "be-10",
+   "split": "dev",
+   "lang": "en",
+   "tags": [
+    "architecture",
+    "cross-system"
+   ],
+   "ambiguous": false,
+   "expected": "deep",
+   "acceptable": [
+    "risky",
+    "deep"
+   ],
+   "min_safe": "risky",
+   "model": "opus",
+   "effort": "xhigh",
+   "abstain": false,
+   "tier": "deep",
+   "why": "auto: planning, \"architecture\" → deep",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.026144,
+   "cost_opus": 0.023392,
+   "correct": true
+  },
+  {
+   "id": "be-11",
+   "split": "dev",
+   "lang": "en",
+   "tags": [
+    "payments",
+    "concurrency"
+   ],
+   "ambiguous": false,
+   "expected": "risky",
+   "acceptable": [
+    "risky"
+   ],
+   "min_safe": "risky",
+   "model": "opus",
+   "effort": "high",
+   "abstain": false,
+   "tier": "risky",
+   "why": "auto: code change, \"concurren\" → risky",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.01768,
+   "cost_opus": 0.01768,
+   "correct": true
+  },
+  {
+   "id": "be-12",
+   "split": "dev",
+   "lang": "ru",
+   "tags": [
+    "feature",
+    "api"
+   ],
+   "ambiguous": false,
+   "expected": "ordinary",
+   "acceptable": [
+    "ordinary"
+   ],
+   "min_safe": "ordinary",
+   "model": "sonnet",
+   "effort": "medium",
+   "abstain": false,
+   "tier": "ordinary",
+   "why": "auto: code change",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.0072,
+   "cost_opus": 0.01632,
+   "correct": true
+  },
+  {
+   "id": "be-13",
+   "split": "dev",
+   "lang": "en",
+   "tags": [
+    "search"
+   ],
+   "ambiguous": false,
+   "expected": "mechanical",
+   "acceptable": [
+    "mechanical",
+    "ordinary"
+   ],
+   "min_safe": "mechanical",
+   "model": "haiku",
+   "effort": null,
+   "abstain": false,
+   "tier": "mechanical",
+   "why": "auto: read-only search",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.003,
+   "cost_opus": 0.0136,
+   "correct": true
+  },
+  {
+   "id": "be-14",
+   "split": "dev",
+   "lang": "ru",
+   "tags": [
+    "concurrency",
+    "money"
+   ],
+   "ambiguous": false,
+   "expected": "risky",
+   "acceptable": [
+    "risky"
+   ],
+   "min_safe": "risky",
+   "model": "opus",
+   "effort": "high",
+   "abstain": false,
+   "tier": "risky",
+   "why": "auto: code change, \"atomic\" → risky",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.018496,
+   "cost_opus": 0.018496,
+   "correct": true
+  },
+  {
+   "id": "be-15",
+   "split": "holdout",
+   "lang": "en",
+   "tags": [
+    "bugfix"
+   ],
+   "ambiguous": false,
+   "expected": "ordinary",
+   "acceptable": [
+    "ordinary"
+   ],
+   "min_safe": "ordinary",
+   "model": "sonnet",
+   "effort": "medium",
+   "abstain": false,
+   "tier": "ordinary",
+   "why": "auto: code change",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.00876,
+   "cost_opus": 0.019856,
+   "correct": true
+  },
+  {
+   "id": "be-17",
+   "split": "holdout",
+   "lang": "ru",
+   "tags": [
+    "trap:ambiguous",
+    "ambiguous"
+   ],
+   "ambiguous": true,
+   "expected": "ordinary",
+   "acceptable": [
+    "mechanical",
+    "ordinary"
+   ],
+   "min_safe": "mechanical",
+   "model": "opus",
+   "effort": null,
+   "abstain": true,
+   "tier": "abstain",
+   "why": "auto: abstain (brief too short to judge)",
+   "exact": false,
+   "within": false,
+   "under": false,
+   "over": false,
+   "cost": 0.0136,
+   "cost_opus": 0.0136,
+   "correct": true
+  },
+  {
+   "id": "data-01",
+   "split": "holdout",
+   "lang": "en",
+   "tags": [
+    "analysis"
+   ],
+   "ambiguous": false,
+   "expected": "ordinary",
+   "acceptable": [
+    "ordinary"
+   ],
+   "min_safe": "ordinary",
+   "model": "opus",
+   "effort": "medium",
+   "abstain": false,
+   "tier": "ordinary",
+   "why": "auto: planning, model left to the agent definition",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.01752,
+   "cost_opus": 0.019856,
+   "correct": true
+  },
+  {
+   "id": "data-02",
+   "split": "holdout",
+   "lang": "ru",
+   "tags": [
+    "format",
+    "multi-file"
+   ],
+   "ambiguous": false,
+   "expected": "mechanical",
+   "acceptable": [
+    "mechanical",
+    "ordinary"
+   ],
+   "min_safe": "mechanical",
+   "model": "sonnet",
+   "effort": "low",
+   "abstain": false,
+   "tier": "mechanical",
+   "why": "auto: code change, \"переимен\" → mechanical",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.0052,
+   "cost_opus": 0.0136,
+   "correct": true
+  },
+  {
+   "id": "data-03",
+   "split": "dev",
+   "lang": "ru",
+   "tags": [
+    "script"
+   ],
+   "ambiguous": false,
+   "expected": "ordinary",
+   "acceptable": [
+    "ordinary"
+   ],
+   "min_safe": "ordinary",
+   "model": "sonnet",
+   "effort": "medium",
+   "abstain": false,
+   "tier": "ordinary",
+   "why": "auto: code change",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.00768,
+   "cost_opus": 0.017408,
+   "correct": true
+  },
+  {
+   "id": "data-04",
+   "split": "holdout",
+   "lang": "en",
+   "tags": [
+    "research",
+    "methodology"
+   ],
+   "ambiguous": false,
+   "expected": "deep",
+   "acceptable": [
+    "risky",
+    "deep"
+   ],
+   "min_safe": "risky",
+   "model": "sonnet",
+   "effort": "medium",
+   "abstain": false,
+   "tier": "ordinary",
+   "why": "auto: planning",
+   "exact": false,
+   "within": false,
+   "under": true,
+   "over": false,
+   "cost": 0.012,
+   "cost_opus": 0.0272,
+   "correct": false
+  },
+  {
+   "id": "data-05",
+   "split": "holdout",
+   "lang": "en",
+   "tags": [
+    "persistence",
+    "billing",
+    "migration",
+    "long"
+   ],
+   "ambiguous": false,
+   "expected": "risky",
+   "acceptable": [
+    "risky"
+   ],
+   "min_safe": "risky",
+   "model": "opus",
+   "effort": "high",
+   "abstain": false,
+   "tier": "risky",
+   "why": "auto: code change, \"billing\" → risky",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.060384,
+   "cost_opus": 0.060384,
+   "correct": true
+  },
+  {
+   "id": "data-06",
+   "split": "holdout",
+   "lang": "en",
+   "tags": [
+    "rerun-command"
+   ],
+   "ambiguous": false,
+   "expected": "mechanical",
+   "acceptable": [
+    "mechanical"
+   ],
+   "min_safe": "mechanical",
+   "model": "sonnet",
+   "effort": "medium",
+   "abstain": false,
+   "tier": "ordinary",
+   "why": "auto: code change",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.006,
+   "cost_opus": 0.0136,
+   "correct": true
+  },
+  {
+   "id": "data-07",
+   "split": "holdout",
+   "lang": "ru",
+   "tags": [
+    "analysis"
+   ],
+   "ambiguous": false,
+   "expected": "ordinary",
+   "acceptable": [
+    "ordinary"
+   ],
+   "min_safe": "ordinary",
+   "model": "opus",
+   "effort": "medium",
+   "abstain": false,
+   "tier": "ordinary",
+   "why": "auto: planning, model left to the agent definition",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.01584,
+   "cost_opus": 0.017952,
+   "correct": true
+  },
+  {
+   "id": "data-09",
+   "split": "holdout",
+   "lang": "ru",
+   "tags": [
+    "privacy",
+    "pii"
+   ],
+   "ambiguous": false,
+   "expected": "risky",
+   "acceptable": [
+    "risky"
+   ],
+   "min_safe": "risky",
+   "model": "opus",
+   "effort": "high",
+   "abstain": false,
+   "tier": "risky",
+   "why": "auto: code change, \"персональные данные\" → risky",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.018768,
+   "cost_opus": 0.018768,
+   "correct": true
+  },
+  {
+   "id": "data-10",
+   "split": "holdout",
+   "lang": "en",
+   "tags": [
+    "script",
+    "plot"
+   ],
+   "ambiguous": false,
+   "expected": "ordinary",
+   "acceptable": [
+    "mechanical",
+    "ordinary"
+   ],
+   "min_safe": "mechanical",
+   "model": "sonnet",
+   "effort": "medium",
+   "abstain": false,
+   "tier": "ordinary",
+   "why": "auto: code change",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.006,
+   "cost_opus": 0.0136,
+   "correct": true
+  },
+  {
+   "id": "data-11",
+   "split": "holdout",
+   "lang": "ru",
+   "tags": [
+    "algorithm",
+    "research"
+   ],
+   "ambiguous": false,
+   "expected": "deep",
+   "acceptable": [
+    "risky",
+    "deep"
+   ],
+   "min_safe": "risky",
+   "model": "sonnet",
+   "effort": "medium",
+   "abstain": false,
+   "tier": "ordinary",
+   "why": "auto: planning",
+   "exact": false,
+   "within": false,
+   "under": true,
+   "over": false,
+   "cost": 0.00888,
+   "cost_opus": 0.020128,
+   "correct": false
+  },
+  {
+   "id": "doc-01",
+   "split": "dev",
+   "lang": "ru",
+   "tags": [
+    "typo"
+   ],
+   "ambiguous": false,
+   "expected": "mechanical",
+   "acceptable": [
+    "mechanical"
+   ],
+   "min_safe": "mechanical",
+   "model": "sonnet",
+   "effort": "low",
+   "abstain": false,
+   "tier": "mechanical",
+   "why": "auto: code change, \"typo\" → mechanical",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.0052,
+   "cost_opus": 0.0136,
+   "correct": true
+  },
+  {
+   "id": "doc-02",
+   "split": "holdout",
+   "lang": "en",
+   "tags": [
+    "docs",
+    "long"
+   ],
+   "ambiguous": false,
+   "expected": "ordinary",
+   "acceptable": [
+    "ordinary"
+   ],
+   "min_safe": "ordinary",
+   "model": "opus",
+   "effort": "high",
+   "abstain": false,
+   "tier": "risky",
+   "why": "auto: code change, \"migrat\" → risky, model left to the agent definition",
+   "exact": false,
+   "within": false,
+   "under": false,
+   "over": true,
+   "cost": 0.112336,
+   "cost_opus": 0.112336,
+   "correct": false
+  },
+  {
+   "id": "doc-04",
+   "split": "holdout",
+   "lang": "ru",
+   "tags": [
+    "docs",
+    "adr"
+   ],
+   "ambiguous": false,
+   "expected": "ordinary",
+   "acceptable": [
+    "mechanical",
+    "ordinary"
+   ],
+   "min_safe": "mechanical",
+   "model": "opus",
+   "effort": "medium",
+   "abstain": false,
+   "tier": "ordinary",
+   "why": "auto: code change, model left to the agent definition",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.01776,
+   "cost_opus": 0.020128,
+   "correct": true
+  },
+  {
+   "id": "doc-05",
+   "split": "dev",
+   "lang": "en",
+   "tags": [
+    "multi-file"
+   ],
+   "ambiguous": false,
+   "expected": "mechanical",
+   "acceptable": [
+    "mechanical"
+   ],
+   "min_safe": "mechanical",
+   "model": "sonnet",
+   "effort": "low",
+   "abstain": false,
+   "tier": "mechanical",
+   "why": "auto: code change, \"copyright year\" → mechanical",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.0052,
+   "cost_opus": 0.0136,
+   "correct": true
+  },
+  {
+   "id": "doc-06",
+   "split": "dev",
+   "lang": "en",
+   "tags": [
+    "docs",
+    "long"
+   ],
+   "ambiguous": false,
+   "expected": "ordinary",
+   "acceptable": [
+    "ordinary"
+   ],
+   "min_safe": "ordinary",
+   "model": "opus",
+   "effort": "medium",
+   "abstain": false,
+   "tier": "ordinary",
+   "why": "auto: code change, model left to the agent definition",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.06264,
+   "cost_opus": 0.070992,
+   "correct": true
+  },
+  {
+   "id": "doc-07",
+   "split": "holdout",
+   "lang": "ru",
+   "tags": [
+    "translation"
+   ],
+   "ambiguous": false,
+   "expected": "mechanical",
+   "acceptable": [
+    "mechanical",
+    "ordinary"
+   ],
+   "min_safe": "mechanical",
+   "model": "sonnet",
+   "effort": "medium",
+   "abstain": false,
+   "tier": "ordinary",
+   "why": "auto: code change",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.01572,
+   "cost_opus": 0.035632,
+   "correct": true
+  },
+  {
+   "id": "doc-08",
+   "split": "holdout",
+   "lang": "en",
+   "tags": [
+    "docs"
+   ],
+   "ambiguous": false,
+   "expected": "ordinary",
+   "acceptable": [
+    "mechanical",
+    "ordinary"
+   ],
+   "min_safe": "mechanical",
+   "model": "sonnet",
+   "effort": "medium",
+   "abstain": false,
+   "tier": "ordinary",
+   "why": "auto: code change",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.01416,
+   "cost_opus": 0.032096,
+   "correct": true
+  },
+  {
+   "id": "doc-09",
+   "split": "dev",
+   "lang": "ru",
+   "tags": [
+    "trap:long-simple",
+    "multi-file"
+   ],
+   "ambiguous": false,
+   "expected": "mechanical",
+   "acceptable": [
+    "mechanical",
+    "ordinary"
+   ],
+   "min_safe": "mechanical",
+   "model": "sonnet",
+   "effort": "medium",
+   "abstain": false,
+   "tier": "ordinary",
+   "why": "auto: code change",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.02808,
+   "cost_opus": 0.063648,
+   "correct": true
+  },
+  {
+   "id": "doc-10",
+   "split": "dev",
+   "lang": "en",
+   "tags": [
+    "docs",
+    "runbook"
+   ],
+   "ambiguous": false,
+   "expected": "ordinary",
+   "acceptable": [
+    "ordinary"
+   ],
+   "min_safe": "ordinary",
+   "model": "opus",
+   "effort": "medium",
+   "abstain": false,
+   "tier": "ordinary",
+   "why": "auto: code change, model left to the agent definition",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.01704,
+   "cost_opus": 0.019312,
+   "correct": true
+  },
+  {
+   "id": "doc-11",
+   "split": "holdout",
+   "lang": "en",
+   "tags": [
+    "trap:ambiguous",
+    "ambiguous"
+   ],
+   "ambiguous": true,
+   "expected": "ordinary",
+   "acceptable": [
+    "mechanical",
+    "ordinary"
+   ],
+   "min_safe": "mechanical",
+   "model": "sonnet",
+   "effort": "medium",
+   "abstain": false,
+   "tier": "ordinary",
+   "why": "auto: code change",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.006,
+   "cost_opus": 0.0136,
+   "correct": true
+  },
+  {
+   "id": "ops-01",
+   "split": "dev",
+   "lang": "en",
+   "tags": [
+    "rerun-command"
+   ],
+   "ambiguous": false,
+   "expected": "mechanical",
+   "acceptable": [
+    "mechanical"
+   ],
+   "min_safe": "mechanical",
+   "model": "sonnet",
+   "effort": "low",
+   "abstain": false,
+   "tier": "mechanical",
+   "why": "auto: code change, \"re-run\" → mechanical",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.0052,
+   "cost_opus": 0.0136,
+   "correct": true
+  },
+  {
+   "id": "ops-02",
+   "split": "dev",
+   "lang": "ru",
+   "tags": [
+    "version-bump",
+    "multi-file"
+   ],
+   "ambiguous": false,
+   "expected": "mechanical",
+   "acceptable": [
+    "mechanical"
+   ],
+   "min_safe": "mechanical",
+   "model": "sonnet",
+   "effort": "low",
+   "abstain": false,
+   "tier": "mechanical",
+   "why": "auto: code change, \"bump\" → mechanical",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.0052,
+   "cost_opus": 0.0136,
+   "correct": true
+  },
+  {
+   "id": "ops-03",
+   "split": "dev",
+   "lang": "en",
+   "tags": [
+    "infra",
+    "database"
+   ],
+   "ambiguous": false,
+   "expected": "risky",
+   "acceptable": [
+    "risky"
+   ],
+   "min_safe": "risky",
+   "model": "opus",
+   "effort": "high",
+   "abstain": false,
+   "tier": "risky",
+   "why": "auto: code change, \"production\" → risky",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.016048,
+   "cost_opus": 0.016048,
+   "correct": true
+  },
+  {
+   "id": "ops-04",
+   "split": "holdout",
+   "lang": "ru",
+   "tags": [
+    "trap:ru-forms",
+    "secrets",
+    "infra"
+   ],
+   "ambiguous": false,
+   "expected": "risky",
+   "acceptable": [
+    "risky"
+   ],
+   "min_safe": "risky",
+   "model": "opus",
+   "effort": "high",
+   "abstain": false,
+   "tier": "risky",
+   "why": "auto: code change, \"secret\" → risky",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.015776,
+   "cost_opus": 0.015776,
+   "correct": true
+  },
+  {
+   "id": "ops-05",
+   "split": "dev",
+   "lang": "en",
+   "tags": [
+    "docker"
+   ],
+   "ambiguous": false,
+   "expected": "ordinary",
+   "acceptable": [
+    "ordinary"
+   ],
+   "min_safe": "ordinary",
+   "model": "sonnet",
+   "effort": "medium",
+   "abstain": false,
+   "tier": "ordinary",
+   "why": "auto: code change",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.00636,
+   "cost_opus": 0.014416,
+   "correct": true
+  },
+  {
+   "id": "ops-06",
+   "split": "dev",
+   "lang": "en",
+   "tags": [
+    "trap:casual-risky",
+    "kubernetes"
+   ],
+   "ambiguous": false,
+   "expected": "risky",
+   "acceptable": [
+    "risky"
+   ],
+   "min_safe": "risky",
+   "model": "opus",
+   "effort": "high",
+   "abstain": false,
+   "tier": "risky",
+   "why": "auto: code change, \"k8s\" → risky",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.0136,
+   "cost_opus": 0.0136,
+   "correct": true
+  },
+  {
+   "id": "ops-07",
+   "split": "holdout",
+   "lang": "ru",
+   "tags": [
+    "trap:log-in-fence",
+    "trap:negation",
+    "summary",
+    "long"
+   ],
+   "ambiguous": false,
+   "expected": "mechanical",
+   "acceptable": [
+    "mechanical",
+    "ordinary"
+   ],
+   "min_safe": "mechanical",
+   "model": "sonnet",
+   "effort": "medium",
+   "abstain": false,
+   "tier": "ordinary",
+   "why": "auto: code change",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.07056,
+   "cost_opus": 0.159936,
+   "correct": true
+  },
+  {
+   "id": "ops-08",
+   "split": "holdout",
+   "lang": "en",
+   "tags": [
+    "ci"
+   ],
+   "ambiguous": false,
+   "expected": "ordinary",
+   "acceptable": [
+    "ordinary"
+   ],
+   "min_safe": "ordinary",
+   "model": "sonnet",
+   "effort": "medium",
+   "abstain": false,
+   "tier": "ordinary",
+   "why": "auto: code change",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.00648,
+   "cost_opus": 0.014688,
+   "correct": true
+  },
+  {
+   "id": "ops-09",
+   "split": "holdout",
+   "lang": "ru",
+   "tags": [
+    "architecture",
+    "cross-system"
+   ],
+   "ambiguous": false,
+   "expected": "deep",
+   "acceptable": [
+    "risky",
+    "deep"
+   ],
+   "min_safe": "risky",
+   "model": "opus",
+   "effort": "xhigh",
+   "abstain": false,
+   "tier": "deep",
+   "why": "auto: planning, \"спроектир\" → deep",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.030096,
+   "cost_opus": 0.026928,
+   "correct": true
+  },
+  {
+   "id": "ops-11",
+   "split": "dev",
+   "lang": "en",
+   "tags": [
+    "incident",
+    "database",
+    "long"
+   ],
+   "ambiguous": false,
+   "expected": "risky",
+   "acceptable": [
+    "risky"
+   ],
+   "min_safe": "risky",
+   "model": "opus",
+   "effort": "high",
+   "abstain": false,
+   "tier": "risky",
+   "why": "auto: code change, \"production\" → risky",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.486064,
+   "cost_opus": 0.486064,
+   "correct": true
+  },
+  {
+   "id": "ops-12",
+   "split": "holdout",
+   "lang": "en",
+   "tags": [
+    "read-only",
+    "trap:negation"
+   ],
+   "ambiguous": false,
+   "expected": "mechanical",
+   "acceptable": [
+    "mechanical",
+    "ordinary"
+   ],
+   "min_safe": "mechanical",
+   "model": "sonnet",
+   "effort": "medium",
+   "abstain": false,
+   "tier": "ordinary",
+   "why": "auto: code change",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.006,
+   "cost_opus": 0.0136,
+   "correct": true
+  },
+  {
+   "id": "gen-01",
+   "split": "holdout",
+   "lang": "en",
+   "tags": [
+    "search"
+   ],
+   "ambiguous": false,
+   "expected": "mechanical",
+   "acceptable": [
+    "mechanical"
+   ],
+   "min_safe": "mechanical",
+   "model": "haiku",
+   "effort": null,
+   "abstain": false,
+   "tier": "mechanical",
+   "why": "auto: read-only search",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.003,
+   "cost_opus": 0.0136,
+   "correct": true
+  },
+  {
+   "id": "gen-03",
+   "split": "holdout",
+   "lang": "en",
+   "tags": [
+    "comparison"
+   ],
+   "ambiguous": false,
+   "expected": "ordinary",
+   "acceptable": [
+    "ordinary"
+   ],
+   "min_safe": "ordinary",
+   "model": "sonnet",
+   "effort": "medium",
+   "abstain": false,
+   "tier": "ordinary",
+   "why": "auto: code change",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.00804,
+   "cost_opus": 0.018224,
+   "correct": true
+  },
+  {
+   "id": "gen-04",
+   "split": "holdout",
+   "lang": "en",
+   "tags": [
+    "research",
+    "algorithm"
+   ],
+   "ambiguous": false,
+   "expected": "deep",
+   "acceptable": [
+    "risky",
+    "deep"
+   ],
+   "min_safe": "risky",
+   "model": "sonnet",
+   "effort": "medium",
+   "abstain": false,
+   "tier": "ordinary",
+   "why": "auto: code change",
+   "exact": false,
+   "within": false,
+   "under": true,
+   "over": false,
+   "cost": 0.00876,
+   "cost_opus": 0.019856,
+   "correct": false
+  },
+  {
+   "id": "gen-05",
+   "split": "holdout",
+   "lang": "ru",
+   "tags": [
+    "writing"
+   ],
+   "ambiguous": false,
+   "expected": "ordinary",
+   "acceptable": [
+    "mechanical",
+    "ordinary"
+   ],
+   "min_safe": "mechanical",
+   "model": "sonnet",
+   "effort": "medium",
+   "abstain": false,
+   "tier": "ordinary",
+   "why": "auto: code change",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.00624,
+   "cost_opus": 0.014144,
+   "correct": true
+  },
+  {
+   "id": "gen-06",
+   "split": "dev",
+   "lang": "en",
+   "tags": [
+    "read-only"
+   ],
+   "ambiguous": false,
+   "expected": "mechanical",
+   "acceptable": [
+    "mechanical"
+   ],
+   "min_safe": "mechanical",
+   "model": "haiku",
+   "effort": null,
+   "abstain": false,
+   "tier": "mechanical",
+   "why": "auto: code change",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.003,
+   "cost_opus": 0.0136,
+   "correct": true
+  },
+  {
+   "id": "gen-07",
+   "split": "holdout",
+   "lang": "en",
+   "tags": [
+    "planning"
+   ],
+   "ambiguous": false,
+   "expected": "ordinary",
+   "acceptable": [
+    "ordinary",
+    "risky"
+   ],
+   "min_safe": "ordinary",
+   "model": "opus",
+   "effort": "high",
+   "abstain": false,
+   "tier": "risky",
+   "why": "auto: planning, \"migrat\" → risky",
+   "exact": false,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.014688,
+   "cost_opus": 0.014688,
+   "correct": true
+  },
+  {
+   "id": "gen-08",
+   "split": "holdout",
+   "lang": "ru",
+   "tags": [
+    "security",
+    "auth",
+    "review"
+   ],
+   "ambiguous": false,
+   "expected": "risky",
+   "acceptable": [
+    "risky"
+   ],
+   "min_safe": "risky",
+   "model": "opus",
+   "effort": "high",
+   "abstain": false,
+   "tier": "risky",
+   "why": "auto: code change, \"security\" → risky",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.019584,
+   "cost_opus": 0.019584,
+   "correct": true
+  },
+  {
+   "id": "gen-10",
+   "split": "dev",
+   "lang": "en",
+   "tags": [
+    "planning"
+   ],
+   "ambiguous": false,
+   "expected": "ordinary",
+   "acceptable": [
+    "ordinary"
+   ],
+   "min_safe": "ordinary",
+   "model": "sonnet",
+   "effort": "medium",
+   "abstain": false,
+   "tier": "ordinary",
+   "why": "auto: planning",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.00672,
+   "cost_opus": 0.015232,
+   "correct": true
+  },
+  {
+   "id": "gen-11",
+   "split": "dev",
+   "lang": "ru",
+   "tags": [
+    "trap:short-deep",
+    "gpu"
+   ],
+   "ambiguous": false,
+   "expected": "deep",
+   "acceptable": [
+    "risky",
+    "deep"
+   ],
+   "min_safe": "risky",
+   "model": "opus",
+   "effort": "high",
+   "abstain": false,
+   "tier": "risky",
+   "why": "auto: code change, \"determinis\" → risky",
+   "exact": false,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.0136,
+   "cost_opus": 0.0136,
+   "correct": true
+  },
+  {
+   "id": "gen-12",
+   "split": "holdout",
+   "lang": "en",
+   "tags": [
+    "trap:ambiguous",
+    "ambiguous"
+   ],
+   "ambiguous": true,
+   "expected": "ordinary",
+   "acceptable": [
+    "mechanical",
+    "ordinary"
+   ],
+   "min_safe": "mechanical",
+   "model": "opus",
+   "effort": null,
+   "abstain": true,
+   "tier": "abstain",
+   "why": "auto: abstain (brief too short to judge)",
+   "exact": false,
+   "within": false,
+   "under": false,
+   "over": false,
+   "cost": 0.0136,
+   "cost_opus": 0.0136,
+   "correct": true
+  },
+  {
+   "id": "gen-13",
+   "split": "dev",
+   "lang": "ru",
+   "tags": [
+    "trap:ambiguous",
+    "ambiguous"
+   ],
+   "ambiguous": true,
+   "expected": "ordinary",
+   "acceptable": [
+    "mechanical",
+    "ordinary"
+   ],
+   "min_safe": "mechanical",
+   "model": "opus",
+   "effort": null,
+   "abstain": true,
+   "tier": "abstain",
+   "why": "auto: abstain (brief too short to judge)",
+   "exact": false,
+   "within": false,
+   "under": false,
+   "over": false,
+   "cost": 0.0136,
+   "cost_opus": 0.0136,
+   "correct": true
+  },
+  {
+   "id": "gen-14",
+   "split": "dev",
+   "lang": "en",
+   "tags": [
+    "trap:ambiguous",
+    "ambiguous"
+   ],
+   "ambiguous": true,
+   "expected": "ordinary",
+   "acceptable": [
+    "mechanical",
+    "ordinary"
+   ],
+   "min_safe": "mechanical",
+   "model": "opus",
+   "effort": null,
+   "abstain": true,
+   "tier": "abstain",
+   "why": "auto: abstain (brief too short to judge)",
+   "exact": false,
+   "within": false,
+   "under": false,
+   "over": false,
+   "cost": 0.0136,
+   "cost_opus": 0.0136,
+   "correct": true
+  },
+  {
+   "id": "gen-15",
+   "split": "dev",
+   "lang": "ru",
+   "tags": [
+    "trap:ambiguous",
+    "ambiguous"
+   ],
+   "ambiguous": true,
+   "expected": "ordinary",
+   "acceptable": [
+    "mechanical",
+    "ordinary"
+   ],
+   "min_safe": "mechanical",
+   "model": "opus",
+   "effort": null,
+   "abstain": true,
+   "tier": "abstain",
+   "why": "auto: abstain (refers to an earlier context)",
+   "exact": false,
+   "within": false,
+   "under": false,
+   "over": false,
+   "cost": 0.0136,
+   "cost_opus": 0.0136,
+   "correct": true
+  },
+  {
+   "id": "gen-16",
+   "split": "dev",
+   "lang": "en",
+   "tags": [
+    "privacy",
+    "gdpr"
+   ],
+   "ambiguous": false,
+   "expected": "risky",
+   "acceptable": [
+    "risky"
+   ],
+   "min_safe": "risky",
+   "model": "opus",
+   "effort": "high",
+   "abstain": false,
+   "tier": "risky",
+   "why": "auto: code change, \"access control\" → risky",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.023392,
+   "cost_opus": 0.023392,
+   "correct": true
+  },
+  {
+   "id": "gen-17",
+   "split": "dev",
+   "lang": "en",
+   "tags": [
+    "research",
+    "ios"
+   ],
+   "ambiguous": false,
+   "expected": "ordinary",
+   "acceptable": [
+    "mechanical",
+    "ordinary"
+   ],
+   "min_safe": "mechanical",
+   "model": "sonnet",
+   "effort": "medium",
+   "abstain": false,
+   "tier": "ordinary",
+   "why": "auto: code change",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.00612,
+   "cost_opus": 0.013872,
+   "correct": true
+  },
+  {
+   "id": "gen-18",
+   "split": "holdout",
+   "lang": "mixed",
+   "tags": [
+    "search"
+   ],
+   "ambiguous": false,
+   "expected": "mechanical",
+   "acceptable": [
+    "mechanical"
+   ],
+   "min_safe": "mechanical",
+   "model": "haiku",
+   "effort": null,
+   "abstain": false,
+   "tier": "mechanical",
+   "why": "auto: read-only search",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.003,
+   "cost_opus": 0.0136,
+   "correct": true
+  },
+  {
+   "id": "gen-19",
+   "split": "dev",
+   "lang": "ru",
+   "tags": [
+    "trap:negation",
+    "writing"
+   ],
+   "ambiguous": false,
+   "expected": "mechanical",
+   "acceptable": [
+    "mechanical",
+    "ordinary"
+   ],
+   "min_safe": "mechanical",
+   "model": "sonnet",
+   "effort": "medium",
+   "abstain": false,
+   "tier": "ordinary",
+   "why": "auto: code change",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.006,
+   "cost_opus": 0.0136,
+   "correct": true
+  },
+  {
+   "id": "ios-28",
+   "split": "dev",
+   "lang": "en",
+   "tags": [
+    "search"
+   ],
+   "ambiguous": false,
+   "expected": "mechanical",
+   "acceptable": [
+    "mechanical"
+   ],
+   "min_safe": "mechanical",
+   "model": "haiku",
+   "effort": null,
+   "abstain": false,
+   "tier": "mechanical",
+   "why": "auto: read-only search",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.003,
+   "cost_opus": 0.0136,
+   "correct": true
+  },
+  {
+   "id": "web-18",
+   "split": "holdout",
+   "lang": "en",
+   "tags": [
+    "format"
+   ],
+   "ambiguous": false,
+   "expected": "mechanical",
+   "acceptable": [
+    "mechanical"
+   ],
+   "min_safe": "mechanical",
+   "model": "sonnet",
+   "effort": "low",
+   "abstain": false,
+   "tier": "mechanical",
+   "why": "auto: code change, \"format\" → mechanical",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.0052,
+   "cost_opus": 0.0136,
+   "correct": true
+  },
+  {
+   "id": "be-18",
+   "split": "holdout",
+   "lang": "ru",
+   "tags": [
+    "docs",
+    "multi-file"
+   ],
+   "ambiguous": false,
+   "expected": "mechanical",
+   "acceptable": [
+    "mechanical",
+    "ordinary"
+   ],
+   "min_safe": "mechanical",
+   "model": "sonnet",
+   "effort": "medium",
+   "abstain": false,
+   "tier": "ordinary",
+   "why": "auto: code change",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.006,
+   "cost_opus": 0.0136,
+   "correct": true
+  },
+  {
+   "id": "ops-13",
+   "split": "holdout",
+   "lang": "en",
+   "tags": [
+    "multi-file",
+    "config"
+   ],
+   "ambiguous": false,
+   "expected": "mechanical",
+   "acceptable": [
+    "mechanical",
+    "ordinary"
+   ],
+   "min_safe": "mechanical",
+   "model": "sonnet",
+   "effort": "medium",
+   "abstain": false,
+   "tier": "ordinary",
+   "why": "auto: code change",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.006,
+   "cost_opus": 0.0136,
+   "correct": true
+  },
+  {
+   "id": "data-12",
+   "split": "dev",
+   "lang": "ru",
+   "tags": [
+    "rename"
+   ],
+   "ambiguous": false,
+   "expected": "mechanical",
+   "acceptable": [
+    "mechanical",
+    "ordinary"
+   ],
+   "min_safe": "mechanical",
+   "model": "sonnet",
+   "effort": "low",
+   "abstain": false,
+   "tier": "mechanical",
+   "why": "auto: code change, \"rename\" → mechanical",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.0052,
+   "cost_opus": 0.0136,
+   "correct": true
+  },
+  {
+   "id": "ios-29",
+   "split": "holdout",
+   "lang": "ru",
+   "tags": [
+    "bugfix",
+    "long"
+   ],
+   "ambiguous": false,
+   "expected": "ordinary",
+   "acceptable": [
+    "ordinary"
+   ],
+   "min_safe": "ordinary",
+   "model": "sonnet",
+   "effort": "medium",
+   "abstain": false,
+   "tier": "ordinary",
+   "why": "auto: code change",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.05664,
+   "cost_opus": 0.128384,
+   "correct": true
+  },
+  {
+   "id": "be-19",
+   "split": "dev",
+   "lang": "en",
+   "tags": [
+    "unknown-cause",
+    "caching",
+    "concurrency"
+   ],
+   "ambiguous": false,
+   "expected": "risky",
+   "acceptable": [
+    "risky"
+   ],
+   "min_safe": "risky",
+   "model": "opus",
+   "effort": "high",
+   "abstain": false,
+   "tier": "risky",
+   "why": "auto: code change, \"race\" → risky",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.019312,
+   "cost_opus": 0.019312,
+   "correct": true
+  },
+  {
+   "id": "web-19",
+   "split": "holdout",
+   "lang": "ru",
+   "tags": [
+    "auth",
+    "oauth"
+   ],
+   "ambiguous": false,
+   "expected": "risky",
+   "acceptable": [
+    "risky"
+   ],
+   "min_safe": "risky",
+   "model": "opus",
+   "effort": "high",
+   "abstain": false,
+   "tier": "risky",
+   "why": "auto: code change, \"oauth\" → risky",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.014688,
+   "cost_opus": 0.014688,
+   "correct": true
+  },
+  {
+   "id": "ops-14",
+   "split": "holdout",
+   "lang": "en",
+   "tags": [
+    "config",
+    "trap:negation"
+   ],
+   "ambiguous": false,
+   "expected": "mechanical",
+   "acceptable": [
+    "mechanical"
+   ],
+   "min_safe": "mechanical",
+   "model": "sonnet",
+   "effort": "low",
+   "abstain": false,
+   "tier": "mechanical",
+   "why": "auto: code change, \"move\" → mechanical",
+   "exact": true,
+   "within": true,
+   "under": false,
+   "over": false,
+   "cost": 0.0052,
+   "cost_opus": 0.0136,
+   "correct": true
+  },
+  {
+   "id": "doc-12",
+   "split": "holdout",
+   "lang": "ru",
+   "tags": [
+    "writing"
+   ],
+   "ambiguous": false,
+   "expected": "ordinary",
+   "acceptable": [
+    "mechanical",
+    "ordinary"
+   ],
+   "min_safe": "mechanical",
+   "model": "opus",
+   "effort": "high",
+   "abstain": false,
+   "tier": "risky",
+   "why": "auto: code change, \"безопасность\" → risky",
+   "exact": false,
+   "within": false,
+   "under": false,
+   "over": true,
+   "cost": 0.0136,
+   "cost_opus": 0.0136,
+   "correct": false
+  }
+ ]
+}

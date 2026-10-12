@@ -1,0 +1,3 @@
+agent-router calibrate — 154 spawns, 154 routed by the router (proposals only; nothing is written)
+on the strong model: 46%   cheap-tier spawns that needed escalation: 13.3%   abstained: 3.9%
+- strong_share: 46 — 13.3% of cheap-tier spawns needed escalation; 46% on opus looks about right

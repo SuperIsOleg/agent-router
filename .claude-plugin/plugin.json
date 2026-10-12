@@ -1,0 +1,9 @@
+{
+  "name": "agent-router",
+  "version": "0.2.2",
+  "description": "Gives every subagent spawn a model and a reasoning effort that fit the task, with a route line, a cost cap and a daily log.",
+  "author": { "name": "Oleg Kalistratov" },
+  "license": "Apache-2.0",
+  "keywords": ["agents", "subagents", "model", "effort", "cost", "router"],
+  "types": "./types/index.d.ts"
+}
